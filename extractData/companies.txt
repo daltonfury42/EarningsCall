@@ -1,0 +1,103 @@
+American Airlines Group 	AAL
+Apple Inc. 	AAPL
+Adobe Inc. 	ADBE
+Analog Devices 	ADI
+Automatic Data Processing, Inc. 	ADP
+Autodesk, Inc. 	ADSK
+Align Technology, Inc. 	ALGN
+Alexion Pharmaceuticals 	ALXN
+Applied Materials, Inc. 	AMAT
+Advanced Micro Devices 	AMD
+Amgen Inc. 	AMGN
+Amazon.com, Inc. 	AMZN
+ASML Holding 	ASML
+Activision Blizzard 	ATVI
+Broadcom Inc. 	AVGO
+Baidu.com, Inc. 	BIDU
+Biogen, Inc 	BIIB
+Booking Holdings 	BKNG
+BioMarin Pharmaceutical, Inc. 	BMRN
+Cadence Design Systems, Inc. 	CDNS
+Celgene Corporation 	CELG
+Cerner Corporation 	CERN
+Check Point Software Technologies Ltd. 	CHKP
+Charter Communications, Inc. 	CHTR
+Comcast Corporation 	CMCSA
+Costco Wholesale Corporation 	COST
+Cisco Systems, Inc. 	CSCO
+CSX Corporation 	CSX
+Cintas Corporation 	CTAS
+Ctrip International 	CTRP
+Cognizant Technology Solutions Corporation 	CTSH
+Citrix Systems, Inc. 	CTXS
+Dollar Tree, Inc. 	DLTR
+Electronic Arts 	EA
+eBay Inc. 	EBAY
+Expedia Group 	EXPE
+Fastenal Company 	FAST
+Facebook, Inc. 	FB
+Fiserv, Inc. 	FISV
+Twenty-First Century Fox 	FOX
+Twenty-First Century Fox 	FOXA
+Gilead Sciences, Inc. 	GILD
+Alphabet Inc. 	GOOG
+Alphabet Inc. 	GOOGL
+Hasbro, Inc. 	HAS
+Henry Schein, Inc. 	HSIC
+IDEXX Laboratories, Inc. 	IDXX
+Illumina, Inc. 	ILMN
+Incyte Corporation 	INCY
+Intel Corporation 	INTC
+Intuit, Inc. 	INTU
+Intuitive Surgical Inc. 	ISRG
+J.B. Hunt Transport Services, Inc. 	JBHT
+JD.com 	JD
+The Kraft Heinz Company 	KHC
+KLA-Tencor Corporation 	KLAC
+Liberty Global 	LBTYA
+Liberty Global 	LBTYK
+Lam Research, Inc. 	LRCX
+Lululemon athletica 	LULU
+Marriott International, Inc. 	MAR
+Microchip Technology 	MCHP
+Mondelēz International 	MDLZ
+MercadoLibre 	MELI
+Monster Beverage 	MNST
+Microsoft Corporation 	MSFT
+Micron Technology, Inc. 	MU
+Maxim Integrated Products 	MXIM
+Mylan N.V. 	MYL
+Netflix 	NFLX
+NetApp 	NTAP
+NetEase, Inc. 	NTES
+NVIDIA Corporation 	NVDA
+NXP Semiconductors 	NXPI
+O'Reilly Automotive, Inc. 	ORLY
+Paychex, Inc. 	PAYX
+PACCAR Inc. 	PCAR
+PepsiCo, Inc. 	PEP
+PayPal Holdings, Inc. 	PYPL
+QUALCOMM Incorporated 	QCOM
+Regeneron Pharmaceuticals 	REGN
+Ross Stores Inc. 	ROST
+Starbucks Corporation 	SBUX
+Sirius XM Radio, Inc. 	SIRI
+Synopsys, Inc. 	SNPS
+Skyworks Solutions, Inc. 	SWKS
+Symantec Corporation 	SYMC
+T-Mobile US 	TMUS
+Tesla, Inc. 	TSLA
+Take-Two Interactive, Inc. 	TTWO
+Texas Instruments, Inc. 	TXN
+United Continental Holdings 	UAL
+Ulta Beauty 	ULTA
+Verisk Analytics 	VRSK
+VeriSign 	VRSN
+Vertex Pharmaceuticals 	VRTX
+Walgreens Boots Alliance 	WBA
+Workday, Inc. 	WDAY
+Western Digital 	WDC
+Willis Towers Watson 	WLTW
+Wynn Resorts 	WYNN
+Xcel Energy, Inc. 	XEL
+Xilinx, Inc. 	XLNX

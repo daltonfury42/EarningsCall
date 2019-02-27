@@ -8,5 +8,7 @@ if __name__ == '__main__':
     parser.add_argument('--outdir', help='Directory to read files from', required=True)
     args = parser.parse_args()
 
+    urls = extractor.getECUrls()
+    saveUrls = extractor.saveECUrls('urls.txt', urls)
     dataWithFileName = extractor.readDataFromDir(args.indir)
     extractor.writeToCSV(args.outdir, dataWithFileName)
