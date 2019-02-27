@@ -59,6 +59,7 @@ def writeToCSV(outPutDir, dataWithFileName):
 
 def getECUrls(symbol='ms'):
     url = 'https://www.nasdaq.com/symbol/' + symbol + '/call-transcripts'
+    print("Retreiving urls for " + url)
 
     page_whole = request.urlopen(url).read().decode('utf-8')
 
@@ -89,3 +90,11 @@ def saveECUrls(fileName, urls):
     with open(fileName, 'w') as f:
         for item in urls:
             f.write("%s\n" % item)
+
+def loadCompanies(fileName):
+    with open(fileName) as f:
+        content = f.readlines()
+
+    content = [x.split('\t')[1].strip() for x in content]
+
+    return content
