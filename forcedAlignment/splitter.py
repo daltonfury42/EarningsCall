@@ -1,7 +1,7 @@
 import csv
 import os
 import subprocess
-import time
+import librosa
 
 def splitAllInDir(dirName):
     for csvFileName in os.listdir(dirName):
@@ -24,6 +24,14 @@ def split(csvFilePath):
 
             ffmpegSplitter(audioFilePath, startTime, endTime, saveFilePath)
 
+def getMFCC(audioFilePath, startTime, endTime):
+    startTime, endTime = float(startTime), float(endTime)
+    duration = endTime - startTime
+
+    y, sr = librosa.load(audioFilePath, offset=startTime, duration=duration)
+    mfcc = list(librosa.feature.mfcc(y=y, sr=sr, n_mfcc=1)[0])
+
+    return mfcc
 
 def ffmpegSplitter(inFile, start, end, outFile):
 
