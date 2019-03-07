@@ -15,6 +15,11 @@ def getAlignmentBatch(mp3sDir, transcriptsDir, outDir):
 
 def getAlignment(audioFile, textFile, outFile):
     print('Processing ' + audioFile)
+
+    if os.path.exists(outFile):
+        print('Skipping as result already exists.')
+        return
+        
     # create Task object
     config_string = u"task_language=eng|is_text_type=plain|os_task_file_format=csv"
     task = Task(config_string=config_string)
