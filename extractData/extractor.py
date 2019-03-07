@@ -1,13 +1,7 @@
 import csv
 import os
 from bs4 import BeautifulSoup
-import enum
 
-class Section(enum.Enum):
-    COMPANY_PARTICIPANTS = 0
-    CONF_CALL_PARTICIPANTS = 1
-    COMPANY_SPEAKS  = 3
-    Q_N_A = 4
 
 def readDataFromDir(inDir):
     dataWithFileName = []
@@ -18,6 +12,7 @@ def readDataFromDir(inDir):
         dataWithFileName.append((fileName, processedData))
 
     return dataWithFileName
+
 
 def readData(fileName):
     print("Processing " + fileName)
@@ -38,11 +33,12 @@ def readData(fileName):
             if text not in ['Company Participants', 'Conference Call Participants', 'Question-and-Answer Session']:
                 speaker = text
         else:
-            if speaker is not None:
+            if speaker is not None and speaker not in ['Executives', 'Analysts']:
                 dataPoint = {'speaker': speaker, 'words': para.text}
                 processedData.append(dataPoint)
 
     return processedData
+
 
 def writeToCSV(outPutDir, dataWithFileName):
     for fileName, data in dataWithFileName:
