@@ -1,6 +1,7 @@
 import csv
 import os
-from pydub import AudioSegment
+import subprocess
+import time
 
 def splitAllInDir(dirName):
     for csvFileName in os.listdir(dirName):
@@ -11,7 +12,6 @@ def split(csvFilePath):
     print('Splitting ' + csvFilePath)
     callId, _ = os.path.splitext(os.path.basename(csvFilePath))
     audioFilePath = os.path.join('forcedAlignment/mp3', callId + '.mp3')
-    audio = AudioSegment.from_mp3(audioFilePath)
 
     with open(csvFilePath) as csvFile:
         csvreader = csv.reader(csvFile)
@@ -21,13 +21,19 @@ def split(csvFilePath):
                 print('Skipping ' + saveFilePath)
                 continue
 
-            startTime = float(startTime) * 1000
-            endTime = float(endTime) * 1000
-            segment = audio[startTime:endTime]
-            segment.export(saveFilePath, format='mp3')
+            ffmpegSplitter(audioFilePath, startTime, endTime, saveFilePath)
 
-            del segment
 
-    import gc
-    del audio
-    gc.collect()
+def ffmpegSplitter(inFile, start, end, outFile):
+
+    # start_sec, start_milli = [int(i) for i in start.split('.')]
+    # end_sec, end_milli = [int(i) for i in end.split('.')]
+    #
+    # start = time.strftime("%H:%M:%S", time.gmtime(start_sec)) + '.' + str(start_milli)
+    # end = time.strftime("%H:%M:%S", time.gmtime(end_sec)) + '.' + str(end_milli)
+
+    cmdString = 'ffmpeg -i {inFile} -acodec copy -ss {start} -to {end} {outFile}'
+    command = cmdString.format(inFile=inFile, start=start, end=end, outFile=outFile)
+
+    # use subprocess to execute the command in the shell
+    subprocess.call(command, shell=True)
