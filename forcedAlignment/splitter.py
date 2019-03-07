@@ -15,7 +15,8 @@ def split(csvFilePath):
 
     with open(csvFilePath) as csvFile:
         csvreader = csv.reader(csvFile)
-        for splitId, startTime, endTime, _ in csvreader:
+        for row in csvreader:
+            splitId, startTime, endTime = row[0], row[1], row[2]
             saveFilePath = os.path.join('forcedAlignment/mp3_segments', callId + '_' + splitId + '.mp3')
             if os.path.exists(saveFilePath):
                 print('Skipping ' + saveFilePath)
