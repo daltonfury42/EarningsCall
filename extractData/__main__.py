@@ -1,15 +1,7 @@
 import argparse
 
 from extractData import extractor
-
-def getPageUrlsAlone(args):
-    companies = extractor.loadCompanies('companies.txt')
-
-    urls = []
-    for company in companies:
-        urls += extractor.getECUrls(company.lower())
-    saveUrls = extractor.saveECUrls('urls.txt', urls)
-    exit(-1)
+from extractData.urls import fetcher
 
 def extractDataAlone(args):
     dataWithFileName = extractor.readDataFromDir(args.indir)
@@ -20,6 +12,8 @@ if __name__ == '__main__':
     parser.add_argument('--indir', help='Directory to read files from', required=True)
     parser.add_argument('--outdir', help='Directory to read files from', required=True)
     args = parser.parse_args()
+
+    #fetcher.fetchFromCompanies()
 
     extractDataAlone(args)
 
