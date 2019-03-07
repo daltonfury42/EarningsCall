@@ -49,6 +49,8 @@ def readData(fileName):
 def writeToCSV(outPutDir, dataWithFileName):
     for fileName, data in dataWithFileName:
         base, ext = os.path.splitext(fileName)
+        base = base.split('-')[0]
+
         savePath = os.path.join(outPutDir, base + '.csv')
         with open(savePath, 'w') as csvFile:
             writer = csv.DictWriter(csvFile, ['speaker', 'words'])
@@ -56,9 +58,17 @@ def writeToCSV(outPutDir, dataWithFileName):
             writer.writeheader()
             writer.writerows(data)
 
+        savePathTextAlone = os.path.join(outPutDir, base + '.txt')
+        with open(savePathTextAlone, 'w') as file:
+
+            data = [line['words'] for line in data]
+            for line in data:
+                file.write("%s\n" % line)
+
+
 
 def getECUrls(symbol='ms'):
-    url = 'https://www.nasdaq.com/symbol/' + symbol + '/call-transcripts'
+    url = 'http://www.nasdaq.com/symbol/' + symbol + '/call-transcripts'
     print("Retreiving urls for " + url)
 
     page_whole = request.urlopen(url).read().decode('utf-8')
@@ -66,6 +76,10 @@ def getECUrls(symbol='ms'):
     page_content = BeautifulSoup(page_whole, features="html.parser")
 
     page_articles = page_content.find("table", {"id": "quotes_content_left_CalltranscriptsId_CallTranscripts"})
+
+    if page_articles is None:
+        print("Unable to retrive urls for " + url)
+        return []
 
     rows = page_articles.findAll("tr")
 
