@@ -14,7 +14,7 @@ def extract(csvFilePath):
     with open(csvFilePath) as csvReadFile:
         csvreader = csv.reader(csvReadFile)
 
-        saveFilePath = os.path.join('forcedAlignment/features', callId + '.csv')
+        saveFilePath = os.path.join('extractFeatures/features', callId + '.csv')
         if os.path.exists(saveFilePath):
             print('Skipping ' + saveFilePath)
             return
@@ -24,7 +24,7 @@ def extract(csvFilePath):
             for row in csvreader:
                 splitId, startTime, endTime = row[0], row[1], row[2]
 
-                audioFilePath = os.path.join('forcedAlignment/mp3_segments', callId + '_' + splitId + '.mp3')
+                audioFilePath = os.path.join('extractFeatures/mp3_segments', callId + '_' + splitId + '.mp3')
 
                 features = getMFCC(audioFilePath)
 
@@ -37,6 +37,6 @@ def extract(csvFilePath):
 
 def getMFCC(audioFilePath):
     y, sr = librosa.load(audioFilePath)
-    mfcc = list(librosa.feature.mfcc(y=y, sr=sr, n_mfcc=1)[0])
+    mfcc = librosa.feature.mfcc(y=y, sr=sr).flatten()
 
-    return mfcc
+    return list(mfcc)

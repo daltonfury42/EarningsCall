@@ -1,10 +1,10 @@
-from forcedAlignment import aligner, splitter, mfcc
+from extractFeatures import aligner, splitter, mfcc
 
 
 if __name__ == '__main__':
 
-    # aligner.getAlignmentBatch('forcedAlignment/mp3', 'extractData/out', 'forcedAlignment/out')
+    # aligner.getAlignmentBatch('extractFeatures/mp3', 'extractData/out', 'extractFeatures/out')
 
-    # splitter.splitAllInDir('forcedAlignment/out')
-
-    mfcc.extractAllInDir('forcedAlignment/out')
+    # splitter.splitAllInDir('extractFeatures/out')
+    #
+    mfcc.extractAllInDir('extractFeatures/out')
