@@ -10,7 +10,6 @@ def extractAllInDir(dirName):
 def extract(csvFilePath):
     print('Extracting from ' + csvFilePath)
     callId, _ = os.path.splitext(os.path.basename(csvFilePath))
-    audioFilePath = os.path.join('forcedAlignment/mp3', callId + '.mp3')
 
     with open(csvFilePath) as csvReadFile:
         csvreader = csv.reader(csvReadFile)
@@ -24,7 +23,10 @@ def extract(csvFilePath):
             writer = csv.writer(csvWriteFile, delimiter=',')
             for row in csvreader:
                 splitId, startTime, endTime = row[0], row[1], row[2]
-                features = getMFCC(audioFilePath, startTime, endTime)
+
+                audioFilePath = os.path.join('forcedAlignment/mp3_segments', callId + '_' + splitId + '.mp3')
+
+                features = getMFCC(audioFilePath)
 
                 row = [splitId, startTime, endTime] + features
                 writer.writerow(row)
@@ -33,11 +35,8 @@ def extract(csvFilePath):
 
 
 
-def getMFCC(audioFilePath, startTime, endTime):
-    startTime, endTime = float(startTime), float(endTime)
-    duration = endTime - startTime
-
-    y, sr = librosa.load(audioFilePath, offset=startTime, duration=duration)
+def getMFCC(audioFilePath):
+    y, sr = librosa.load(audioFilePath)
     mfcc = list(librosa.feature.mfcc(y=y, sr=sr, n_mfcc=1)[0])
 
     return mfcc
