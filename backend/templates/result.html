@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" type="text/css">
 </head>
 
 <body>
@@ -42,20 +42,20 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    
             </form>
         </div>
     </nav>
+    
     <main role="main">
         <div class="jumbotron">
             <div class="container">
+                <br><br>
                 <h1 class="display-3">Hello, world!</h1>
                 <p>This is a template for a simple marketing or informational website. It includes a large callout
                     called a jumbotron and three supporting pieces of content. Use it as a starting point to create
                     something more unique.</p>
-                <p> <audio id="audiofile" src="{{ url_for('static', filename='mp3/' + callId + '.mp3') }}" controls>
-                    </audio>
+                <p> 
                 </p>
             </div>
         </div>
@@ -76,8 +76,9 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                        <audio id="audiofile" src="{{ url_for('static', filename='mp3/' + callId + '.mp3') }}" controls></audio>
+                </div>
             </div>
         </div>
     </main>
