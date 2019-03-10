@@ -63,11 +63,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div id="subtitles">
-                        {% for text in texts %}
-                        <p>{{ text['text'] }}</p>
-                        {% endfor %}
-                    </div>
+                        <ul class="list-group" id="subtitles">
+                            {% for text in texts %}
+                            <li class="list-group-item list-group-item-action disabled"><p>{{ text['text'] }}</p></li>
+                            {% endfor %}
+                        </ul>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-2"></div>
@@ -89,7 +89,12 @@
 
             syncData.forEach(function (element, index, array) {
                 if (audioPlayer.currentTime >= element.start && audioPlayer.currentTime <= element.end) {
-                    subtitles.children[index].style.background = 'yellow';
+                    subtitles.children[index].classList.remove("disabled");
+                    subtitles.children[index].classList.add("list-group-item-dark");
+
+                    if(index!= 0) {
+                        subtitles.children[index-1].classList.remove("list-group-item-dark"); 
+                    }
                 }
             });
         });
