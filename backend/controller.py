@@ -1,3 +1,5 @@
+import random
+
 from flask import Flask, render_template
 import os
 import csv
@@ -6,14 +8,14 @@ app = Flask(__name__)
 
 @app.route('/call/<string:callId>')
 def results(callId):
-    timeData, texts = getData(callId)
-    return render_template('result.html', callId=callId, timeData=timeData, texts=texts)
+    timeData, texts, emotions = getData(callId)
+    return render_template('result.html', callId=callId, timeData=timeData, texts=texts, emotions=emotions)
 
 
 def getData(callId):
     transcriptFilePath = os.path.join('data/transcripts', callId + '.csv')
 
-    timeData, texts = [], []
+    timeData, texts, emotions = [], [], []
 
     with open(transcriptFilePath) as csvFile:
         spamreader = csv.reader(csvFile)
@@ -22,5 +24,6 @@ def getData(callId):
             text = text.decode('utf-8')
             timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
             texts.append({'splitId': splitId, 'speaker': speaker, 'text': text})
+            emotions.append({'splitId': splitId, 'emotion': random.choice(['happy', 'sad', 'neutral'])})
 
-    return  timeData, texts
+    return  timeData, texts, emotions

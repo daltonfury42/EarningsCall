@@ -63,11 +63,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                        <ul class="list-group" id="subtitles">
-                            {% for text in texts %}
-                            <li class="list-group-item list-group-item-action disabled"><p>{{ text['text'] }}</p></li>
-                            {% endfor %}
-                        </ul>
+                    <div class="list-group" id="subtitles">
+                        {% for text in texts %}
+                        <a data-toggle="popover" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"
+                            class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1" id="spreaker">{{ text['speaker'] }}:</h5>
+                            </div>
+                            <br>
+                            <p class="mb-1">{{ text['text'] }}</p>
+                        </a>
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-2"></div>
@@ -81,19 +88,23 @@
             var syncData = [
                 {% for data in timeData %}
                     { "end": {{ data['endTime'] }}, "start": {{ data['startTime'] }} },
-                {% endfor %}
+        {% endfor %}
             ];
 
 
         audioPlayer.addEventListener("timeupdate", function (e) {
 
             syncData.forEach(function (element, index, array) {
-                if (audioPlayer.currentTime >= element.start && audioPlayer.currentTime <= element.end) {
-                    subtitles.children[index].classList.remove("disabled");
+                if (audioPlayer.currentTime >= element.start && audioPlayer.currentTime <= element.end && !subtitles.children[index].classList.contains("list-group-item-dark")) {
                     subtitles.children[index].classList.add("list-group-item-dark");
 
-                    if(index!= 0) {
-                        subtitles.children[index-1].classList.remove("list-group-item-dark"); 
+                    var audioIcon = document.createElement("IMG")
+                    audioIcon.setAttribute("src", "https://img.icons8.com/metro/26/000000/speaker.png");
+                    subtitles.children[index].children[0].appendChild(audioIcon);
+
+                    if (index != 0) {
+                        subtitles.children[index - 1].classList.remove("list-group-item-dark");
+                        subtitles.children[index - 1].children[0].removeChild(subtitles.children[index - 1].children[0].lastChild);
                     }
                 }
             });
