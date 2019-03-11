@@ -11,6 +11,18 @@ def results(callId):
     timeData, texts = getData(callId)
     return render_template('result.html', callId=callId, timeData=timeData, texts=texts)
 
+@app.route('/call')
+def calls():
+    return render_template('calls.html')
+
+def getAvailableData():
+    availData = []
+    dataDir = 'backend/data/transcripts'
+    for fileName in os.listdir(dataDir):
+        callId, _ = os.path.split(fileName)
+        availData.append({'callId': callId, 'title': 'Title goes here'})
+
+    return availData
 
 def getData(callId):
     transcriptFilePath = os.path.join('data/transcripts', callId + '.csv')

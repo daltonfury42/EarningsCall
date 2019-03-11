@@ -3,3 +3,15 @@
     margin-top: 50px;
     margin-left:10%;
 }*/
+body {
+  padding-top: 4.5rem;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.block-centered {
+  margin: 100px auto 0 auto;
+  width: 70%;
+}
