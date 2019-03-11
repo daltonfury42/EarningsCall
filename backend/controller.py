@@ -8,14 +8,14 @@ app = Flask(__name__)
 
 @app.route('/call/<string:callId>')
 def results(callId):
-    timeData, texts, emotions = getData(callId)
-    return render_template('result.html', callId=callId, timeData=timeData, texts=texts, emotions=emotions)
+    timeData, texts = getData(callId)
+    return render_template('result.html', callId=callId, timeData=timeData, texts=texts)
 
 
 def getData(callId):
     transcriptFilePath = os.path.join('data/transcripts', callId + '.csv')
 
-    timeData, texts, emotions = [], [], []
+    timeData, texts = [], []
 
     with open(transcriptFilePath) as csvFile:
         spamreader = csv.reader(csvFile)
@@ -23,7 +23,7 @@ def getData(callId):
             speaker, text, splitId, startTime, endTime = row[0], row[1], row[2], row[3], row[4]
             text = text.decode('utf-8')
             timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
-            texts.append({'splitId': splitId, 'speaker': speaker, 'text': text})
-            emotions.append({'splitId': splitId, 'emotion': random.choice(['happy', 'sad', 'neutral'])})
+            texts.append({'splitId': splitId, 'speaker': speaker, 'text': text,
+                          'emotion': random.choice(['happy', 'sad', 'neutral'])})
 
-    return  timeData, texts, emotions
+    return  timeData, texts

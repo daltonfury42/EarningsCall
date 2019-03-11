@@ -42,11 +42,11 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                    
+
             </form>
         </div>
     </nav>
-    
+
     <main role="main">
         <div class="jumbotron">
             <div class="container">
@@ -55,7 +55,7 @@
                 <p>This is a template for a simple marketing or informational website. It includes a large callout
                     called a jumbotron and three supporting pieces of content. Use it as a starting point to create
                     something more unique.</p>
-                <p> 
+                <p>
                 </p>
             </div>
         </div>
@@ -65,51 +65,80 @@
                 <div class="col-md-6">
                     <div class="list-group" id="subtitles">
                         {% for text in texts %}
-                        <a data-toggle="popover" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"
-                            class="list-group-item list-group-item-action flex-column align-items-start">
+                        <a 
+                            class="list-group-item list-group-item-action flex-column align-items-start"
+                            id="{{ text['splitId'] }}" href="javascript:focusOn('{{ text['splitId'] }}', true);">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1" id="spreaker">{{ text['speaker'] }}:</h5>
+                                <img src="https://img.icons8.com/metro/26/000000/speaker.png" style="visibility:hidden;" id="{{ text['splitId'] }}-audioImage">
                             </div>
                             <br>
                             <p class="mb-1">{{ text['text'] }}</p>
+                            <span class="badge badge-primary" id="{{ text['splitId'] }}-emotion"
+                                style="visibility:hidden;">{{ text['emotion']}}</span>
                         </a>
                         {% endfor %}
                     </div>
                 </div>
                 <div class="col-md-4">
-                        <audio id="audiofile" src="{{ url_for('static', filename='mp3/' + callId + '.mp3') }}" controls></audio>
+                    <audio id="audiofile" src="{{ url_for('static', filename='mp3/' + callId + '.mp3') }}"
+                        controls></audio>
                 </div>
             </div>
         </div>
     </main>
     <script>
-        (function (win, doc) {
-            var audioPlayer = doc.getElementById("audiofile");
-            var subtitles = doc.getElementById("subtitles");
-            var syncData = [
-                {% for data in timeData %}
-                    { "end": {{ data['endTime'] }}, "start": {{ data['startTime'] }} },
+        var syncData = [
+            {% for data in timeData %}
+        { "end": {{ data['endTime'] }}, "start": {{ data['startTime'] }}, 'splitId': '{{ data['splitId']}}' },
         {% endfor %}
             ];
 
+        var audioPlayer = document.getElementById("audiofile");
+        var currentFocus = undefined
 
-        audioPlayer.addEventListener("timeupdate", function (e) {
+        function focusOn(splitId, triggerAudio) {
 
-            syncData.forEach(function (element, index, array) {
-                if (audioPlayer.currentTime >= element.start && audioPlayer.currentTime <= element.end && !subtitles.children[index].classList.contains("list-group-item-dark")) {
-                    subtitles.children[index].classList.add("list-group-item-dark");
+            if (currentFocus != splitId)
+                if (currentFocus != undefined)
+                    unFocus(currentFocus);
+                currentFocus = splitId;
+            console.log('splitID:');
+            console.log(splitId)
+            document.getElementById(splitId + '-emotion').style.visibility = "visible";
+            document.getElementById(splitId + '-audioImage').style.visibility = "visible";
 
-                    var audioIcon = document.createElement("IMG")
-                    audioIcon.setAttribute("src", "https://img.icons8.com/metro/26/000000/speaker.png");
-                    subtitles.children[index].children[0].appendChild(audioIcon);
+            var elem = document.getElementById(splitId);
+            var index = parseInt(splitId.slice(1, splitId.length)) - 1
+            timeData = syncData[index]
+            
+            elem.classList.add("list-group-item-dark");
 
-                    if (index != 0) {
-                        subtitles.children[index - 1].classList.remove("list-group-item-dark");
-                        subtitles.children[index - 1].children[0].removeChild(subtitles.children[index - 1].children[0].lastChild);
+            if (triggerAudio) {
+                audioPlayer.currentTime = timeData['start'];
+                audioPlayer.play();
+            }
+        }
+
+        function unFocus(splitId) {
+            document.getElementById(splitId + '-audioImage').style.visibility = "hidden";
+            var elem = document.getElementById(splitId);
+            elem.classList.remove("list-group-item-dark");
+        }
+
+        (function (win, doc) {
+            
+            var subtitles = doc.getElementById("subtitles");
+
+            audioPlayer.addEventListener("timeupdate", function (e) {
+
+                syncData.forEach(function (element, index, array) {
+                    if (audioPlayer.currentTime >= element.start && audioPlayer.currentTime <= element.end && !subtitles.children[index].classList.contains("list-group-item-dark")) {
+                        console.log(element.splitId)
+                        focusOn(element.splitId, false);
                     }
-                }
+                });
             });
-        });
         }(window, document));
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
