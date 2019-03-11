@@ -13,13 +13,17 @@ def results(callId):
 
 @app.route('/call')
 def calls():
-    return render_template('calls.html')
+
+    dataList = getAvailableData()
+
+    return render_template('calls.html', dataList=dataList)
 
 def getAvailableData():
     availData = []
-    dataDir = 'backend/data/transcripts'
+    dataDir = 'data/transcripts'
     for fileName in os.listdir(dataDir):
-        callId, _ = os.path.split(fileName)
+        print(fileName)
+        callId, _ = os.path.splitext(fileName)
         availData.append({'callId': callId, 'title': 'Title goes here'})
 
     return availData

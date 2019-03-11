@@ -36,10 +36,9 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-
-              <a class="dropdown-item" href="#">Category1</a>
-              <a class="dropdown-item" href="#">Category2</a>
-              <a class="dropdown-item" href="#">Category3</a>
+                {% for data in dataList %}
+              <a class="dropdown-item" href="call/{{ data['callId'] }}">{{ data['callId'] }}</a>
+              {% endfor %}
             </div>
           </div>
         </div>
