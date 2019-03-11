@@ -11,7 +11,7 @@ def results(callId):
     timeData, texts = getData(callId)
     return render_template('result.html', callId=callId, timeData=timeData, texts=texts)
 
-@app.route('/call')
+@app.route('/call/')
 def calls():
 
     dataList = getAvailableData()
