@@ -27,14 +27,18 @@ def readData(fileName):
     speaker = None
     processedData = []
 
+    section = 'announcement'
+
     for para in paragraphs[1:]:
         if para.find("strong") is not None:
             text = para.find("strong").text
             if text not in ['Company Participants', 'Conference Call Participants', 'Question-and-Answer Session']:
                 speaker = text
+            elif text == 'Question-and-Answer Session':
+                section = 'qna'
         else:
             if speaker is not None and speaker not in ['Executives', 'Analysts']:
-                dataPoint = {'speaker': speaker, 'words': para.text}
+                dataPoint = {'section': section, 'speaker': speaker, 'words': para.text}
                 processedData.append(dataPoint)
 
     return processedData
@@ -43,13 +47,13 @@ def readData(fileName):
 def writeToCSV(outPutDir, dataWithFileName):
     for fileName, data in dataWithFileName:
         base, ext = os.path.splitext(fileName)
-        base = base.split('-')[0]
+        # base = base.split('-')[0]
 
         savePath = os.path.join(outPutDir, base + '.csv')
         with open(savePath, 'w') as csvFile:
-            writer = csv.DictWriter(csvFile, ['speaker', 'words'])
+            writer = csv.DictWriter(csvFile, ['section', 'speaker', 'words'])
 
-            writer.writeheader()
+            # writer.writeheader()
             writer.writerows(data)
 
         savePathTextAlone = os.path.join(outPutDir, base + '.txt')
