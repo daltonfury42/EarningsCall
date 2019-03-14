@@ -7,6 +7,7 @@ import csv
 import re
 
 app = Flask(__name__)
+backendDir = os.path.dirname(__file__)
 
 @app.route('/call/<string:callId>')
 def results(callId):
@@ -22,7 +23,7 @@ def calls():
 
 def getAvailableData():
     availData = []
-    dataDir = 'data/transcripts'
+    dataDir = os.path.join(backendDir, 'data/transcripts')
     for fileName in os.listdir(dataDir):
         base, _ = os.path.splitext(fileName)
         base = base.split('-')
@@ -34,7 +35,8 @@ def getAvailableData():
     return availData[:5]
 
 def getData(callId):
-    transcriptFilePath = os.path.join('data/transcripts', callId + '*.csv')
+    transcriptsDir = os.path.join(backendDir, 'data/transcripts')
+    transcriptFilePath = os.path.join(transcriptsDir, callId + '*.csv')
     transcriptFilePath = glob.glob(transcriptFilePath)[0]
 
     base, _ = os.path.splitext(transcriptFilePath)
@@ -57,3 +59,6 @@ def getData(callId):
                           'emotion': emotion})
 
     return  title, timeData, texts
+
+if __name__ == "__main__":
+    app.run()
