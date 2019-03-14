@@ -47,12 +47,14 @@
                             <div class="list-group">
                                     {% for emotion in emotionCount.keys() %}
                                     {% if emotionCount[emotion] > 0 %}
-                                    <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('{{ emotion }}')">
+                                    <button type="button" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" onclick="filterSelection('{{ emotion }}')">
                                         {{ emotion }}
+                                        <span class="badge badge-primary badge-pill">{{ emotionCount[emotion] }}</span>
                                     </button>
                                     {% else %}
-                                    <button type="button" class="list-group-item list-group-item-action disabled">
+                                    <button type="button" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action disabled">
                                         {{ emotion }}
+                                        <span class="badge badge-secondary badge-pill">0</span>
                                     </button>
                                     {% endif %}
                                     {% endfor %} 
@@ -62,8 +64,9 @@
                             <div class="list-group">
                                     {% for topic in topicCount.keys() %}
                                     {% if topic != 'Notopic' %}
-                                        <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('{{ topic }}')">
+                                        <button type="button" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" onclick="filterSelection('{{ topic }}')">
                                             {{ topic }}
+                                            <span class="badge badge-success badge-pill">{{ topicCount[topic] }}</span>
                                         </button>
                                     {% endif %}
                                     {% endfor %}        
