@@ -49,8 +49,25 @@
         <div class="container">
             <div class="row">
                     <div class="col-md-3">
-                    
+                            
+                            <div class="list-group">
+                                    <button type="button" class="list-group-item list-group-item-action active">
+                                      All
+                                    </button>
+                                    {% for emotion in emotionSet %}
+                                        <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('{{ emotion }}')">
+                                            {{ emotion }}
+                                        </button>
+                                    {% endfor %}        
+                            </div>
+                                  <br><br>
+                                  <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-secondary">Left</button>
+                                        <button type="button" class="btn btn-secondary">Middle</button>
+                                        <button type="button" class="btn btn-secondary">Right</button>
+                                      </div>
                         </div>
+
                 <div class="col-md-9">
                     <div class="list-group" id="subtitles">
                         {% for text in texts %}
