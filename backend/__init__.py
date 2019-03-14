@@ -11,10 +11,10 @@ backendDir = os.path.dirname(__file__)
 
 @app.route('/call/<string:callId>')
 def results(callId):
-    title, timeData, texts, emotionSet = getData(callId)
+    title, timeData, texts, emotionSet, topicSet = getData(callId)
     print(emotionSet)
     return render_template('result.html', callId=callId, timeData=timeData,
-                           texts=texts, title=title, emotionSet=emotionSet)
+                           texts=texts, title=title, emotionSet=emotionSet, topicSet=topicSet)
 
 @app.route('/')
 def calls():
@@ -60,12 +60,12 @@ def getData(callId):
             text = text.decode('utf-8')
             timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
             texts.append({'splitId': splitId, 'speaker': speaker, 'text': text,
-                          'emotion': emotion})
+                          'emotion': emotion, 'topic': topic})
 
             emotionSet.add(emotion)
             topicSet.add(topic)
 
-    return  title, timeData, texts, list(emotionSet)
+    return  title, timeData, texts, list(emotionSet), list(topicSet)
 
 if __name__ == "__main__":
     app.run()
