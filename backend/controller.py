@@ -50,10 +50,10 @@ def getData(callId):
     with open(transcriptFilePath) as csvFile:
         spamreader = csv.reader(csvFile)
         for row in spamreader:
-            splitId, startTime, endTime, _, speaker, text = row[0], row[1], row[2], row[3], row[4], row[5]
+            splitId, startTime, endTime, _, speaker, text, emotion = row[0], row[1], row[2], row[3], row[4], row[5], row[6]
             text = text.decode('utf-8')
             timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
             texts.append({'splitId': splitId, 'speaker': speaker, 'text': text,
-                          'emotion': random.choice(['happy', 'sad', 'neutral'])})
+                          'emotion': emotion})
 
     return  title, timeData, texts
