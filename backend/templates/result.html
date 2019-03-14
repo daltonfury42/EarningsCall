@@ -80,7 +80,7 @@
                             id="{{ text['splitId'] }}" href="javascript:focusOn('{{ text['splitId'] }}', true);">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1" id="spreaker">{{ text['speaker'] }}:</h5>
-                                <img src="https://img.icons8.com/metro/26/000000/speaker.png" style="visibility:hidden;"
+                                <img src="{{ url_for('static', filename='img/speaker.png') }}" style="visibility:hidden;"
                                     id="{{ text['splitId'] }}-audioImage">
                             </div>
                             <br>
