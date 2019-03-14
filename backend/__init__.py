@@ -54,7 +54,7 @@ def getData(callId):
     emotionCount['All'] = 0
     emotionCount['Happy'] = 0
     emotionCount['Neutral'] = 0
-    emotionCount['Disappointed'] = 0
+    emotionCount['Sad'] = 0
     emotionCount['Analytical'] = 0
     emotionCount['Strategy'] = 0
 
