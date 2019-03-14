@@ -121,3 +121,18 @@ function unFocus(splitId) {
         });
     });
 }(window, document));
+
+function filterSelection(filterClass) {
+    rows = document.getElementsByClassName("filterable")
+
+    for (i = 0; i < rows.length; i++)
+    {
+        row = rows[i];
+        if (filterClass == "all")
+            row.classList.remove("d-none");
+        else if (row.classList.contains(filterClass))
+            row.classList.remove("d-none");
+        else
+            row.classList.add("d-none");
+    }
+}

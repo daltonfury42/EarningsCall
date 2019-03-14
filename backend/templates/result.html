@@ -54,7 +54,7 @@
                 <div class="col-md-9">
                     <div class="list-group" id="subtitles">
                         {% for text in texts %}
-                        <a class="list-group-item list-group-item-action flex-column align-items-start"
+                        <a class="list-group-item list-group-item-action flex-column align-items-start filterable {{ text['emotion']}}"
                             id="{{ text['splitId'] }}" href="javascript:focusOn('{{ text['splitId'] }}', true);">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1" id="spreaker">{{ text['speaker'] }}:</h5>
