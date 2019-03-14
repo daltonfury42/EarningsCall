@@ -1,5 +1,5 @@
 import glob
-import random
+from collections import defaultdict, OrderedDict
 
 from flask import Flask, render_template
 import os
@@ -11,10 +11,9 @@ backendDir = os.path.dirname(__file__)
 
 @app.route('/call/<string:callId>')
 def results(callId):
-    title, timeData, texts, emotionSet, topicSet = getData(callId)
-    print(emotionSet)
+    title, timeData, texts, emotionCount, topicCount = getData(callId)
     return render_template('result.html', callId=callId, timeData=timeData,
-                           texts=texts, title=title, emotionSet=emotionSet, topicSet=topicSet)
+                           texts=texts, title=title, emotionCount=emotionCount, topicCount=topicCount)
 
 @app.route('/')
 def calls():
@@ -49,7 +48,15 @@ def getData(callId):
 
     title = re.sub(r'Ceo[ A-Za-z]*', 'Q', header)
 
-    timeData, texts, emotionSet, topicSet = [], [], set(), set()
+    timeData, texts, topicCount = [], [], defaultdict(lambda: 0)
+
+    emotionCount = OrderedDict()
+    emotionCount['All'] = 0
+    emotionCount['Happy'] = 0
+    emotionCount['Neutral'] = 0
+    emotionCount['Disappointed'] = 0
+    emotionCount['Analytical'] = 0
+    emotionCount['Strategy'] = 0
 
     with open(transcriptFilePath) as csvFile:
         spamreader = csv.reader(csvFile)
@@ -58,14 +65,18 @@ def getData(callId):
                 continue
             splitId, startTime, endTime, _, speaker, text, emotion, topic = row
             text = text.decode('utf-8')
+            emotion = emotion.strip()
+            topic = topic.strip().title()
             timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
             texts.append({'splitId': splitId, 'speaker': speaker, 'text': text,
                           'emotion': emotion, 'topic': topic})
 
-            emotionSet.add(emotion)
-            topicSet.add(topic)
+            emotionCount[emotion] = emotionCount[emotion] + 1
+            emotionCount['All'] += 1
+            topicCount[topic] = topicCount[topic] + 1
+            topicCount['All'] += 1
 
-    return  title, timeData, texts, list(emotionSet), list(topicSet)
+    return title, timeData, texts, emotionCount, topicCount
 
 if __name__ == "__main__":
     app.run()

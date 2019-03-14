@@ -35,12 +35,8 @@
 
     <main role="main">
         <div class="jumbotron">
-            <div class="container">
-                
+            <div class="container"> 
                 <h3 class="display-4">{{ title }}</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout
-                    called a jumbotron and three supporting pieces of content. Use it as a starting point to create
-                    something more unique.</p>
             </div>
         </div>
 
@@ -49,23 +45,23 @@
                     <div class="col-md-3">
                             <h5>Emotions:</h5>
                             <div class="list-group">
-                                    <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('all')">
-                                      All
+                                    {% for emotion in emotionCount.keys() %}
+                                    {% if emotionCount[emotion] > 0 %}
+                                    <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('{{ emotion }}')">
+                                        {{ emotion }}
                                     </button>
-                                    {% for emotion in emotionSet %}
-                                        <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('{{ emotion }}')">
-                                            {{ emotion }}
-                                        </button>
-                                    {% endfor %}        
+                                    {% else %}
+                                    <button type="button" class="list-group-item list-group-item-action disabled">
+                                        {{ emotion }}
+                                    </button>
+                                    {% endif %}
+                                    {% endfor %} 
                             </div>
                             <br>
                             <h5>Topics:</h5>
                             <div class="list-group">
-                                    <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('all')">
-                                      All
-                                    </button>
-                                    {% for topic in topicSet %}
-                                    {% if topic != 'NoTopic' %}
+                                    {% for topic in topicCount.keys() %}
+                                    {% if topic != 'Notopic' %}
                                         <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('{{ topic }}')">
                                             {{ topic }}
                                         </button>
@@ -88,7 +84,7 @@
                             <p class="mb-1">{{ text['text'] }}</p>
                             <span class="badge badge-primary" id="{{ text['splitId'] }}-emotion"
                                 >{{ text['emotion']}}</span>
-                            {% if text['topic'] != 'NoTopic' %}
+                            {% if text['topic'] != 'Notopic' %}
                             <span class="badge badge-pill badge-success">{{ text['topic']}}</span>
                             {% endif %}
                         </a>
