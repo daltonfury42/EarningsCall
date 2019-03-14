@@ -36,22 +36,20 @@
     <main role="main">
         <div class="jumbotron">
             <div class="container">
-                <br><br>
+                
                 <h3 class="display-4">{{ title }}</h1>
                 <p>This is a template for a simple marketing or informational website. It includes a large callout
                     called a jumbotron and three supporting pieces of content. Use it as a starting point to create
                     something more unique.</p>
-                <p>
-                </p>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
                     <div class="col-md-3">
-                            
+                            <h5>Emotions:</h5>
                             <div class="list-group">
-                                    <button type="button" class="list-group-item list-group-item-action active">
+                                    <button type="button" class="list-group-item list-group-item-action" onclick="filterSelection('all')">
                                       All
                                     </button>
                                     {% for emotion in emotionSet %}
@@ -60,12 +58,6 @@
                                         </button>
                                     {% endfor %}        
                             </div>
-                                  <br><br>
-                                  <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-secondary">Left</button>
-                                        <button type="button" class="btn btn-secondary">Middle</button>
-                                        <button type="button" class="btn btn-secondary">Right</button>
-                                      </div>
                         </div>
 
                 <div class="col-md-9">
@@ -81,7 +73,7 @@
                             <br>
                             <p class="mb-1">{{ text['text'] }}</p>
                             <span class="badge badge-primary" id="{{ text['splitId'] }}-emotion"
-                                style="visibility:hidden;">{{ text['emotion']}}</span>
+                                >{{ text['emotion']}}</span>
                         </a>
                         {% endfor %}
                     </div>

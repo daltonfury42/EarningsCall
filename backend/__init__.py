@@ -49,19 +49,21 @@ def getData(callId):
 
     title = re.sub(r'Ceo[ A-Za-z]*', 'Q', header)
 
-    timeData, texts, emotionSet = [], [], set()
+    timeData, texts, emotionSet, topicSet = [], [], set(), set()
 
     with open(transcriptFilePath) as csvFile:
         spamreader = csv.reader(csvFile)
         for row in spamreader:
             if (row[3] == "qna"):
                 continue
-            splitId, startTime, endTime, _, speaker, text, emotion = row[0], row[1], row[2], row[3], row[4], row[5], row[6]
+            splitId, startTime, endTime, _, speaker, text, emotion, topic = row
             text = text.decode('utf-8')
             timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
             texts.append({'splitId': splitId, 'speaker': speaker, 'text': text,
                           'emotion': emotion})
+
             emotionSet.add(emotion)
+            topicSet.add(topic)
 
     return  title, timeData, texts, list(emotionSet)
 
