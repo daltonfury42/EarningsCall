@@ -59,7 +59,7 @@ def getData(callId):
     emotionCount['Neutral'] = 0
     emotionCount['Sad'] = 0
     emotionCount['Analytical'] = 0
-    emotionCount['Strategy'] = 0
+    emotionCount['Strategical'] = 0
 
     with open(transcriptFilePath) as csvFile:
         spamreader = csv.reader(csvFile)
