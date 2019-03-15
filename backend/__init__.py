@@ -27,26 +27,29 @@ def getAvailableData():
     dataDir = os.path.join(backendDir, 'data/transcripts')
     for fileName in os.listdir(dataDir):
         base, _ = os.path.splitext(fileName)
-        base = base.split('-')
-        callId = base[0]
-        title = ' '.join(base[1:])
-        title = title.title()
+        callId = base.split('-')[0]
+        title = getTitleFromFileName(fileName)
         availData.append({'callId': callId, 'title': title})
 
-    return availData[:5]
+    return availData
 
-def getData(callId):
-    transcriptsDir = os.path.join(backendDir, 'data/transcripts')
-    transcriptFilePath = os.path.join(transcriptsDir, callId + '*.csv')
-    transcriptFilePath = glob.glob(transcriptFilePath)[0]
-
-    base, _ = os.path.splitext(transcriptFilePath)
+def getTitleFromFileName(filePath):
+    base, _ = os.path.splitext(filePath)
     header = base.split('-')[1:]
     header = ' '.join(header).title()
 
     header = re.sub('Earnings Call Transcript$', '', header)
 
     title = re.sub(r'Ceo[ A-Za-z]*', 'Q', header)
+
+    return title
+
+def getData(callId):
+    transcriptsDir = os.path.join(backendDir, 'data/transcripts')
+    transcriptFilePath = os.path.join(transcriptsDir, callId + '*.csv')
+    transcriptFilePath = glob.glob(transcriptFilePath)[0]
+
+    title = getTitleFromFileName(transcriptFilePath)
 
     timeData, texts, topicCount = [], [], defaultdict(lambda: 0)
 

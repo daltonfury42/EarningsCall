@@ -1,10 +1,6 @@
-/*#audiofile {
-    position: fixed;
-    margin-top: 50px;
-    margin-left:10%;
-}*/
 body {
   padding-top: 4.5rem;
+  padding-bottom: 5rem;
 }
 
 .text-centered {
