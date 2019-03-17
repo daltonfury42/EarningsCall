@@ -76,8 +76,9 @@ def getData(callId):
 
             emotionCount[emotion] = emotionCount[emotion] + 1
             emotionCount['All'] += 1
-            topicCount[topic] = topicCount[topic] + 1
-            topicCount['All'] += 1
+            if topic != 'Notopic':
+                topicCount[topic] = topicCount[topic] + 1
+                topicCount['All'] += 1
 
     return title, timeData, texts, emotionCount, topicCount
 
