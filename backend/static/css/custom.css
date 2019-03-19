@@ -11,3 +11,27 @@ body {
   margin: 100px auto 0 auto;
   width: 70%;
 }
+
+.dot-success {
+  margin-top: 8px;
+  height: 10px;
+  width: 10px;
+  background-color: #006600;
+  display: inline-block;
+}
+
+.dot-warning {
+  margin-top: 8px;
+  height: 10px;
+  width: 10px;
+  background-color: #b38600;
+  display: inline-block;
+}
+
+.dot-danger {
+  margin-top: 8px;
+  height: 10px;
+  width: 10px;
+  background-color: #cc3300;
+  display: inline-block;
+}

@@ -31,17 +31,12 @@
             <br><br>
           <div class="list-group list-group-flush" style="display:inline-block;">
             {% for data in dataList %}
-            <a href="/call/{{ data['callId'] }}" class="list-group-item list-group-item-{{ data['color'] }} list-group-item-action">
-              {{ data['title'] }}
-            </a>
+            <a href="/call/{{ data['callId'] }}" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <p class="mb-1">{{ data['title'] }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+      <span class="dot-{{ data['color'] }}"></span>
+    </div></a>
             {% endfor %}
-            <!--{% for data in dataList %}-->
-            <!--<a href="/call/{{ data['callId'] }}" class="list-group-item list-group-item-action flex-column align-items-start">-->
-    <!--<div class="d-flex w-100 justify-content-between">-->
-      <!--<p class="mb-1">{{ data['title'] }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>-->
-      <!--<span>{{ data['color'] }}</span>-->
-    <!--</div></a>-->
-            <!--{% endfor %}-->
           </div>
         </div>
 
