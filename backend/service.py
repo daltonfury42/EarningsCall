@@ -9,12 +9,14 @@ backendDir = os.path.dirname(__file__)
 
 def getAvailableData():
     availData = []
-    dataDir = os.path.join(backendDir, 'data/transcripts')
-    for fileName in os.listdir(dataDir):
-        base, _ = os.path.splitext(fileName)
-        callId = base.split('-')[0]
-        title = getTitleFromFileName(fileName)
-        availData.append({'callId': callId, 'title': title})
+    metaFile = os.path.join(backendDir, 'data/meta/data.csv')
+    with open(metaFile) as file:
+        spamreader = csv.reader(file)
+
+        for fileName, companyName, date, overallResult in spamreader:
+            base, _ = os.path.splitext(fileName)
+            callId = base.split('-')[0]
+            availData.append({'callId': callId, 'title': companyName + ' ' + date + ' Results', 'result': overallResult})
 
     return availData
 

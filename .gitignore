@@ -261,7 +261,6 @@ fabric.properties
 
 # End of https://www.gitignore.io/api/pycharm,python,django
 
-data/
 data_10/
 out/
 mp3/
@@ -271,3 +270,4 @@ features_1d/
 combined/
 timings/
 mp3
+extractData/data/
