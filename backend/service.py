@@ -13,10 +13,10 @@ def getAvailableData():
     with open(metaFile) as file:
         spamreader = csv.reader(file)
 
-        for fileName, companyName, date, overallResult in spamreader:
+        for fileName, companyName, date, color in spamreader:
             base, _ = os.path.splitext(fileName)
             callId = base.split('-')[0]
-            availData.append({'callId': callId, 'title': companyName + ' ' + date + ' Results', 'result': overallResult})
+            availData.append({'callId': callId, 'title': companyName + ' ' + date + ' Results', 'color': color})
 
     return availData
 
