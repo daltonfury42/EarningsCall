@@ -67,4 +67,24 @@ def getData(callId):
                 topicCount[topic] = topicCount[topic] + 1
                 topicCount['All'] += 1
 
-    return title, timeData, texts, emotionCount, topicCount
+    highlights = getHighlights(callId, .7)
+
+    return title, timeData, texts, emotionCount, topicCount, highlights
+
+def getHighlights(callId, threshold):
+    attentionTagsDir = os.path.join(backendDir, 'data/attention_tags')
+    attentionTagsFilePath = os.path.join(attentionTagsDir, callId + '.csv')
+
+    highlightsDict = defaultdict(lambda : [])
+
+    with open(attentionTagsFilePath) as csvFile:
+        spamReader = csv.reader(csvFile)
+        next(spamReader, None)
+        for _, id, sentence, attention, emotion, tags in spamReader:
+            if float(attention) > threshold:
+                highlightsDict[emotion].append((sentence, float(attention)))
+
+    for emotion, highlights in highlightsDict.items():
+        highlightsDict[emotion] = sorted(highlights, key=lambda highlight: highlight[1], reverse=True)
+
+    return highlightsDict
