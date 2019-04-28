@@ -3,6 +3,15 @@ import csv
 import os
 import glob
 from collections import defaultdict, OrderedDict
+from enum import Enum
+
+class Emotions(Enum):
+    ALL = 'All'
+    HAPPY = 'Happy'
+    NEUTRAL = 'Neutral'
+    SAD = 'Sad'
+    ANALYTICAL = 'Analytical'
+    STRATEGICAL = 'Strategical'
 
 
 backendDir = os.path.dirname(__file__)
@@ -41,12 +50,12 @@ def getData(callId):
     timeData, texts, topicCount = [], [], defaultdict(lambda: 0)
 
     emotionCount = OrderedDict()
-    emotionCount['All'] = 0
-    emotionCount['Happy'] = 0
-    emotionCount['Neutral'] = 0
-    emotionCount['Sad'] = 0
-    emotionCount['Analytical'] = 0
-    emotionCount['Strategical'] = 0
+    emotionCount[Emotions.ALL.value] = 0
+    emotionCount[Emotions.HAPPY.value] = 0
+    emotionCount[Emotions.NEUTRAL.value] = 0
+    emotionCount[Emotions.SAD.value] = 0
+    emotionCount[Emotions.ANALYTICAL.value] = 0
+    emotionCount[Emotions.STRATEGICAL.value] = 0
 
     with open(transcriptFilePath) as csvFile:
         spamreader = csv.reader(csvFile)
@@ -62,10 +71,10 @@ def getData(callId):
                           'emotion': emotion, 'topic': topic})
 
             emotionCount[emotion] = emotionCount[emotion] + 1
-            emotionCount['All'] += 1
+            emotionCount[Emotions.ALL.value] += 1
             if topic != 'Notopic':
                 topicCount[topic] = topicCount[topic] + 1
-                topicCount['All'] += 1
+                topicCount[Emotions.ALL.value] += 1
 
     highlights = getHighlights(callId, .7)
 
@@ -90,7 +99,7 @@ def getHighlights(callId, threshold):
     for emotion in highlightsDict.keys():
         highlightsDict[emotion] = sorted(highlightsDict[emotion], key=lambda highlight: highlight[1], reverse=True)
 
-    if 'Neutral' in highlightsDict:
-        del highlightsDict['Neutral']
+    if Emotions.NEUTRAL.value in highlightsDict:
+        del highlightsDict[Emotions.NEUTRAL.value]
 
     return highlightsDict
