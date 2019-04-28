@@ -43,13 +43,3 @@ body {
   content: '- Show Less';
 }
 
-#module #collapseExample.collapse:not(.show) {
-  display: block;
-  /* height = lineheight * no of lines to display */
-  height: 3em;
-  overflow: hidden;
-}
-
-#module #collapseExample.collapsing {
-  height: 3em;
-}

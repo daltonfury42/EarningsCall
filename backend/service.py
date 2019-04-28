@@ -84,7 +84,7 @@ def getHighlights(callId, threshold):
             if float(attention) > threshold:
                 highlightsDict[emotion].append((sentence, float(attention)))
 
-    for emotion, highlights in highlightsDict.items():
-        highlightsDict[emotion] = sorted(highlights, key=lambda highlight: highlight[1], reverse=True)
+    for emotion in highlightsDict.keys():
+        highlightsDict[emotion] = sorted(highlightsDict[emotion], key=lambda highlight: highlight[1], reverse=True)
 
     return highlightsDict

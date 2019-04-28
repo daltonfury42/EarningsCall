@@ -74,14 +74,20 @@
                         </div>
 
                 <div class="col-md-9">
+                    {% for emotion in highlights.keys() %}
                     <div id="module" class="container">
-  <h3>Bacon Ipsum</h3>
-  <p class="collapse" id="collapseExample" aria-expanded="false">Bacon ipsum dolor amet doner picanha tri-tip biltong leberkas salami meatball tongue filet mignon landjaeger tail. Kielbasa salami tenderloin picanha spare ribs, beef ribs strip steak jerky cow. Pork chop chicken ham hock beef ribs turkey jerky. Shoulder
-    beef capicola doner, tongue tail sausage short ribs andouille. Rump frankfurter landjaeger t-bone, kielbasa doner ham hock shankle venison. Cupim capicola kielbasa t-bone, ball tip chicken andouille venison pork chop doner bacon beef ribs kevin shankle.
-    Short loin leberkas tenderloin ground round shank, brisket strip steak ham hock ham.
-  </p>
-  <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
-</div>
+                        <h3>Highlights</h3>
+                        <p>
+                            {{ highlights[emotion][0][0] }} {{ highlights[emotion][1][0] }} </p>
+                            <p class="collapse" id="collapse-{{ emotion }}-hl" aria-expanded="false">
+                                {% for sentence in highlights[emotion][2:] %}
+                                {{ sentence[0] }}
+                                {% endfor %}
+                            </p>
+                            <a class="collapsed" data-toggle="collapse" href="#collapse-{{ emotion }}-hl" role="button" aria-expanded="false" aria-controls="collapse-{{ emotion }}-hl"></a>
+                            
+                    </div>
+                    {% endfor %}
 
 
                     <div class="list-group" id="subtitles">

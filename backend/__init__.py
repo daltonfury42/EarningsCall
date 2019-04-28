@@ -9,7 +9,7 @@ def results(callId):
     title, timeData, texts, emotionCount, topicCount, highlights = service.getData(callId)
     return render_template('result.html', callId=callId, timeData=timeData,
                            texts=texts, title=title, emotionCount=emotionCount,
-                           topicCount=topicCount, hightlights=highlights)
+                           topicCount=topicCount, highlights=highlights)
 
 @app.route('/')
 def calls():
