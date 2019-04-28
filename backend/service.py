@@ -77,16 +77,20 @@ def getHighlights(callId, threshold):
 
     highlightsDict = defaultdict(lambda : [])
 
-    with open(attentionTagsFilePath) as csvFile:
-        spamReader = csv.reader(csvFile)
-        next(spamReader, None)
-        for _, id, sentence, attention, emotion, tags in spamReader:
-            if float(attention) > threshold:
-                highlightsDict[emotion].append((sentence.capitalize(), float(attention)))
+    try:
+        with open(attentionTagsFilePath) as csvFile:
+            spamReader = csv.reader(csvFile)
+            next(spamReader, None)
+            for _, id, sentence, attention, emotion, tags in spamReader:
+                if float(attention) > threshold:
+                    highlightsDict[emotion].append((sentence.capitalize(), float(attention)))
+    except IOError:
+        pass
 
     for emotion in highlightsDict.keys():
         highlightsDict[emotion] = sorted(highlightsDict[emotion], key=lambda highlight: highlight[1], reverse=True)
 
-    del highlightsDict['Neutral']
+    if 'Neutral' in highlightsDict:
+        del highlightsDict['Neutral']
 
     return highlightsDict
