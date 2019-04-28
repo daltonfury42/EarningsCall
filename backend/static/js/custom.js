@@ -128,7 +128,7 @@ function filterSelection(filterClass) {
     for (i = 0; i < rows.length; i++)
     {
         row = rows[i];
-        if (filterClass == "All")
+        if (filterClass == "All" && row.classList.contains('All-filter-display'))
             row.classList.remove("d-none");
         else if (row.classList.contains(filterClass))
             row.classList.remove("d-none");

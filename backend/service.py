@@ -82,9 +82,11 @@ def getHighlights(callId, threshold):
         next(spamReader, None)
         for _, id, sentence, attention, emotion, tags in spamReader:
             if float(attention) > threshold:
-                highlightsDict[emotion].append((sentence, float(attention)))
+                highlightsDict[emotion].append((sentence.capitalize(), float(attention)))
 
     for emotion in highlightsDict.keys():
         highlightsDict[emotion] = sorted(highlightsDict[emotion], key=lambda highlight: highlight[1], reverse=True)
+
+    del highlightsDict['Neutral']
 
     return highlightsDict
