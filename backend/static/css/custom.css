@@ -43,3 +43,11 @@ body {
   content: '- Show Less';
 }
 
+
+#title-box {
+  background-image: url(/static/img/jumbatron.svg);
+  background-size: cover;
+}
+#title-text {
+  color: white;
+}
