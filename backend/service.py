@@ -63,7 +63,7 @@ def getData(callId):
             if (row[3] == "qna"):
                 continue
             splitId, startTime, endTime, _, speaker, text, emotion, topic = row
-            text = text.decode('utf-8')
+            # text = text.decode('utf-8')
             emotion = emotion.strip()
             topic = topic.strip().title()
             timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
