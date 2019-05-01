@@ -76,23 +76,25 @@ def getData(callId):
                 topicCount[topic] = topicCount[topic] + 1
                 topicCount[Emotions.ALL.value] += 1
 
-    highlights = getHighlights(callId, .7)
+    highlightsDict, highlights_flat = getHighlights(callId, .7)
 
-    return title, timeData, texts, emotionCount, topicCount, highlights
+    return title, timeData, texts, emotionCount, topicCount, highlightsDict, highlights_flat
 
 def getHighlights(callId, threshold):
     attentionTagsDir = os.path.join(backendDir, 'data/attention_tags')
     attentionTagsFilePath = os.path.join(attentionTagsDir, callId + '.csv')
 
     highlightsDict = defaultdict(lambda : [])
-
+    highlights_flat = []
     try:
         with open(attentionTagsFilePath) as csvFile:
             spamReader = csv.reader(csvFile)
             next(spamReader, None)
             for _, id, sentence, attention, emotion, tags in spamReader:
                 if float(attention) > threshold:
-                    highlightsDict[emotion].append((sentence.capitalize(), float(attention)))
+                    hightlight = (sentence.capitalize(), float(attention))
+                    highlightsDict[emotion].append(hightlight)
+                    highlights_flat.append(hightlight)
     except IOError:
         pass
 
@@ -102,4 +104,6 @@ def getHighlights(callId, threshold):
     if Emotions.NEUTRAL.value in highlightsDict:
         del highlightsDict[Emotions.NEUTRAL.value]
 
-    return highlightsDict
+    highlights_flat.sort(key=lambda highlight: highlight[1], reverse=True)
+
+    return highlightsDict, highlights_flat
