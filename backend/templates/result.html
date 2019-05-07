@@ -75,6 +75,7 @@
 
                 <div class="col-md-9">
                 <div class="container">
+		{% if highlights_flat|length > 0 %}
                     <div class="module filterable All-filter-display">
                         <h3>Highlights</h3>
                             <p>
@@ -90,6 +91,7 @@
                                 <a class="collapsed" data-toggle="collapse" href="#collapse-{{ emotion }}-hl" role="button" aria-expanded="false" aria-controls="collapse-{{ emotion }}-hl"></a>
                             </p>
                     </div>
+		{% endif %}
 
                     {% for emotion in highlights_dict.keys() %}
                         <div class="module {{ emotion }} filterable d-none">
