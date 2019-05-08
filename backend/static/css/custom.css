@@ -1,5 +1,5 @@
 body {
-  padding-top: 4.5rem;
+  padding-top: 3.5rem;
   padding-bottom: 5rem;
 }
 
@@ -35,11 +35,19 @@ body {
   background-color: #cc3300;
   display: inline-block;
 }
-#module a.collapsed:after {
+.module a.collapsed:after {
   content: '+ Show More';
 }
 
-#module a:not(.collapsed):after {
+.module a:not(.collapsed):after {
   content: '- Show Less';
 }
 
+
+#title-box {
+  background-image: url(/static/img/jumbatron.svg);
+  background-size: cover;
+}
+#title-text {
+  color: white;
+}

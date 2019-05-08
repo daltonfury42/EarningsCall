@@ -34,9 +34,9 @@
     </nav>
 
     <main role="main">
-        <div class="jumbotron">
+        <div id="title-box" class="jumbotron">
             <div class="container"> 
-                <h3 class="display-4">{{ title }}</h1>
+                <h3 id="title-text" class="display-4">{{ title }}</h1>
             </div>
         </div>
 
@@ -74,23 +74,42 @@
                         </div>
 
                 <div class="col-md-9">
-                <div class="container"></div>
-                    {% for emotion in highlights.keys() %}
-                    <div id="module" class="row {{ emotion }} filterable d-none">
-                        <h3> {{ emotion }} - Highlights</h3>
-                        <p>
-                            {{ highlights[emotion][0][0] }} {{ highlights[emotion][1][0] }} </p>
-                            <p class="collapse" id="collapse-{{ emotion }}-hl" aria-expanded="false">
-                                {% for sentence in highlights[emotion][2:] %}
-                                {{ sentence[0] }}
-                                {% endfor %}
+                <div class="container">
+		{% if highlights_flat|length > 0 %}
+                    <div class="module filterable All-filter-display">
+                        <h3>Highlights</h3>
+                            <p>
+                                <ul>
+                                    <li>{{ highlights_flat[0][0] }}</li>
+                                    <li>{{ highlights_flat[1][0] }}</li>
+                                    <div class="collapse" id="collapse-{{ emotion }}-hl" aria-expanded="false">
+                                        {% for sentence in highlights_flat[2:] %}
+                                            <li>{{ sentence[0] }}</li>
+                                        {% endfor %}
+                                    </div>
+                                </ul>
+                                <a class="collapsed" data-toggle="collapse" href="#collapse-{{ emotion }}-hl" role="button" aria-expanded="false" aria-controls="collapse-{{ emotion }}-hl"></a>
                             </p>
-                            <a class="collapsed" data-toggle="collapse" href="#collapse-{{ emotion }}-hl" role="button" aria-expanded="false" aria-controls="collapse-{{ emotion }}-hl"></a>
                     </div>
-                    {% endfor %}
+		{% endif %}
 
-                            <br>
-                            <br>
+                    {% for emotion in highlights_dict.keys() %}
+                        <div class="module {{ emotion }} filterable d-none">
+                            <h3> {{ emotion }} - Highlights</h3>
+                                <p>
+                                    <ul>
+                                        <li>{{ highlights_dict[emotion][0][0] }}</li>
+                                        <li>{{ highlights_dict[emotion][1][0] }}</li>
+                                        <div class="collapse" id="collapse-{{ emotion }}-hl" aria-expanded="false">
+                                            {% for sentence in highlights_dict[emotion][2:] %}
+                                                <li>{{ sentence[0] }}</li>
+                                            {% endfor %}
+                                        </div>
+                                    </ul>
+                                    <a class="collapsed" data-toggle="collapse" href="#collapse-{{ emotion }}-hl" role="button" aria-expanded="false" aria-controls="collapse-{{ emotion }}-hl"></a>
+                                </p>
+                        </div>
+                    {% endfor %}
 
                     <div class="row">
                         <div class="list-group" id="subtitles">
@@ -104,11 +123,22 @@
                                 </div>
                                 <br>
                                 <p class="mb-1">{{ text['text'] }}</p>
-                                <span class="badge badge-primary" id="{{ text['splitId'] }}-emotion"
-                                    >{{ text['emotion']}}</span>
-                                {% if text['topic'] != 'Notopic' %}
-                                <span class="badge badge-pill badge-success">{{ text['topic']}}</span>
-                                {% endif %}
+
+                                
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge badge-primary" id="{{ text['splitId'] }}-emotion">{{ text['emotion']}}</span>
+                                        {% if text['topic'] != 'Notopic' %}
+                                        <span class="badge badge-pill badge-success">{{ text['topic']}}</span>
+                                        {% endif    %}
+                                    </div>
+                                    <div>
+                                        {% for tag in tags_dict[text['splitId']] %}
+                                        <span class="badge badge-secondary badge-pill">{{ tag }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
                             </a>
                             {% endfor %}
                         </div>

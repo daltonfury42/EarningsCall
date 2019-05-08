@@ -63,7 +63,7 @@ def getData(callId):
             if (row[3] == "qna"):
                 continue
             splitId, startTime, endTime, _, speaker, text, emotion, topic = row
-            text = text.decode('utf-8')
+            # text = text.decode('utf-8')
             emotion = emotion.strip()
             topic = topic.strip().title()
             timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
@@ -76,30 +76,40 @@ def getData(callId):
                 topicCount[topic] = topicCount[topic] + 1
                 topicCount[Emotions.ALL.value] += 1
 
-    highlights = getHighlights(callId, .7)
+    highlightsDict, highlights_flat, tags_dict = getHighlightsAndTags(callId, .7)
 
-    return title, timeData, texts, emotionCount, topicCount, highlights
+    return title, timeData, texts, emotionCount, topicCount, highlightsDict, highlights_flat, tags_dict
 
-def getHighlights(callId, threshold):
+def getHighlightsAndTags(callId, threshold):
     attentionTagsDir = os.path.join(backendDir, 'data/attention_tags')
     attentionTagsFilePath = os.path.join(attentionTagsDir, callId + '.csv')
 
-    highlightsDict = defaultdict(lambda : [])
-
+    highlights_dict = defaultdict(lambda : [])
+    tags_dict = defaultdict(lambda: set())
+    highlights_flat = []
     try:
         with open(attentionTagsFilePath) as csvFile:
             spamReader = csv.reader(csvFile)
             next(spamReader, None)
             for _, id, sentence, attention, emotion, tags in spamReader:
+                tags_dict[id] = tags_dict[id].union(set(tags.split()))
                 if float(attention) > threshold:
-                    highlightsDict[emotion].append((sentence.capitalize(), float(attention)))
+                    hightlight = (sentence.capitalize(), float(attention))
+                    highlights_dict[emotion].append(hightlight)
+                    highlights_flat.append(hightlight)
     except IOError:
         pass
 
-    for emotion in highlightsDict.keys():
-        highlightsDict[emotion] = sorted(highlightsDict[emotion], key=lambda highlight: highlight[1], reverse=True)
+    for emotion in highlights_dict.keys():
+        highlights_dict[emotion] = sorted(highlights_dict[emotion], key=lambda highlight: highlight[1], reverse=True)
 
-    if Emotions.NEUTRAL.value in highlightsDict:
-        del highlightsDict[Emotions.NEUTRAL.value]
+    if Emotions.NEUTRAL.value in highlights_dict:
+        del highlights_dict[Emotions.NEUTRAL.value]
 
-    return highlightsDict
+    highlights_flat.sort(key=lambda highlight: highlight[1], reverse=True)
+
+    return highlights_dict, highlights_flat, tags_dict
+
+
+if __name__ == '__main__':
+    getHighlightsAndTags('4239008', .7)
