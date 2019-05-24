@@ -4,6 +4,7 @@ import os
 import glob
 from collections import defaultdict, OrderedDict
 from enum import Enum
+import io
 
 class Emotions(Enum):
     ALL = 'All'
@@ -57,7 +58,7 @@ def getData(callId):
     emotionCount[Emotions.ANALYTICAL.value] = 0
     emotionCount[Emotions.STRATEGICAL.value] = 0
 
-    with open(transcriptFilePath) as csvFile:
+    with io.open(transcriptFilePath, encoding='utf-8') as csvFile:
         spamreader = csv.reader(csvFile)
         for row in spamreader:
             if (row[3] == "qna"):
