@@ -86,7 +86,6 @@ def getHighlightsAndTags(callId, threshold):
 
     highlights_dict = defaultdict(lambda : [])
     tags_dict = defaultdict(lambda: set())
-    highlights_flat = []
     try:
         with open(attentionTagsFilePath) as csvFile:
             spamReader = csv.reader(csvFile)
@@ -96,17 +95,15 @@ def getHighlightsAndTags(callId, threshold):
                 if float(attention) > threshold and emotion != Emotions.NEUTRAL.value:
                     hightlight = (sentence.capitalize(), float(attention))
                     highlights_dict[emotion].append(hightlight)
-                    highlights_flat.append(hightlight)
     except IOError:
         pass
 
     for emotion in highlights_dict.keys():
         highlights_dict[emotion] = sorted(highlights_dict[emotion], key=lambda highlight: highlight[1], reverse=True)
 
-    if Emotions.NEUTRAL.value in highlights_dict:
-        raise Exception("Already filtered out neutrals, can't happen")
 
-    highlights_flat.sort(key=lambda highlight: highlight[1], reverse=True)
+    highlights_flat = highlights_dict.get(Emotions.HAPPY.value, []) + highlights_dict.get(Emotions.ANALYTICAL.value, []) \
+                      + highlights_dict.get(Emotions.STRATEGICAL.value, [])
 
     return highlights_dict, highlights_flat, tags_dict
 
