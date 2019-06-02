@@ -93,7 +93,7 @@ def getHighlightsAndTags(callId, threshold):
             next(spamReader, None)
             for _, id, sentence, attention, emotion, tags in spamReader:
                 tags_dict[id] = tags_dict[id].union(set(tags.split()))
-                if float(attention) > threshold:
+                if float(attention) > threshold and emotion != Emotions.NEUTRAL.value:
                     hightlight = (sentence.capitalize(), float(attention))
                     highlights_dict[emotion].append(hightlight)
                     highlights_flat.append(hightlight)
@@ -104,7 +104,7 @@ def getHighlightsAndTags(callId, threshold):
         highlights_dict[emotion] = sorted(highlights_dict[emotion], key=lambda highlight: highlight[1], reverse=True)
 
     if Emotions.NEUTRAL.value in highlights_dict:
-        del highlights_dict[Emotions.NEUTRAL.value]
+        raise Exception("Already filtered out neutrals, can't happen")
 
     highlights_flat.sort(key=lambda highlight: highlight[1], reverse=True)
 
