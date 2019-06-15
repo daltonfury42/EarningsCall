@@ -1,6 +1,6 @@
 body {
   padding-top: 3.5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 
 .text-centered {
@@ -35,14 +35,6 @@ body {
   background-color: #cc3300;
   display: inline-block;
 }
-.module a.collapsed:after {
-  content: '+ Show More';
-}
-
-.module a:not(.collapsed):after {
-  content: '- Show Less';
-}
-
 
 #title-box {
   background-image: url(/static/img/jumbatron.svg);
@@ -50,4 +42,20 @@ body {
 }
 #title-text {
   color: white;
+}
+
+.list-group{
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#lastRow {
+    height: 87vh;
+    overflow: hidden;
+}
+
+.innerLast {
+    height: 87vh;
+    overflow: scroll;
 }
