@@ -47,7 +47,11 @@ def getData(callId):
 
     title = getTitleFromFileName(transcriptFilePath)
 
-    timeData, texts, topicCount = [], [], defaultdict(lambda: 0)
+    highlightsDict, highlights_flat, tags_dict = getHighlightsAndTags(callId, .7)
+
+    topicCount = defaultdict(lambda: 0)
+
+    data = {}
 
     emotionCount = OrderedDict()
     emotionCount[Emotions.ALL.value] = 0
@@ -66,9 +70,8 @@ def getData(callId):
             # text = text.decode('utf-8')
             emotion = emotion.strip()
             topic = topic.strip().title()
-            timeData.append({'splitId': splitId, 'startTime': startTime, 'endTime': endTime})
-            texts.append({'splitId': splitId, 'speaker': speaker, 'text': text,
-                          'emotion': emotion, 'topic': topic})
+            data[splitId] = {'startTime': float(startTime), 'endTime': float(endTime), 'speaker': speaker,
+                         'text': text, 'emotion': emotion, 'topic': topic, 'tags': list(tags_dict[splitId])}
 
             emotionCount[emotion] = emotionCount[emotion] + 1
             emotionCount[Emotions.ALL.value] += 1
@@ -76,9 +79,7 @@ def getData(callId):
                 topicCount[topic] = topicCount[topic] + 1
                 topicCount[Emotions.ALL.value] += 1
 
-    highlightsDict, highlights_flat, tags_dict = getHighlightsAndTags(callId, .7)
-
-    return title, timeData, texts, emotionCount, topicCount, highlightsDict, highlights_flat, tags_dict
+    return title, data, emotionCount, topicCount, highlightsDict, highlights_flat
 
 def getHighlightsAndTags(callId, threshold):
     attentionTagsDir = os.path.join(backendDir, 'data/attention_tags')

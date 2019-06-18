@@ -44,18 +44,7 @@ body {
   color: white;
 }
 
-.list-group{
-    margin-bottom: 10px;
-    overflow:scroll;
-    -webkit-overflow-scrolling: touch;
-}
-
-#lastRow {
-    height: 87vh;
-    overflow: hidden;
-}
-
-.innerLast {
-    height: 87vh;
+.scrollable {
+    height: 60vh;
     overflow: scroll;
 }

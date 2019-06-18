@@ -26,10 +26,6 @@
                     <a class="nav-link" href="..">Home <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                    <audio id="audiofile" src="{{ url_for('static', filename='mp3/' + callId + '.mp3') }}"
-                    controls></audio>
-            </form>
         </div>
     </nav>
 
@@ -41,49 +37,25 @@
         </div>
 
         <div class="container">
-            <div class="row" id="lastRow">
-            <div id="waveform"></div>
-                <div class="col-md-6 innerLast">
+            <div class="row">
+            <audio id="audiofile" src="{{ url_for('static', filename='mp3/' + callId + '.mp3') }}"
+                    controls></audio>
+        </div>
+            <div class="row">
+
+                <div class="col-md-6">
                 <div class="container">
 		
                     <div class="row">
-                        <div class="list-group" id="subtitles">
-                            {% for text in texts %}
-                            <a class="list-group-item list-group-item-action flex-column align-items-start filterable All-filter-display {{ text['emotion']}} {{ text['topic']}}"
-                                id="{{ text['splitId'] }}" href="javascript:focusOn('{{ text['splitId'] }}', true);">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1" id="spreaker">{{ text['speaker'] }}:</h5>
-                                    <img src="{{ url_for('static', filename='img/speaker.png') }}" style="visibility:hidden;"
-                                        id="{{ text['splitId'] }}-audioImage">
-                                </div>
-                                <br>
-                                <p class="mb-1">{{ text['text'] }}</p>
+                        <div class="list-group scrollable" id="subtitles">
 
-                                
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <span class="badge badge-primary" id="{{ text['splitId'] }}-emotion">{{ text['emotion']}}</span>
-                                        {% if text['topic'] != 'Notopic' %}
-                                        <span class="badge badge-pill badge-success">{{ text['topic']}}</span>
-                                        {% endif    %}
-                                    </div>
-                                    <div>
-                                        {% for tag in tags_dict[text['splitId']] %}
-                                        <span class="badge badge-secondary badge-pill">{{ tag }}</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                
-                            </a>
-                            {% endfor %}
                         </div>
                     </div>
                 </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="container innerLast">
-                        <div class="row">
-                    
+                    <div class="container">
+                        <div class="row scrollable">
                             {% if highlights_flat|length > 0 %}
                                     <h3>Highlights</h3>
                                             <ul>
@@ -99,11 +71,7 @@
         </div>
     </main>
     <script>
-        var syncData = [
-            {% for data in timeData %}
-        { "end": {{ data['endTime'] }}, "start": {{ data['startTime'] }}, 'splitId': '{{ data['splitId']}}' },
-        {% endfor %}
-            ];
+        var dataJson = {{ data|safe }};
     </script>
 
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>

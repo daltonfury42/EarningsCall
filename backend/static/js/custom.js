@@ -1,78 +1,3 @@
-var EPPZScrollTo =
-{
-    /**
-     * Helpers.
-     */
-    documentVerticalScrollPosition: function () {
-        if (self.pageYOffset) return self.pageYOffset; // Firefox, Chrome, Opera, Safari.
-        if (document.documentElement && document.documentElement.scrollTop) return document.documentElement.scrollTop; // Internet Explorer 6 (standards mode).
-        if (document.body.scrollTop) return document.body.scrollTop; // Internet Explorer 6, 7 and 8.
-        return 0; // None of the above.
-    },
-
-    viewportHeight: function () { return (document.compatMode === "CSS1Compat") ? document.documentElement.clientHeight : document.body.clientHeight; },
-
-    documentHeight: function () { return (document.height !== undefined) ? document.height : document.body.offsetHeight; },
-
-    documentMaximumScrollPosition: function () { return this.documentHeight() - this.viewportHeight(); },
-
-    elementVerticalClientPositionById: function (id) {
-        var element = document.getElementById(id);
-        var rectangle = element.getBoundingClientRect();
-        return rectangle.top;
-    },
-
-    /**
-     * Animation tick.
-     */
-    scrollVerticalTickToPosition: function (currentPosition, targetPosition) {
-        var filter = 0.2;
-        var fps = 60;
-        var difference = parseFloat(targetPosition) - parseFloat(currentPosition);
-
-        // Snap, then stop if arrived.
-        var arrived = (Math.abs(difference) <= 0.5);
-        if (arrived) {
-            // Apply target.
-            scrollTo(0.0, targetPosition);
-            return;
-        }
-
-        // Filtered position.
-        currentPosition = (parseFloat(currentPosition) * (1.0 - filter)) + (parseFloat(targetPosition) * filter);
-
-        // Apply target.
-        scrollTo(0.0, Math.round(currentPosition));
-
-        // Schedule next tick.
-        setTimeout("EPPZScrollTo.scrollVerticalTickToPosition(" + currentPosition + ", " + targetPosition + ")", (1000 / fps));
-    },
-
-    /**
-     * For public use.
-     *
-     * @param id The id of the element to scroll to.
-     * @param padding Top padding to apply above element.
-     */
-    scrollVerticalToElementById: function (id, padding) {
-        var element = document.getElementById(id);
-        if (element == null) {
-            console.warn('Cannot find element with id \'' + id + '\'.');
-            return;
-        }
-
-        var targetPosition = this.documentVerticalScrollPosition() + this.elementVerticalClientPositionById(id) - padding;
-        var currentPosition = this.documentVerticalScrollPosition();
-
-        // Clamp.
-        var maximumScrollPosition = this.documentMaximumScrollPosition();
-        if (targetPosition > maximumScrollPosition) targetPosition = maximumScrollPosition;
-
-        // Start animation.
-        this.scrollVerticalTickToPosition(currentPosition, targetPosition);
-    }
-};
-
 var audioPlayer = document.getElementById("audiofile");
 var currentFocus = undefined
 
@@ -82,22 +7,16 @@ function focusOn(splitId, triggerAudio) {
         if (currentFocus != undefined)
             unFocus(currentFocus);
     currentFocus = splitId;
-    console.log('splitID:');
-    console.log(splitId)
     document.getElementById(splitId + '-emotion').style.visibility = "visible";
     document.getElementById(splitId + '-audioImage').style.visibility = "visible";
 
     var elem = document.getElementById(splitId);
-    var index = parseInt(splitId.slice(1, splitId.length)) - 1
-    timeData = syncData[index]
-
+    elem.style.visibility = "visible"
     elem.classList.add("list-group-item-dark");
 
     if (triggerAudio) {
-        audioPlayer.currentTime = timeData['start'];
+        audioPlayer.currentTime = dataJson[splitId]['start'];
         audioPlayer.play();
-    } else {
-        EPPZScrollTo.scrollVerticalToElementById(splitId, 90);
     }
 }
 
@@ -107,19 +26,99 @@ function unFocus(splitId) {
     elem.classList.remove("list-group-item-dark");
 }
 
+function createPara(splitId) {
+    var a = document.createElement("a");
+    var dataPoint = dataJson[splitId];
+    a.setAttribute("class", 'list-group-item list-group-item-action flex-column align-items-start ' + dataPoint['emotion'] + ' ' + dataPoint['topic']);
+    a.setAttribute("id", splitId);
+    a.setAttribute("href", "javascript:focusOn('" + splitId + "', true);");
+
+    var div1 = document.createElement("div");
+    div1.setAttribute("class", "d-flex w-100 justify-content-between");
+
+    var speaker = document.createElement("h5");
+    speaker.setAttribute("class", "mb-1");
+    speaker.setAttribute("id", "spreaker");
+
+    speaker.innerHTML = dataPoint['speaker'];
+
+    div1.appendChild(speaker);
+
+    var speakerIcon = document.createElement("img");
+    speakerIcon.setAttribute("src", "/static/img/speaker.png");
+    speakerIcon.setAttribute("style", "visibility:hidden;");
+    speakerIcon.setAttribute("id", splitId + "-audioImage");
+
+    div1.appendChild(speakerIcon);
+
+    a.appendChild(div1);
+    a.appendChild(document.createElement("br"));
+
+    var mainText = document.createElement("p");
+    mainText.setAttribute("class", "md-1");
+    mainText.innerHTML = dataPoint['text'];
+    a.appendChild(mainText);
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("class", "d-flex justify-content-between align-items-center");
+
+    var div21 = document.createElement("div");
+    var span1 = document.createElement("span");
+    span1.setAttribute("class", "badge badge-primary");
+    span1.setAttribute("id", splitId + "-emotion");
+    span1.innerHTML = dataPoint['emotion'];
+
+    div21.appendChild(span1);
+
+    if (dataPoint['topic'] != 'Notopic') {
+        var span2 = document.createElement("span");
+        span2.setAttribute("class", "badge badge-pill badge-success");
+        span2.setAttribute("id", splitId + "-topic");
+        span2.innerHTML = dataPoint['topic'];
+
+        div21.appendChild(span2);
+    }
+
+    div2.appendChild(div21);
+
+    div22 = document.createElement('div');
+    for (var tagI in dataPoint['tags']) {
+        var tagSpan = document.createElement('span');
+        tagSpan.setAttribute('class', 'badge badge-secondary badge-pill');
+        tagSpan.innerHTML = dataPoint['tags'][tagI];
+        div22.appendChild(tagSpan);
+    }
+    div2.appendChild(div22);
+
+    div2.appendChild(div22);
+
+    a.appendChild(div2);
+
+    return a;
+
+
+}
+
 (function (win, doc) {
 
     var subtitles = doc.getElementById("subtitles");
 
     audioPlayer.addEventListener("timeupdate", function (e) {
 
-        syncData.forEach(function (element, index, array) {
-            if (audioPlayer.currentTime >= element.start && audioPlayer.currentTime <= element.end && !subtitles.children[index].classList.contains("list-group-item-dark")) {
-                console.log(element.splitId)
-                focusOn(element.splitId, false);
+        var currentSplitId = undefined;
+        for (var splitId in dataJson) {
+            if (dataJson[splitId]["startTime"] <= audioPlayer.currentTime && dataJson[splitId]["isVisible"] === undefined) {
+                var para = createPara(splitId);
+                dataJson[splitId]["isVisible"] = true;
+                subtitles.appendChild(para);
+                subtitles.scrollTop = subtitles.scrollHeight;
             }
+        }
+
+        if (currentSplitId) {
+            focusOn(element.splitId, false);
+        }
         });
-    });
 }(window, document));
 
 function filterSelection(filterClass) {
