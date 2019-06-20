@@ -7,84 +7,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" type="text/css">
+
+        <!-- wavesurfer.js -->
+        <script src="https://unpkg.com/wavesurfer.js/dist/wavesurfer.js"></script>
+
+        <!-- plugins -->
+        <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.timeline.js"></script>
+        <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.regions.js"></script>
+        <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.minimap.js"></script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="https://www.morganstanley.com">Morgan Stanley</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="https://www.morganstanley.com">Morgan Stanley</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="..">Home <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="..">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <main role="main">
-        <div id="title-box" class="jumbotron">
-            <div class="container"> 
-                <h3 id="title-text" class="display-4">{{ title }}</h1>
-            </div>
-        </div>
-
+<main role="main">
+    <div id="title-box" class="jumbotron">
         <div class="container">
-            <div class="row">
-            <audio id="audiofile" src="{{ url_for('static', filename='mp3/' + callId + '.mp3') }}"
-                    controls></audio>
+            <h3 id="title-text" class="display-4">{{ title }}</h3>
         </div>
-            <div class="row">
+    </div>
 
-                <div class="col-md-6">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-1"></div>
+
+            <div class="col-md-4">
                 <div class="container">
-		
+
                     <div class="row">
                         <div class="list-group scrollable" id="subtitles">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="demo">
+                    <p id="subtitle" class="text-center text-info">&nbsp;</p>
 
+                    <div id="wave-timeline"></div>
+
+                    <div id="waveform">
+                        <!-- Here be waveform -->
+                    </div>
+
+                    <div class="row" style="margin: 30px 0">
+                        <div class="col-sm-8">
+                            <p>
+                                Click on a region to enter an annotation.<br />
+                                Shift-click plays a region in a loop.
+                            </p>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <div class="btn-group">
+                                <button class="btn btn-primary btn-block" data-action="play">
+                                    <span id="play">
+                                        <i class="glyphicon glyphicon-play"></i>
+                                        Play
+                                    </span>
+
+                                    <span id="pause" style="display: none">
+                                        <i class="glyphicon glyphicon-pause"></i>
+                                        Pause
+                                    </span>
+                                </button>
+                                {% if highlights_flat|length > 0 %}
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#highlightsModal">
+                                  Highlights
+                                </button>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="container">
-                        <div class="row scrollable">
-                            {% if highlights_flat|length > 0 %}
-                                    <h3>Highlights</h3>
-                                            <ul>
-                                                    {% for sentence in highlights_flat[2:] %}
-                                                        <li>{{ sentence[0] }}</li>
-                                                    {% endfor %}
-                                            </ul>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>    
             </div>
         </div>
-    </main>
-    <script>
+    </div>
+    {% if highlights_flat|length > 0 %}
+    <div class="modal fade" id="highlightsModal">
+      <div class="modal-dialog mw-100 w-75">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Highlights</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+
+                            <ul>
+                                {% for sentence in highlights_flat[2:] %}
+                                <li>{{ sentence[0] }}</li>
+                                {% endfor %}
+                            </ul>
+
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+</main>
+<script>
+        var callId = "{{ callId }}";
         var dataJson = {{ data|safe }};
-    </script>
+</script>
 
-    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script src="{{ url_for('static', filename='js/audioplayer.js') }}"></script>
+<script src="{{ url_for('static', filename='js/trivia.js') }}"></script>
 
-    <script src="https://unpkg.com/wavesurfer.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </body>

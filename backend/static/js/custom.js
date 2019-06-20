@@ -111,7 +111,7 @@ function createPara(splitId) {
                 var para = createPara(splitId);
                 dataJson[splitId]["isVisible"] = true;
                 subtitles.appendChild(para);
-                subtitles.scrollTop = subtitles.scrollHeight;
+                    subtitles.scrollTop = subtitles.scrollHeight;
             }
         }
 
