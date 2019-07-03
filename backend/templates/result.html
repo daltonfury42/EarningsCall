@@ -10,6 +10,7 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- wavesurfer.js -->
         <script src="https://unpkg.com/wavesurfer.js/dist/wavesurfer.js"></script>
@@ -49,58 +50,75 @@
 
         <div class="row">
             <div class="col-md-1"></div>
-
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="container">
-
                     <div class="row">
-                        <div class="list-group scrollable" id="subtitles">
+                        <div class="list-group scrollable w-100" id="historyPane">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div id="demo">
-                    <p id="subtitle" class="text-center text-info">&nbsp;</p>
 
-                    <div id="wave-timeline"></div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div id="demo" class="w-100">
+                        <p id="subtitle" class="text-center text-info">&nbsp;</p>
 
-                    <div id="waveform">
-                        <!-- Here be waveform -->
-                    </div>
+                        <div id="wave-timeline"></div>
 
-                    <div class="row" style="margin: 30px 0">
-                        <div class="col-sm-8">
-                            <p>
-                                Click on a region to enter an annotation.<br />
-                                Shift-click plays a region in a loop.
-                            </p>
+                        <div id="waveform">
+                            <!-- Here be waveform -->
                         </div>
 
-                        <div class="col-sm-2">
-                            <div class="btn-group">
-                                <button class="btn btn-primary btn-block" data-action="play">
-                                    <span id="play">
-                                        <i class="glyphicon glyphicon-play"></i>
-                                        Play
-                                    </span>
+                        <div class="row" style="margin: 30px 0">
+                            <div class="col-sm-8">
+                                    {% if highlights_flat|length > 0 %}
+                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#highlightsModal">
+                                      Highlights
+                                    </button>
+                                    {% endif %}
+                            </div>
 
-                                    <span id="pause" style="display: none">
-                                        <i class="glyphicon glyphicon-pause"></i>
-                                        Pause
-                                    </span>
-                                </button>
-                                {% if highlights_flat|length > 0 %}
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#highlightsModal">
-                                  Highlights
-                                </button>
-                                {% endif %}
+                            <div class="col-sm-2">
+                                <div class="btn-group">
+<!--                                    <button class="btn btn-secondary btn-block" data-action="back">-->
+<!--                                        <i class="material-icons">skip_previous</i>-->
+<!--                                    </button>-->
+                                    <button class="btn btn-secondary btn-block" data-action="play">
+                                        <span id="play">
+                                            <i class="material-icons">play_arrow</i>
+                                        </span>
+
+                                        <span id="pause" style="display: none">
+                                            <i class="material-icons">pause</i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="subtitleCard" class="w-100">
+                                <div class="card text-center">
+                                  <div class="card-header">
+                                    Featured
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                  </div>
+                                  <div class="card-footer text-muted">
+                                    2 days ago
+                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
+
     </div>
     {% if highlights_flat|length > 0 %}
     <div class="modal fade" id="highlightsModal">
@@ -140,13 +158,7 @@
         var dataJson = {{ data|safe }};
 </script>
 
-<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
-<script src="{{ url_for('static', filename='js/audioplayer.js') }}"></script>
-<script src="{{ url_for('static', filename='js/trivia.js') }}"></script>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -154,6 +166,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script src="{{ url_for('static', filename='js/audioplayer.js') }}"></script>
+<script src="{{ url_for('static', filename='js/trivia.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.scrollintoview.js') }}"></script>
+
 </body>
 
 </html>

@@ -1,31 +1,3 @@
-var audioPlayer = document.getElementById("audiofile");
-var currentFocus = undefined
-
-function focusOn(splitId, triggerAudio) {
-
-    if (currentFocus != splitId)
-        if (currentFocus != undefined)
-            unFocus(currentFocus);
-    currentFocus = splitId;
-    document.getElementById(splitId + '-emotion').style.visibility = "visible";
-    document.getElementById(splitId + '-audioImage').style.visibility = "visible";
-
-    var elem = document.getElementById(splitId);
-    elem.style.visibility = "visible"
-    elem.classList.add("list-group-item-dark");
-
-    if (triggerAudio) {
-        audioPlayer.currentTime = dataJson[splitId]['start'];
-        audioPlayer.play();
-    }
-}
-
-function unFocus(splitId) {
-    document.getElementById(splitId + '-audioImage').style.visibility = "hidden";
-    var elem = document.getElementById(splitId);
-    elem.classList.remove("list-group-item-dark");
-}
-
 function createPara(splitId) {
     var a = document.createElement("a");
     var dataPoint = dataJson[splitId];
@@ -97,41 +69,4 @@ function createPara(splitId) {
     return a;
 
 
-}
-
-(function (win, doc) {
-
-    var subtitles = doc.getElementById("subtitles");
-
-    audioPlayer.addEventListener("timeupdate", function (e) {
-
-        var currentSplitId = undefined;
-        for (var splitId in dataJson) {
-            if (dataJson[splitId]["startTime"] <= audioPlayer.currentTime && dataJson[splitId]["isVisible"] === undefined) {
-                var para = createPara(splitId);
-                dataJson[splitId]["isVisible"] = true;
-                subtitles.appendChild(para);
-                    subtitles.scrollTop = subtitles.scrollHeight;
-            }
-        }
-
-        if (currentSplitId) {
-            focusOn(element.splitId, false);
-        }
-        });
-}(window, document));
-
-function filterSelection(filterClass) {
-    rows = document.getElementsByClassName("filterable")
-
-    for (i = 0; i < rows.length; i++)
-    {
-        row = rows[i];
-        if (filterClass == "All" && row.classList.contains('All-filter-display'))
-            row.classList.remove("d-none");
-        else if (row.classList.contains(filterClass))
-            row.classList.remove("d-none");
-        else
-            row.classList.add("d-none");
-    }
 }

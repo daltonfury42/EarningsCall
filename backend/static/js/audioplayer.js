@@ -2,6 +2,7 @@
  * Create a WaveSurfer instance.
  */
 var wavesurfer;
+var currentSplitId;
 
 /**
  * Init & load.
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         normalize: true,
         minimap: true,
         backend: 'MediaElement',
+        fillParent: true,
         plugins: [
             WaveSurfer.regions.create(),
             WaveSurfer.minimap.create({
@@ -32,26 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     wavesurfer.load("/static/mp3/" + callId + ".mp3");
 
-
-    /* Regions */
-
     wavesurfer.on('ready', function() {
-        wavesurfer.enableDragSelection({
-            color: randomColor(0.1)
-        });
-
-        if (localStorage.regions) {
-            loadRegions(JSON.parse(localStorage.regions));
-        }
+        loadRegions();
+        initHistoryPane();
     });
+
     wavesurfer.on('region-click', function(region, e) {
         e.stopPropagation();
         // Play on click, loop on shift click
         e.shiftKey ? region.playLoop() : region.play();
     });
-    wavesurfer.on('region-click', editAnnotation);
-    wavesurfer.on('region-updated', saveRegions);
-    wavesurfer.on('region-removed', saveRegions);
     wavesurfer.on('region-in', showNote);
 
     wavesurfer.on('region-play', function(region) {
@@ -74,102 +66,191 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-/**
- * Save annotations to localStorage.
- */
-function saveRegions() {
-    localStorage.regions = JSON.stringify(
-        Object.keys(wavesurfer.regions.list).map(function(id) {
-            var region = wavesurfer.regions.list[id];
-            return {
-                start: region.start,
-                end: region.end,
-                attributes: region.attributes,
-                data: region.data
-            };
-        })
-    );
-}
-
-/**
- * Load regions from localStorage.
- */
-function loadRegions(regions) {
-    regions.forEach(function(region) {
-        region.color = randomColor(0.1);
-        wavesurfer.addRegion(region);
-    });
-}
-
-
-/**
- * Random RGBA color.
- */
-function randomColor(alpha) {
-    return (
-        'rgba(' +
-        [
-            ~~(Math.random() * 255),
-            ~~(Math.random() * 255),
-            ~~(Math.random() * 255),
-            alpha || 1
-        ] +
-        ')'
-    );
-}
-
-/**
- * Edit annotation for a region.
- */
-function editAnnotation(region) {
-    var form = document.forms.edit;
-    form.style.opacity = 1;
-    (form.elements.start.value = Math.round(region.start * 10) / 10),
-        (form.elements.end.value = Math.round(region.end * 10) / 10);
-    form.elements.note.value = region.data.note || '';
-    form.onsubmit = function(e) {
-        e.preventDefault();
-        region.update({
-            start: form.elements.start.value,
-            end: form.elements.end.value,
-            data: {
-                note: form.elements.note.value
-            }
-        });
-        form.style.opacity = 0;
-    };
-    form.onreset = function() {
-        form.style.opacity = 0;
-        form.dataset.region = null;
-    };
-    form.dataset.region = region.id;
-}
-
-/**
+/*
  * Display annotation.
  */
 function showNote(region) {
     if (!showNote.el) {
         showNote.el = document.querySelector('#subtitle');
     }
-    showNote.el.textContent = region.data.note || '–';
+    showNote.el.textContent = region.id;
+    currentSplitId = region.id;
+
+    updateHistoryPane(currentSplitId);
+
+    var cardDisplayDiv = document.getElementById("subtitleCard");
+    while (cardDisplayDiv.firstChild) {
+        cardDisplayDiv.removeChild(cardDisplayDiv.firstChild);
+    }
+
+    cardDisplayDiv.appendChild(createPara(region.id))
+
 }
 
-/**
- * Bind controls.
- */
-window.GLOBAL_ACTIONS['delete-region'] = function() {
-    var form = document.forms.edit;
-    var regionId = form.dataset.region;
-    if (regionId) {
-        wavesurfer.regions.list[regionId].remove();
-        form.reset();
+function updateHistoryPane(currentSplitId) {
+    for (var splitId in dataJson) {
+        if (Number(splitId.substr(1)) <= Number(currentSplitId.substr(1))) {
+            var historyPaneElem = document.getElementById('history-pane-' + splitId);
+            if(historyPaneElem.classList.contains('disabled')) {
+                historyPaneElem.classList.remove('disabled');
+                historyPaneElem.classList.add('list-group-item-dark');
+
+                if (document.getElementById('history-pane-emotion-' + splitId) == undefined) {
+                    var emotionSpanElem = document.createElement('span');
+                    emotionSpanElem.setAttribute('class', 'badge badge-primary');
+                    emotionSpanElem.setAttribute('id', 'history-pane-emotion-' + splitId);
+                    emotionSpanElem.innerHTML = dataJson[splitId].emotion;
+                    historyPaneElem.appendChild(emotionSpanElem);
+                }
+            }
+        }
+    }
+    $('#history-pane-' + currentSplitId).scrollintoview();
+//
+//    var speakerIconOld = document.getElementById('speaker-icon');
+//    if (speakerIconOld) {
+//        speakerIconOld.parentNode.removeChild(speakerIconOld);
+//    }
+//
+//    if (null === document.getElementById('speaker-icon')) {
+//        var speakerIcon = document.createElement('i');
+//        speakerIcon.setAttribute('class', 'material-icons');
+//        speakerIcon.innerHTML = 'record_voice_over';
+//
+//        var historyPaneElemCurrent = document.getElementById('history-pane-' + currentSplitId);
+//        historyPaneElemCurrent.firstChild.appendChild(speakerIcon);
+//    }
+
+}
+
+function loadRegions() {
+
+    for (var splitId in dataJson) {
+        var dataPoint = dataJson[splitId]
+        var region = {  id: splitId,
+                        start: dataPoint.startTime,
+                        end: dataPoint.endTime,
+                        drag: false,
+                        resize: false,
+                    };
+
+        if (dataPoint.emotion == "Happy") {
+            region.color = "rgba(0, 255, 0, 0.1)"
+        } else if (dataPoint.emotion == "Sad") {
+            region.color = "rgba(255, 0, 0, 0.1)"
+        } else if (dataPoint.emotion == "Strategical") {
+            region.color = "rgba(0, 0, 255, 0.1)"
+        } else if (dataPoint.emotion == "Analytical") {
+            region.color = "rgba(255, 255, 0, 0.1)"
+        }
+
+        wavesurfer.addRegion(region);
+    }
+}
+
+function initHistoryPane() {
+    var historyPaneElem = document.getElementById('historyPane');
+    var dataPoint;
+    for (var splitId in dataJson) {
+        dataPoint = dataJson[splitId];
+
+        historyPaneElem.appendChild(createHistoryElem(splitId, dataPoint.startTime, dataPoint.speaker));
+    }
+
+    var minutes = Math.floor(dataPoint.endTime / 60);
+    var seconds = Math.round(dataPoint.endTime - minutes * 60);
+    historyPaneElem.appendChild(createHistoryElem('faq', dataPoint.endTime, 'QnA'));
+
+}
+
+function createHistoryElem(splitId, time, speaker) {
+
+        var minutes = Math.floor(time / 60);
+        var seconds = Math.round(time - minutes * 60);
+
+        var elem = document.createElement('a');
+        elem.setAttribute('class', 'list-group-item disabled list-group-item-action d-flex justify-content-between align-items-center');
+        elem.setAttribute('id', 'history-pane-' + splitId);
+        elem.setAttribute('href', 'javascript:wavesurfer.play(' + time + ');')
+
+        var leftDiv = document.createElement('div');
+
+        var text = document.createElement('p');
+        text.innerHTML = '(' + pad(minutes, 2) + ':' + pad(seconds, 2) + ')  ' + speaker;
+        leftDiv.appendChild(text);
+
+        elem.appendChild(leftDiv);
+
+        return elem;
+}
+
+var wavesurfer = window.wavesurfer;
+
+var GLOBAL_ACTIONS = {
+    play: function() {
+        wavesurfer.playPause();
+    },
+
+    back: function() {
+        currentSplitId = 'f' + pad(Number(currentSplitId.substr(1))-1, 6);
+
+        wavesurfer.play(dataJson[currentSplitId].start);
+    },
+
+    forth: function() {
+        currentSplitId = 'f' + pad(Number(currentSplitId.substr(1))+1, 6);
+
+        if (currentSplitId == 'f000000') {
+            return;
+        }
+
+        if (dataJson[currentSplitId] == undefined) {
+            // Display FAQ card.
+        }
+
+        wavesurfer.play(dataJson[currentSplitId].start);
+    },
+
+    'toggle-mute': function() {
+        wavesurfer.toggleMute();
     }
 };
 
-window.GLOBAL_ACTIONS['export'] = function() {
-    window.open(
-        'data:application/json;charset=utf-8,' +
-            encodeURIComponent(localStorage.regions)
-    );
-};
+// Bind actions to buttons and keypresses
+document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('keydown', function(e) {
+        var map = {
+            32: 'play', // space
+            37: 'back', // left
+            39: 'forth' // right
+        };
+        var action = map[e.keyCode];
+        if (action in GLOBAL_ACTIONS) {
+            if (document == e.target || document.body == e.target) {
+                e.preventDefault();
+            }
+            GLOBAL_ACTIONS[action](e);
+        }
+    });
+
+    [].forEach.call(document.querySelectorAll('[data-action]'), function(el) {
+        el.addEventListener('click', function(e) {
+            var action = e.currentTarget.dataset.action;
+            if (action in GLOBAL_ACTIONS) {
+                e.preventDefault();
+                GLOBAL_ACTIONS[action](e);
+            }
+        });
+    });
+});
+
+function pad(number, length) {
+
+    var str = '' + number;
+    while (str.length < length) {
+        str = '0' + str;
+    }
+
+    return str;
+
+}
