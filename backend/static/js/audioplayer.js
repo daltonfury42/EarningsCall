@@ -202,15 +202,24 @@ function loadRegions() {
 function initHistoryPane() {
     var historyPaneElem = document.getElementById('historyPane');
     var dataPoint;
-    for (var splitId in dataJson) {
+    var id = 1
+
+    while (true) {
+        splitId = 'f' + pad(id, 6);
+
         dataPoint = dataJson[splitId];
+        if (dataPoint === undefined) {
+            break;
+        }
 
         historyPaneElem.appendChild(createHistoryElem(splitId, dataPoint.startTime, dataPoint.speaker));
+        id += 1;
     }
 
-    var minutes = Math.floor(dataPoint.endTime / 60);
-    var seconds = Math.round(dataPoint.endTime - minutes * 60);
-    historyPaneElem.appendChild(createHistoryElem('faq', dataPoint.endTime, 'QnA'));
+    var lastDataPoint = dataJson['f' + pad(id-1, 6)]
+    var minutes = Math.floor(lastDataPoint.endTime / 60);
+    var seconds = Math.round(lastDataPoint.endTime - minutes * 60);
+    historyPaneElem.appendChild(createHistoryElem('f100000', lastDataPoint.endTime, 'QnA'));
 
 }
 

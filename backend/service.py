@@ -5,6 +5,8 @@ import glob
 from collections import defaultdict, OrderedDict
 from enum import Enum
 
+print('Here')
+
 class Emotions(Enum):
     ALL = 'All'
     HAPPY = 'Happy'
