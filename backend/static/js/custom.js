@@ -1,9 +1,16 @@
 function createPara(splitId) {
+
+    if (splitId == 'f100000') {
+        return createQnAPara();
+    }
+
     var a = document.createElement("a");
     var dataPoint = dataJson[splitId];
     a.setAttribute("class", 'list-group-item list-group-item-action flex-column align-items-start ' + dataPoint['emotion'] + ' ' + dataPoint['topic']);
     a.setAttribute("id", splitId);
-    a.setAttribute("href", "javascript:focusOn('" + splitId + "', true);");
+    a.setAttribute("href", "#");
+
+
 
     var div1 = document.createElement("div");
     div1.setAttribute("class", "d-flex w-100 justify-content-between");
@@ -15,13 +22,6 @@ function createPara(splitId) {
     speaker.innerHTML = dataPoint['speaker'];
 
     div1.appendChild(speaker);
-
-    var speakerIcon = document.createElement("img");
-    speakerIcon.setAttribute("src", "/static/img/speaker.png");
-    speakerIcon.setAttribute("style", "visibility:hidden;");
-    speakerIcon.setAttribute("id", splitId + "-audioImage");
-
-    div1.appendChild(speakerIcon);
 
     a.appendChild(div1);
     a.appendChild(document.createElement("br"));
@@ -69,4 +69,21 @@ function createPara(splitId) {
     return a;
 
 
+}
+
+function createQnAPara() {
+    var a = document.createElement('a');
+    a.setAttribute('class', "card text-center");
+
+    var divCard = document.createElement('div');
+    divCard.setAttribute('class', 'card-body');
+
+    var text = document.createElement('p');
+    text.innerHTML = 'Question and Answer Session';
+
+    divCard.appendChild(text);
+
+    a.appendChild(divCard);
+
+    return a;
 }

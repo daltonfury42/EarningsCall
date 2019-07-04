@@ -3,7 +3,17 @@
  */
 var wavesurfer;
 var currentSplitId;
+var emotionColor = {"Happy": "rgba(0, 255, 0, 0.1)",
+                    "Sad": "rgba(255, 0, 0, 0.1)",
+                    "Strategical": "rgba(0, 0, 255, 0.1)",
+                    "Analytical": "rgba(255, 255, 0, 0.1)",
+                    "Neutral": "rgb(211, 211, 211)"};
 
+var emotionCount = {"Happy": 0,
+                    "Sad": 0,
+                    "Neutral": 0,
+                    "Strategical": 0,
+                    "Analytical": 0};
 /**
  * Init & load.
  */
@@ -88,24 +98,47 @@ function showNote(region) {
 }
 
 function updateHistoryPane(currentSplitId) {
+    for (var emotion in emotionCount) {
+        emotionCount[emotion] = 0;
+    }
+
     for (var splitId in dataJson) {
+        var dataPoint = dataJson[splitId];
+        var historyPaneElem = document.getElementById('history-pane-' + splitId);
         if (Number(splitId.substr(1)) <= Number(currentSplitId.substr(1))) {
-            var historyPaneElem = document.getElementById('history-pane-' + splitId);
+
+            emotionCount[dataPoint.emotion] += 1;
+
             if(historyPaneElem.classList.contains('disabled')) {
                 historyPaneElem.classList.remove('disabled');
-                historyPaneElem.classList.add('list-group-item-dark');
+                historyPaneElem.setAttribute('style', 'background-color: ' + emotionColor[dataPoint.emotion]);
 
                 if (document.getElementById('history-pane-emotion-' + splitId) == undefined) {
                     var emotionSpanElem = document.createElement('span');
                     emotionSpanElem.setAttribute('class', 'badge badge-primary');
                     emotionSpanElem.setAttribute('id', 'history-pane-emotion-' + splitId);
-                    emotionSpanElem.innerHTML = dataJson[splitId].emotion;
+                    emotionSpanElem.innerHTML = dataPoint.emotion;
                     historyPaneElem.appendChild(emotionSpanElem);
                 }
             }
+        } else {
+
+
+            var emotionSpanElem = document.getElementById('history-pane-emotion-' + splitId);
+            if (emotionSpanElem != null) {
+                emotionSpanElem.parentNode.removeChild(emotionSpanElem);
+                historyPaneElem.className += ' disabled';
+                historyPaneElem.removeAttribute('style');
+            }
         }
     }
+
     $('#history-pane-' + currentSplitId).scrollintoview();
+
+    for (var emotion in emotionCount) {
+        var emotionCountElem = document.getElementById(emotion + '-count');
+        emotionCountElem.innerHTML = emotionCount[emotion];
+    }
 //
 //    var speakerIconOld = document.getElementById('speaker-icon');
 //    if (speakerIconOld) {
@@ -125,6 +158,8 @@ function updateHistoryPane(currentSplitId) {
 
 function loadRegions() {
 
+    var callEnd = 0.0;
+
     for (var splitId in dataJson) {
         var dataPoint = dataJson[splitId]
         var region = {  id: splitId,
@@ -135,17 +170,33 @@ function loadRegions() {
                     };
 
         if (dataPoint.emotion == "Happy") {
-            region.color = "rgba(0, 255, 0, 0.1)"
+            region.color = emotionColor["Happy"];
         } else if (dataPoint.emotion == "Sad") {
-            region.color = "rgba(255, 0, 0, 0.1)"
+            region.color = emotionColor["Sad"];
         } else if (dataPoint.emotion == "Strategical") {
-            region.color = "rgba(0, 0, 255, 0.1)"
+            region.color = emotionColor["Strategical"];
         } else if (dataPoint.emotion == "Analytical") {
-            region.color = "rgba(255, 255, 0, 0.1)"
+            region.color = emotionColor["Analytical"];
         }
 
         wavesurfer.addRegion(region);
+        if (dataPoint.endTime > callEnd) {
+            callEnd = dataPoint.endTime;
+        }
     }
+
+    var faqRegion = {
+        id: 'f100000',
+        start: callEnd,
+        end: wavesurfer.getDuration(),
+        drag: false,
+        resize: false,
+        color: "rgba(255,255,255,1)",
+    };
+
+    wavesurfer.addRegion(faqRegion);
+
+
 }
 
 function initHistoryPane() {
