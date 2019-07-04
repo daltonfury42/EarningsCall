@@ -49,11 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         initHistoryPane();
     });
 
-    wavesurfer.on('region-click', function(region, e) {
-        e.stopPropagation();
-        // Play on click, loop on shift click
-        e.shiftKey ? region.playLoop() : region.play();
-    });
     wavesurfer.on('region-in', showNote);
 
     wavesurfer.on('region-play', function(region) {
