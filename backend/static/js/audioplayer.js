@@ -179,19 +179,6 @@ function loadRegions() {
             callEnd = dataPoint.endTime;
         }
     }
-
-    var faqRegion = {
-        id: 'f100000',
-        start: callEnd,
-        end: wavesurfer.getDuration(),
-        drag: false,
-        resize: false,
-        color: "rgba(255,255,255,1)",
-    };
-
-    wavesurfer.addRegion(faqRegion);
-
-
 }
 
 function initHistoryPane() {
@@ -210,11 +197,6 @@ function initHistoryPane() {
         historyPaneElem.appendChild(createHistoryElem(splitId, dataPoint.startTime, dataPoint.speaker));
         id += 1;
     }
-
-    var lastDataPoint = dataJson['f' + pad(id-1, 6)]
-    var minutes = Math.floor(lastDataPoint.endTime / 60);
-    var seconds = Math.round(lastDataPoint.endTime - minutes * 60);
-    historyPaneElem.appendChild(createHistoryElem('f100000', lastDataPoint.endTime, 'QnA'));
 
 }
 
