@@ -31,20 +31,20 @@ function createPara(splitId) {
     mainText.innerHTML = dataPoint['text'];
     a.appendChild(mainText);
 
-    var div2 = createBadges(dataPoint, "");
+    var div2 = createBadges(dataPoint, splitId,"");
     a.appendChild(div2);
 
     return a;
 }
 
-function createBadges(dataPoint, idPrefix) {
+function createBadges(dataPoint, splitId, idPrefix) {
     var div2 = document.createElement("div");
     div2.setAttribute("class", "d-flex justify-content-between align-items-center");
+    div2.setAttribute("id", idPrefix + 'badges-' + splitId)
 
     var div21 = document.createElement("div");
     var span1 = document.createElement("span");
     span1.setAttribute("class", "badge badge-primary");
-    span1.setAttribute("id", idPrefix + "emotion-" + splitId);
     span1.innerHTML = dataPoint['emotion'];
 
     div21.appendChild(span1);
@@ -52,7 +52,6 @@ function createBadges(dataPoint, idPrefix) {
     if (dataPoint['topic'] != 'Notopic') {
         var span2 = document.createElement("span");
         span2.setAttribute("class", "badge badge-pill badge-success");
-        span2.setAttribute("id", idPrefix + "topic-" + splitId);
         span2.innerHTML = dataPoint['topic'];
 
         div21.appendChild(span2);

@@ -96,7 +96,7 @@ def getHighlightsAndTags(callId, threshold):
             for _, id, sentence, attention, emotion, tags in spamReader:
                 tags_dict[id] = tags_dict[id].union(set(tags.split()))
                 if float(attention) > threshold and emotion != Emotions.NEUTRAL.value:
-                    hightlight = (sentence.capitalize(), float(attention))
+                    hightlight = (sentence.capitalize(), float(attention), id)
                     highlights_dict[emotion].append(hightlight)
     except IOError:
         pass
@@ -107,6 +107,8 @@ def getHighlightsAndTags(callId, threshold):
 
     highlights_flat = highlights_dict.get(Emotions.HAPPY.value, []) + highlights_dict.get(Emotions.ANALYTICAL.value, []) \
                       + highlights_dict.get(Emotions.STRATEGICAL.value, [])
+
+    highlights_flat = highlights_flat[:15]
 
     return highlights_dict, highlights_flat, tags_dict
 

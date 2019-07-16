@@ -108,17 +108,17 @@ function updateHistoryPane(currentSplitId) {
                 historyPaneElem.classList.remove('disabled');
                 historyPaneElem.setAttribute('style', 'background-color: ' + emotionColor[dataPoint.emotion]);
 
-                if (document.getElementById('history-pane-emotion-' + splitId) == undefined) {
-                    var badges = createBadges(dataPoint, 'history-pane-')
+                if (document.getElementById('history-pane-badges-' + splitId) == undefined) {
+                    var badges = createBadges(dataPoint, splitId, 'history-pane-')
                     historyPaneElem.appendChild(badges);
                 }
             }
         } else {
 
 
-            var emotionSpanElem = document.getElementById('history-pane-emotion-' + splitId);
-            if (emotionSpanElem != null) {
-                emotionSpanElem.parentNode.removeChild(emotionSpanElem);
+            var badgesElem = document.getElementById('history-pane-badges-' + splitId);
+            if (badgesElem != null) {
+                badgesElem.parentNode.removeChild(badgesElem);
                 historyPaneElem.className += ' disabled';
                 historyPaneElem.removeAttribute('style');
             }
@@ -131,21 +131,6 @@ function updateHistoryPane(currentSplitId) {
         var emotionCountElem = document.getElementById(emotion + '-count');
         emotionCountElem.innerHTML = emotionCount[emotion];
     }
-//
-//    var speakerIconOld = document.getElementById('speaker-icon');
-//    if (speakerIconOld) {
-//        speakerIconOld.parentNode.removeChild(speakerIconOld);
-//    }
-//
-//    if (null === document.getElementById('speaker-icon')) {
-//        var speakerIcon = document.createElement('i');
-//        speakerIcon.setAttribute('class', 'material-icons');
-//        speakerIcon.innerHTML = 'record_voice_over';
-//
-//        var historyPaneElemCurrent = document.getElementById('history-pane-' + currentSplitId);
-//        historyPaneElemCurrent.firstChild.appendChild(speakerIcon);
-//    }
-
 }
 
 function loadRegions() {
@@ -287,4 +272,8 @@ function pad(number, length) {
 
     return str;
 
+}
+
+function playBySplitId(splitId) {
+    wavesurfer.play(dataJson[splitId].startTime);
 }
