@@ -31,13 +31,20 @@ function createPara(splitId) {
     mainText.innerHTML = dataPoint['text'];
     a.appendChild(mainText);
 
+    var div2 = createBadges(dataPoint, "");
+    a.appendChild(div2);
+
+    return a;
+}
+
+function createBadges(dataPoint, idPrefix) {
     var div2 = document.createElement("div");
     div2.setAttribute("class", "d-flex justify-content-between align-items-center");
 
     var div21 = document.createElement("div");
     var span1 = document.createElement("span");
     span1.setAttribute("class", "badge badge-primary");
-    span1.setAttribute("id", splitId + "-emotion");
+    span1.setAttribute("id", idPrefix + "emotion-" + splitId);
     span1.innerHTML = dataPoint['emotion'];
 
     div21.appendChild(span1);
@@ -45,7 +52,7 @@ function createPara(splitId) {
     if (dataPoint['topic'] != 'Notopic') {
         var span2 = document.createElement("span");
         span2.setAttribute("class", "badge badge-pill badge-success");
-        span2.setAttribute("id", splitId + "-topic");
+        span2.setAttribute("id", idPrefix + "topic-" + splitId);
         span2.innerHTML = dataPoint['topic'];
 
         div21.appendChild(span2);
@@ -64,11 +71,7 @@ function createPara(splitId) {
 
     div2.appendChild(div22);
 
-    a.appendChild(div2);
-
-    return a;
-
-
+    return div2;
 }
 
 function createQnAPara() {

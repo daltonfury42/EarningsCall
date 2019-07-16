@@ -109,11 +109,8 @@ function updateHistoryPane(currentSplitId) {
                 historyPaneElem.setAttribute('style', 'background-color: ' + emotionColor[dataPoint.emotion]);
 
                 if (document.getElementById('history-pane-emotion-' + splitId) == undefined) {
-                    var emotionSpanElem = document.createElement('span');
-                    emotionSpanElem.setAttribute('class', 'badge badge-primary');
-                    emotionSpanElem.setAttribute('id', 'history-pane-emotion-' + splitId);
-                    emotionSpanElem.innerHTML = dataPoint.emotion;
-                    historyPaneElem.appendChild(emotionSpanElem);
+                    var badges = createBadges(dataPoint, 'history-pane-')
+                    historyPaneElem.appendChild(badges);
                 }
             }
         } else {
@@ -206,7 +203,7 @@ function createHistoryElem(splitId, time, speaker) {
         var seconds = Math.round(time - minutes * 60);
 
         var elem = document.createElement('a');
-        elem.setAttribute('class', 'list-group-item disabled list-group-item-action d-flex justify-content-between align-items-center');
+        elem.setAttribute('class', 'list-group-item disabled list-group-item-action');
         elem.setAttribute('id', 'history-pane-' + splitId);
         elem.setAttribute('href', 'javascript:wavesurfer.play(' + time + ');')
 
