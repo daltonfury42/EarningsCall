@@ -1,16 +1,16 @@
 ,id,sentence,normalized_sent_attention,emotion,tags
-0,f000001,"good day, ladies and gentlemen.",0.442362026,Netural,session answer question operator time 
-1,f000001,and welcome to the q4 2018 intel corporation earnings conference call.,0.386037592,Netural,session answer question operator time 
-2,f000001,"at this time, all participants are in a listen only mode.",0.393981689,Netural,session answer question operator time 
-3,f000001,"later, we will conduct the question-and-answer session and instructions will follow at that time [operator instructions].",0.673201916,Netural,session answer question operator time 
-4,f000001,"as a reminder, this conference call is being recorded.",0.404383339,Netural,session answer question operator time 
-5,f000002,"i would now like to introduce your host for todays conference, mr. mark henninger, head of investor relations.",0.861631737,Netural,henninger mr head host mark 
-6,f000002,"sir, you may begin.",0.426956698,Netural,henninger mr head host mark 
-7,f000003,"thank you, operator.",0.378358942,Netural,intc investor web site 
-8,f000003,and welcome everyone to intels fourth quarter and full-year 2018 earnings conference call.,0.376216683,Netural,intc investor web site 
-9,f000003,by now you should have received a copy of our earnings release and the earnings presentation.,0.446824684,Netural,intc investor web site 
-10,f000003,"if youve not received both documents, theyre available on our investor web site, intc.com.",0.583438259,Netural,intc investor web site 
-11,f000003,the earnings presentation is also available in the webcast window for those joining us online.,0.493569096,Netural,intc investor web site 
+0,f000001,"good day, ladies and gentlemen.",0.442362026,Neutral,session answer question operator time 
+1,f000001,and welcome to the q4 2018 intel corporation earnings conference call.,0.386037592,Neutral,session answer question operator time 
+2,f000001,"at this time, all participants are in a listen only mode.",0.393981689,Neutral,session answer question operator time 
+3,f000001,"later, we will conduct the question-and-answer session and instructions will follow at that time [operator instructions].",0.673201916,Neutral,session answer question operator time 
+4,f000001,"as a reminder, this conference call is being recorded.",0.404383339,Neutral,session answer question operator time 
+5,f000002,"i would now like to introduce your host for todays conference, mr. mark henninger, head of investor relations.",0.861631737,Neutral,henninger mr head host mark 
+6,f000002,"sir, you may begin.",0.426956698,Neutral,henninger mr head host mark 
+7,f000003,"thank you, operator.",0.378358942,Neutral,intc investor web site 
+8,f000003,and welcome everyone to intels fourth quarter and full-year 2018 earnings conference call.,0.376216683,Neutral,intc investor web site 
+9,f000003,by now you should have received a copy of our earnings release and the earnings presentation.,0.446824684,Neutral,intc investor web site 
+10,f000003,"if youve not received both documents, theyre available on our investor web site, intc.com.",0.583438259,Neutral,intc investor web site 
+11,f000003,the earnings presentation is also available in the webcast window for those joining us online.,0.493569096,Neutral,intc investor web site 
 12,f000004,"im joined today by bob swan, our intels chief financial officer and interim ceo; murthy renduchintala, group president of the technology, systems architecture, and client group and chief engineering officer, as well as navin shenoy, executive vice president and general manager of the data center group.",0.999819864,Strategical,engineering renduchintala executive architecture president 
 13,f000004,"in a moment, well hear brief remarks from bob, followed by q&a.",0.367945721,Strategical,engineering renduchintala executive architecture president 
 14,f000005,"before we begin, let me remind everyone that todays discussion contains forward-looking statements based on the environment as we currently see it, and as such, does include risks and uncertainties.",0.377125514,Strategical,risk information press release 
@@ -18,14 +18,14 @@
 16,f000006,a brief reminder that this quarter we have provided both gaap and non-gaap financial measures.,0.626073656,Analytical,reminder gaap non quarter 
 17,f000006,"today, we will be speaking to the non-gaap financial measures when describing our consolidated results.",0.48809609,Analytical,reminder gaap non quarter 
 18,f000006,the earnings presentation and earnings releases available on intc.com include the full gaap and non-gaap reconciliations.,0.442874094,Analytical,reminder gaap non quarter 
-19,f000007,"with that, let me hand it over to bob.",1,Netural,hand 
-20,f000008,thanks mark.,0.368887891,Netural,minute status mind top question 
-21,f000008,and thanks to navin and murthy who will participate in the q&a later in the call.,0.370958697,Netural,minute status mind top question 
-22,f000008,"before i get into the results, ill take a minute to address what i expect is a top of mind question, the status of intels ceo search.",0.564638915,Netural,minute status mind top question 
-23,f000008,the board continues to evaluate candidates for what i believe is the biggest and best open job on the planet.,0.387225133,Netural,minute status mind top question 
-24,f000008,they are proceeding with a sense of urgency while also ensuring that they make the right choice for this great company.,0.377397528,Netural,minute status mind top question 
-25,f000008,"meanwhile, murthy, navin, the entire management team and the 107,000 employees have come together as a team to continue driving intels transformation to a data centric company.",0.467420749,Netural,minute status mind top question 
-26,f000008,"our 2018 results demonstrate the progress weve made, and id like to share those results with you now.",0.469647234,Netural,minute status mind top question 
+19,f000007,"with that, let me hand it over to bob.",1,Neutral,hand 
+20,f000008,thanks mark.,0.368887891,Neutral,minute status mind top question 
+21,f000008,and thanks to navin and murthy who will participate in the q&a later in the call.,0.370958697,Neutral,minute status mind top question 
+22,f000008,"before i get into the results, ill take a minute to address what i expect is a top of mind question, the status of intels ceo search.",0.564638915,Neutral,minute status mind top question 
+23,f000008,the board continues to evaluate candidates for what i believe is the biggest and best open job on the planet.,0.387225133,Neutral,minute status mind top question 
+24,f000008,they are proceeding with a sense of urgency while also ensuring that they make the right choice for this great company.,0.377397528,Neutral,minute status mind top question 
+25,f000008,"meanwhile, murthy, navin, the entire management team and the 107,000 employees have come together as a team to continue driving intels transformation to a data centric company.",0.467420749,Neutral,minute status mind top question 
+26,f000008,"our 2018 results demonstrate the progress weve made, and id like to share those results with you now.",0.469647234,Neutral,minute status mind top question 
 27,f000009,2018 marked intels golden anniversary.,0.367920134,Happy,internet eye memory modem center 
 28,f000009,it was a truly remarkable year for a remarkable company.,0.367959489,Happy,internet eye memory modem center 
 29,f000009,"full-year revenue grew 13% and crossed the $70 billion mark for the first time, setting an all time revenue record for the third consecutive year.",0.385855839,Happy,internet eye memory modem center 
@@ -170,10 +170,10 @@
 168,f000043,we feel great about where we are and where were going.,0.367885172,Happy,ambition tam strategy record opportunity 
 169,f000043,"five years ago, we set out to transform intel from a pc centric company to a data centric company.",0.374528233,Happy,ambition tam strategy record opportunity 
 170,f000043,"today, our strategy, products and people, are delivering on that ambition with strong growth, record results and the largest tam opportunity in the companys history.",0.982152423,Happy,ambition tam strategy record opportunity 
-171,f000044,"ive been inspired and humbled time and time again by our employees commitment to this company, their colleagues and our customers, and were just getting started.",0.814431926,Netural,company time 
-172,f000044,"i am convinced the board will close on a new ceo in the near future and i believe the management team, myself and 107,000 employees will rally behind him or her to take this company to a whole new level.",0.408495377,Netural,company time 
-173,f000044,"in the meantime, we will not be distracted by the board.",0.406788907,Netural,company time 
-174,f000045,"with that, let me turn it over back to mark and well get to your questions.",1,Netural,mark 
-175,f000046,"thank you, bob.",0.367909429,Netural,practice participant q question 
-176,f000046,"moving on now to the q&a as is our normal practice, we would ask each participant to ask just one question.",0.999770065,Netural,practice participant q question 
-177,f000046,"operator, please introduce our first questioner.",0.367934057,Netural,practice participant q question 
+171,f000044,"ive been inspired and humbled time and time again by our employees commitment to this company, their colleagues and our customers, and were just getting started.",0.814431926,Neutral,company time 
+172,f000044,"i am convinced the board will close on a new ceo in the near future and i believe the management team, myself and 107,000 employees will rally behind him or her to take this company to a whole new level.",0.408495377,Neutral,company time 
+173,f000044,"in the meantime, we will not be distracted by the board.",0.406788907,Neutral,company time 
+174,f000045,"with that, let me turn it over back to mark and well get to your questions.",1,Neutral,mark 
+175,f000046,"thank you, bob.",0.367909429,Neutral,practice participant q question 
+176,f000046,"moving on now to the q&a as is our normal practice, we would ask each participant to ask just one question.",0.999770065,Neutral,practice participant q question 
+177,f000046,"operator, please introduce our first questioner.",0.367934057,Neutral,practice participant q question 

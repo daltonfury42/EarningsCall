@@ -6,10 +6,9 @@ app = Flask(__name__)
 
 @app.route('/call/<string:callId>')
 def results(callId):
-    title, data, emotionCount, topicCount, highlights_dict, highlights_flat = service.getData(callId)
-    return render_template('result.html', callId=callId, data=json.dumps(data), title=title, emotionCount=emotionCount,
-                           topicCount=topicCount, highlights_dict=highlights_dict,
-                           highlights_flat=highlights_flat )
+    title, data, highlights_dict, highlights_flat = service.getData(callId)
+    return render_template('result.html', callId=callId, data=json.dumps(data), title=title,
+                           highlights_dict=highlights_dict, highlights_flat=highlights_flat)
 
 @app.route('/')
 def calls():

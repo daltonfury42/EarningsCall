@@ -49,51 +49,37 @@ def getData(callId):
 
     title = getTitleFromFileName(transcriptFilePath)
 
-    highlightsDict, highlights_flat, tags_dict = getHighlightsAndTags(callId, .7)
-
-    topicCount = defaultdict(lambda: 0)
+    highlightsDict, highlights_flat, tags_dict, emotion_dict = getResults(callId, .7)
 
     data = {}
-
-    emotionCount = OrderedDict()
-    emotionCount[Emotions.ALL.value] = 0
-    emotionCount[Emotions.HAPPY.value] = 0
-    emotionCount[Emotions.NEUTRAL.value] = 0
-    emotionCount[Emotions.SAD.value] = 0
-    emotionCount[Emotions.ANALYTICAL.value] = 0
-    emotionCount[Emotions.STRATEGICAL.value] = 0
 
     with open(transcriptFilePath) as csvFile:
         spamreader = csv.reader(csvFile)
         for row in spamreader:
             if (row[3] == "qna"):
                 continue
-            splitId, startTime, endTime, _, speaker, text, emotion, topic = row
+            splitId, startTime, endTime, _, speaker, text, _, topic = row
             # text = text.decode('utf-8')
-            emotion = emotion.strip()
+            emotion = emotion_dict[splitId]
             topic = topic.strip().title()
             data[splitId] = {'startTime': float(startTime), 'endTime': float(endTime), 'speaker': speaker,
                          'text': text, 'emotion': emotion, 'topic': topic, 'tags': list(tags_dict[splitId])}
 
-            emotionCount[emotion] = emotionCount[emotion] + 1
-            emotionCount[Emotions.ALL.value] += 1
-            if topic != 'Notopic':
-                topicCount[topic] = topicCount[topic] + 1
-                topicCount[Emotions.ALL.value] += 1
+    return title, data, highlightsDict, highlights_flat
 
-    return title, data, emotionCount, topicCount, highlightsDict, highlights_flat
-
-def getHighlightsAndTags(callId, threshold):
+def getResults(callId, threshold):
     attentionTagsDir = os.path.join(backendDir, 'data/attention_tags')
     attentionTagsFilePath = os.path.join(attentionTagsDir, callId + '.csv')
 
     highlights_dict = defaultdict(lambda : [])
     tags_dict = defaultdict(lambda: set())
+    emotion_dict = {}
     try:
         with open(attentionTagsFilePath) as csvFile:
             spamReader = csv.reader(csvFile)
             next(spamReader, None)
             for _, id, sentence, attention, emotion, tags in spamReader:
+                emotion_dict[id] = emotion
                 tags_dict[id] = tags_dict[id].union(set(tags.split()))
                 if float(attention) > threshold and emotion != Emotions.NEUTRAL.value:
                     hightlight = (sentence.capitalize(), float(attention), id)
@@ -110,7 +96,7 @@ def getHighlightsAndTags(callId, threshold):
 
     highlights_flat = highlights_flat[:15]
 
-    return highlights_dict, highlights_flat, tags_dict
+    return highlights_dict, highlights_flat, tags_dict, emotion_dict
 
 
 if __name__ == '__main__':

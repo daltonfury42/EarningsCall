@@ -1,19 +1,19 @@
 ,id,sentence,normalized_sent_attention,emotion,tags
-0,f000001,"good day, everyone, and welcome to the texas instruments 4q 18 and 2018 year-end earnings release conference.",0.797537862,Netural,texas welcome everyone day release 
-1,f000001,todays call is being recorded.,0.461268936,Netural,texas welcome everyone day release 
-2,f000002,"at this time, id like to turn the conference over to dave pahl.",0.967156978,Netural,conference time 
-3,f000002,"please go ahead, sir.",0.380372008,Netural,conference time 
-4,f000003,thank you.,0.373701742,Netural,live website web call 
-5,f000003,good afternoon and thank you for joining our fourth quarter and 2018 earnings conference call.,0.374434481,Netural,live website web call 
-6,f000003,"rafael lizardi, tis chief financial officer, is with me today.",0.396750677,Netural,live website web call 
-7,f000003,"for any of you who missed the release, you can find it on our website at ti.com/ir.",0.506015988,Netural,live website web call 
-8,f000003,this call is being broadcast live over the web and can be accessed through our website.,0.5533752,Netural,live website web call 
-9,f000003,a replay will be available through the web.,0.433436046,Netural,live website web call 
-10,f000004,this call will include forward-looking statements that involve risks and uncertainties that could cause tis results to differ materially from managements current expectations.,0.975878664,Netural,tis call 
-11,f000004,"we encourage you to review the notice regarding forward-looking statements contained in the earnings release published today, as well as tis most recent sec filings for a more complete description.",0.376903234,Netural,tis call 
-12,f000004,"first, let me provide some information thats important for your calendars.",0.367892472,Netural,tis call 
-13,f000004,we plan to hold a call to review our capital management strategy on february 5 at 10 am central time.,0.367884556,Netural,tis call 
-14,f000004,"similar to what we have done in the past, rafael and i will provide insight into our strategy.",0.367928923,Netural,tis call 
+0,f000001,"good day, everyone, and welcome to the texas instruments 4q 18 and 2018 year-end earnings release conference.",0.797537862,Neutral,texas welcome everyone day release 
+1,f000001,todays call is being recorded.,0.461268936,Neutral,texas welcome everyone day release 
+2,f000002,"at this time, id like to turn the conference over to dave pahl.",0.967156978,Neutral,conference time 
+3,f000002,"please go ahead, sir.",0.380372008,Neutral,conference time 
+4,f000003,thank you.,0.373701742,Neutral,live website web call 
+5,f000003,good afternoon and thank you for joining our fourth quarter and 2018 earnings conference call.,0.374434481,Neutral,live website web call 
+6,f000003,"rafael lizardi, tis chief financial officer, is with me today.",0.396750677,Neutral,live website web call 
+7,f000003,"for any of you who missed the release, you can find it on our website at ti.com/ir.",0.506015988,Neutral,live website web call 
+8,f000003,this call is being broadcast live over the web and can be accessed through our website.,0.5533752,Neutral,live website web call 
+9,f000003,a replay will be available through the web.,0.433436046,Neutral,live website web call 
+10,f000004,this call will include forward-looking statements that involve risks and uncertainties that could cause tis results to differ materially from managements current expectations.,0.975878664,Neutral,tis call 
+11,f000004,"we encourage you to review the notice regarding forward-looking statements contained in the earnings release published today, as well as tis most recent sec filings for a more complete description.",0.376903234,Neutral,tis call 
+12,f000004,"first, let me provide some information thats important for your calendars.",0.367892472,Neutral,tis call 
+13,f000004,we plan to hold a call to review our capital management strategy on february 5 at 10 am central time.,0.367884556,Neutral,tis call 
+14,f000004,"similar to what we have done in the past, rafael and i will provide insight into our strategy.",0.367928923,Neutral,tis call 
 15,f000005,"for todays call, let me start by summarizing what rafael and i will be reviewing.",0.367992896,Analytical,segment color light end market 
 16,f000005,"ill be covering three topics: first, a high-level summary of the financial results for the fourth quarter.",0.368168074,Analytical,segment color light end market 
 17,f000005,"second, ill provide some details of the fourth quarter by segment and end market, and ill include some additional color in light of the market weakness we are currently experiencing.",0.996443479,Analytical,segment color light end market 
@@ -43,11 +43,11 @@
 41,f000011,"demand came in mostly as expected, although personal electronics, and specifically smartphones, was weaker, including chinese smartphone manufacturers.",0.688239985,Strategical,smartphone demand 
 42,f000011,"automotive and industrial, both declined sequentially but still grew single digits from the year ago quarter.",0.374021275,Strategical,smartphone demand 
 43,f000011,"in contrast, communications equipment grew about 20% year-on-year, benefiting from 5g deployments.",0.525195331,Strategical,smartphone demand 
-44,f000012,"on a regional basis, demand in china was weaker than the other regions.",0.531014927,Netural,basis china demand 
-45,f000012,end markets within china behaved directionally consistent with the rest of the world.,0.445161535,Netural,basis china demand 
-46,f000012,we are seeing signs from our customers and the channel that this weakness is primarily from increased caution due to trade tensions.,0.430104251,Netural,basis china demand 
-47,f000012,"we assume that this weakness is a combination of lower local end demand, as well as reduced exports, but we do not have visibility into distinguish between the two.",0.463357259,Netural,basis china demand 
-48,f000012,"in addition, i would note that distributors, particularly in asia, did get more conservative on their inventory positions late in the quarter.",0.388783661,Netural,basis china demand 
+44,f000012,"on a regional basis, demand in china was weaker than the other regions.",0.531014927,Neutral,basis china demand 
+45,f000012,end markets within china behaved directionally consistent with the rest of the world.,0.445161535,Neutral,basis china demand 
+46,f000012,we are seeing signs from our customers and the channel that this weakness is primarily from increased caution due to trade tensions.,0.430104251,Neutral,basis china demand 
+47,f000012,"we assume that this weakness is a combination of lower local end demand, as well as reduced exports, but we do not have visibility into distinguish between the two.",0.463357259,Neutral,basis china demand 
+48,f000012,"in addition, i would note that distributors, particularly in asia, did get more conservative on their inventory positions late in the quarter.",0.388783661,Neutral,basis china demand 
 49,f000013,"finally, as we do at the close of each calendar year, ill now describe our revenue by end market for 2018, which is a good indicator of our strategic progress.",0.373948306,Strategical,tvs equipment enterprise 
 50,f000013,"we break this into six categories: industrial, automotive, personal electronics which includes products such as mobile phones, pcs, tablets, and tvs, communications equipment, enterprise systems, and other, which is primarily calculators.",0.889748692,Strategical,tvs equipment enterprise 
 51,f000013,"in summary; industrial, automotive and enterprise systems each grew double digits, while communications equipment was about even and personal electronics declined low single digits in 2018. specifically, as a percentage of revenue, industrial was 36% and automotive was 20%.",0.395884827,Strategical,tvs equipment enterprise 
@@ -62,7 +62,7 @@
 60,f000014,all of this translates to a high terminal value of our portfolio.,0.373056323,Strategical,strategy capital position 
 61,f000015,"in 2018, industrial and automotive combined made up 56% of tis revenue, up from 54% in 2017, and up from 42% just five years ago.",0.668938406,Strategical,tis revenue 
 62,f000015,"we have established momentum in these markets, and we see great opportunity ahead.",0.549945164,Strategical,tis revenue 
-63,f000016,"rafael will now review profitability, capital management and our outlook.",1,Netural,profitability capital management outlook 
+63,f000016,"rafael will now review profitability, capital management and our outlook.",1,Neutral,profitability capital management outlook 
 64,f000017,"thanks, dave, and good afternoon everyone.",0.367897337,Strategical,factory profit revenue year 
 65,f000017,"gross profit in the quarter was $2.41 billion, or 64.8% of revenue.",0.36913615,Strategical,factory profit revenue year 
 66,f000017,"from a year ago, gross profit decreased primarily due to lower revenue and reduced factory loadings.",0.895745858,Strategical,factory profit revenue year 
@@ -84,11 +84,11 @@
 82,f000020,"in the fourth quarter, we paid $736 million in dividends and repurchased $2.01 billion of our own stock for a total return to owners of $2.75 billion in the fourth quarter.",0.436471593,Strategical,coupon debt rate 
 83,f000020,our balance sheet remains strong with $4.23 billion of cash and short-term investments at the end of the fourth quarter.,0.369586423,Strategical,coupon debt rate 
 84,f000020,total debt was $5.1 billion with a weighted average coupon rate of 2.77%.,0.832902914,Strategical,coupon debt rate 
-85,f000021,"inventory days were 152, up 18 days from a year ago, and above our targeted range as mentioned on our last call.",0.522143385,Netural,consignment phase progress addition 
-86,f000021,we continue to believe there is strategic value in owning and controlling our inventory.,0.369912264,Netural,consignment phase progress addition 
-87,f000021,"we have reduced our operating plan starting in the fourth quarter, but we are also working to replenish inventory of low volume devices; these actions have served us well in the past.",0.409527206,Netural,consignment phase progress addition 
-88,f000021,"in addition, we have made progress on our next phase of our consignment programs with our distributors.",0.553712575,Netural,consignment phase progress addition 
-89,f000021,we expect inventory will continue to run above our targeted range for several more quarters.,0.418183042,Netural,consignment phase progress addition 
+85,f000021,"inventory days were 152, up 18 days from a year ago, and above our targeted range as mentioned on our last call.",0.522143385,Neutral,consignment phase progress addition 
+86,f000021,we continue to believe there is strategic value in owning and controlling our inventory.,0.369912264,Neutral,consignment phase progress addition 
+87,f000021,"we have reduced our operating plan starting in the fourth quarter, but we are also working to replenish inventory of low volume devices; these actions have served us well in the past.",0.409527206,Neutral,consignment phase progress addition 
+88,f000021,"in addition, we have made progress on our next phase of our consignment programs with our distributors.",0.553712575,Neutral,consignment phase progress addition 
+89,f000021,we expect inventory will continue to run above our targeted range for several more quarters.,0.418183042,Neutral,consignment phase progress addition 
 90,f000022,"now, lets look at some of these results for the year.",0.369752712,Analytical,capital revenue 
 91,f000022,"in 2018, cash flow from operations was $7.19 billion.",0.388220736,Analytical,capital revenue 
 92,f000022,"capital expenditures were $1.13 billion, or 7.2% of revenue.",0.49283488,Analytical,capital revenue 
@@ -108,8 +108,8 @@
 106,f000025,"given our experience, we will stay focused on making ti stronger for the long-term, while remaining diligent in the short-term.",0.370798431,Strategical,allocation capital analog processing flow 
 107,f000025,"we continue to invest in our competitive advantages, which are technology and manufacturing, portfolio breadth, market reach, and diverse and long-lived positions [ph].",0.382182537,Strategical,allocation capital analog processing flow 
 108,f000025,"we will continue to strengthen these advantages through disciplined capital allocation and by focusing on the best products; analog and embedded processing, and the best markets; industrial and automotive, which i believe will enable us to continue to improve and deliver free cash flow per share growth for a long time to come.",0.887136629,Strategical,allocation capital analog processing flow 
-109,f000027,"thanks, rafael.",0.369325396,Netural,order opportunity question 
-110,f000027,"operator, you can now open the lines up for questions.",0.399619185,Netural,order opportunity question 
-111,f000027,"in order to provide as any of you as possible an opportunity to ask your questions, please limit yourself to a single question.",0.823314003,Netural,order opportunity question 
-112,f000027,"after our response, we will provide you an opportunity for an additional follow-up.",0.406257621,Netural,order opportunity question 
-113,f000027,operator?,0.371021902,Netural,order opportunity question 
+109,f000027,"thanks, rafael.",0.369325396,Neutral,order opportunity question 
+110,f000027,"operator, you can now open the lines up for questions.",0.399619185,Neutral,order opportunity question 
+111,f000027,"in order to provide as any of you as possible an opportunity to ask your questions, please limit yourself to a single question.",0.823314003,Neutral,order opportunity question 
+112,f000027,"after our response, we will provide you an opportunity for an additional follow-up.",0.406257621,Neutral,order opportunity question 
+113,f000027,operator?,0.371021902,Neutral,order opportunity question 

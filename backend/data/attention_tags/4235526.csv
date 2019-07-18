@@ -1,17 +1,17 @@
 ,id,sentence,normalized_sent_attention,emotion,tags
-0,f000001,"good day, ladies and gentlemen.",0.487918116,Netural,operator reminder conference 
-1,f000001,and welcome to the western digital corp second quarter fiscal 2019 conference call.,0.453311678,Netural,operator reminder conference 
-2,f000001,"[operator instructions] as a reminder, this conference is being recorded.",0.611881306,Netural,operator reminder conference 
-3,f000002,"i would like to introduce your host for todays call, mr. peter andrew, vice president of investor relations.",0.755998949,Netural,vice peter host president investor 
-4,f000002,mr. andrew you may begin.,0.486613694,Netural,vice peter host president investor 
-5,f000003,okay.,0.370575181,Netural,obligation information 
-6,f000003,"thank you and good afternoon, everyone.",0.383635262,Netural,obligation information 
-7,f000003,"this conference call will contain forward-looking statements within the meaning of the federal securities laws, including business plans and strategies, industry trends, and business and financial outlook.",0.399243027,Netural,obligation information 
-8,f000003,these forward-looking statements are based on management’s current assumptions and expectations and we assume no obligation to update them to reflect new information or events.,0.877171203,Netural,obligation information 
+0,f000001,"good day, ladies and gentlemen.",0.487918116,Neutral,operator reminder conference 
+1,f000001,and welcome to the western digital corp second quarter fiscal 2019 conference call.,0.453311678,Neutral,operator reminder conference 
+2,f000001,"[operator instructions] as a reminder, this conference is being recorded.",0.611881306,Neutral,operator reminder conference 
+3,f000002,"i would like to introduce your host for todays call, mr. peter andrew, vice president of investor relations.",0.755998949,Neutral,vice peter host president investor 
+4,f000002,mr. andrew you may begin.,0.486613694,Neutral,vice peter host president investor 
+5,f000003,okay.,0.370575181,Neutral,obligation information 
+6,f000003,"thank you and good afternoon, everyone.",0.383635262,Neutral,obligation information 
+7,f000003,"this conference call will contain forward-looking statements within the meaning of the federal securities laws, including business plans and strategies, industry trends, and business and financial outlook.",0.399243027,Neutral,obligation information 
+8,f000003,these forward-looking statements are based on management’s current assumptions and expectations and we assume no obligation to update them to reflect new information or events.,0.877171203,Neutral,obligation information 
 9,f000004,please refer to our most recent annual report on form 10-k filed with the sec for more information on the risks and uncertainties that could cause actual results to differ materially.,0.942966535,Strategical,report sec information form refer 
 10,f000004,we will also make reference to non-gaap financial measures today.,0.368319719,Strategical,report sec information form refer 
 11,f000004,reconciliations between the non-gaap and comparable gaap financial measures are included in the press release and guidance summary that are being posted in the investor relations sections of our website.,0.389663552,Strategical,report sec information form refer 
-12,f000005,"with that, i will now turn the call over to steve milligan, our ceo.",1,Netural,ceo call i 
+12,f000005,"with that, i will now turn the call over to steve milligan, our ceo.",1,Neutral,ceo call i 
 13,f000006,"thank you, peter, and good morning, everyone.",0.406988754,Strategical,cordano officer chief president mark 
 14,f000006,"with me today are mike cordano, president and chief operating officer; and mark long, chief financial officer.",0.903905667,Strategical,cordano officer chief president mark 
 15,f000007,"for the second quarter of fiscal 2019, we reported revenue of $4.2 billion and non-gaap gross margin of 31.3%.",0.682811217,Analytical,margin gaap revenue quarter 
@@ -32,9 +32,9 @@
 30,f000012,the product development investments we have made are yielding results.,0.385444627,Strategical,controller firmware mobile development enterprise 
 31,f000012,"specifically, we have completed development of internal controller and firmware architectures that can be leveraged across our portfolio in client, enterprise, mobile and embedded applications.",0.702107549,Strategical,controller firmware mobile development enterprise 
 32,f000012,we now address all the key categories for the enterprise ssd market.,0.442026896,Strategical,controller firmware mobile development enterprise 
-33,f000013,"in addition, we will be sampling our enterprise nvme product with bics4 by mid-2019.",0.429684399,Netural,position success client portfolio market 
-34,f000013,we have a significant market position with our nvme client portfolio and expect to further capitalize on this success.,0.692029553,Netural,position success client portfolio market 
-35,f000013,we will be shipping our mainstream client ssd based on bics4 in the march quarter.,0.455131411,Netural,position success client portfolio market 
+33,f000013,"in addition, we will be sampling our enterprise nvme product with bics4 by mid-2019.",0.429684399,Neutral,position success client portfolio market 
+34,f000013,we have a significant market position with our nvme client portfolio and expect to further capitalize on this success.,0.692029553,Neutral,position success client portfolio market 
+35,f000013,we will be shipping our mainstream client ssd based on bics4 in the march quarter.,0.455131411,Neutral,position success client portfolio market 
 36,f000014,our embedded solutions are now shipping to all of the top global smartphone manufacturers enabled by our expanding portfolio of ufs products.,0.529322642,Strategical,surveillance flash growth 
 37,f000014,"surveillance, automotive and gaming are attractive growth opportunities for flash and we are already making inroads in these areas.",0.695000387,Strategical,surveillance flash growth 
 38,f000015,"in hard drives we continue to provide the enterprise market with leading aerial densities, enabling the highest capacity points and most cost-effective solutions.",0.769301619,Strategical,capacity cost enterprise market 
@@ -45,15 +45,15 @@
 43,f000016,data center systems continue to gain momentum across all of its product offerings in the quarter.,0.988123008,Analytical,momentum center product quarter 
 44,f000017,"as weve previously indicated, we are taking actions to right-size our factory production levels while ensuring we maintain our competitiveness and technology leadership.",0.685589112,Strategical,production factory competitiveness size leadership 
 45,f000017,in flash we are executing on the previously announced changes.,0.536588804,Strategical,production factory competitiveness size leadership 
-46,f000019,hi sherry.,1,Netural,hi sherry 
-47,f000021,put me back on the line im going to begin the call.,1,Netural,im line call 
-48,f000022,"youre in the line, sir.",0.7686253,Netural,youre line 
-49,f000022,we can hear you now.,0.47862,Netural,youre line 
-50,f000025,okay.,0.403916275,Netural,side 
-51,f000025,were okay on your side now?,0.910781427,Netural,side 
-52,f000028,all right.,0.377203364,Netural,sorry im bit script 
-53,f000028,"well, i dont know where we cut off.",0.412609778,Netural,sorry im bit script 
-54,f000028,"anyway im going to back up - sorry about that, im going to back a little bit on my script.",0.869552812,Netural,sorry im bit script 
+46,f000019,hi sherry.,1,Neutral,hi sherry 
+47,f000021,put me back on the line im going to begin the call.,1,Neutral,im line call 
+48,f000022,"youre in the line, sir.",0.7686253,Neutral,youre line 
+49,f000022,we can hear you now.,0.47862,Neutral,youre line 
+50,f000025,okay.,0.403916275,Neutral,side 
+51,f000025,were okay on your side now?,0.910781427,Neutral,side 
+52,f000028,all right.,0.377203364,Neutral,sorry im bit script 
+53,f000028,"well, i dont know where we cut off.",0.412609778,Neutral,sorry im bit script 
+54,f000028,"anyway im going to back up - sorry about that, im going to back a little bit on my script.",0.869552812,Neutral,sorry im bit script 
 55,f000029,"as we have previously indicated, we are taking actions to right-size our factory production levels while ensuring we are maintaining our competitiveness and technology leadership.",0.512243191,Strategical,wafer output flash bit calendar 
 56,f000029,"in flash, we are executing on the previously announced changes to our wafer output levels to reduce our bit supply growth for calendar 2019.",0.718173414,Strategical,wafer output flash bit calendar 
 57,f000030,we are also making adjustments to the pace of our capital investments in flash in order to align of our bit output with our market demand.,0.9613433,Analytical,order flash output pace bit 
@@ -65,8 +65,8 @@
 63,f000032,"transformative trends such as artificial intelligence, machine learning, autonomous vehicles, mobility, and iot will continue to drive massive amounts of data that needs to be captured, preserved, accessed, and transformed.",0.79364166,Analytical,mobility machine intelligence iot 
 64,f000033,western digital remains well-positioned to further capitalize on the fundamental opportunities associated with the rapid growth in the volume and value of data.,0.661393142,Strategical,digital volume value growth 
 65,f000033,i want to thank the western digital team and all our partners for their ongoing support.,0.556219014,Strategical,digital volume value growth 
-66,f000034,"with that, i will now ask mike to share our business highlights.",1,Netural,mike share business i 
-67,f000035,"thank you, steve and good afternoon everyone.",1,Netural,afternoon thank everyone 
+66,f000034,"with that, i will now ask mike to share our business highlights.",1,Neutral,mike share business i 
+67,f000035,"thank you, steve and good afternoon everyone.",1,Neutral,afternoon thank everyone 
 68,f000036,we have spent the last two years aggressively investing and building our architectural platforms to power product line expansion.,0.645752198,Strategical,power expansion line product 
 69,f000036,we are now at the point where these platforms and the products launched from these platforms are ramping as we enter 2019. the results of these investments gives us the confidence that we have the strongest portfolio in the companys history.,0.56969135,Strategical,power expansion line product 
 70,f000037,"before i get into the details of our december quarter performance, id like to comment on how we intend to capitalize on the strength of our expanding portfolio throughout the calendar year and beyond.",1,Strategical,id strength portfolio performance calendar 
@@ -114,8 +114,8 @@
 112,f000055,these include reduced demand for mobile handsets a continued slowdown investments by hyperscale customer’s inventory adjustments at certain customers and geopolitical volatility.,0.923672501,Analytical,slowdown customer’s volatility demand inventory 
 113,f000056,"to conclude my remarks as we enter the new year, we are confident in the strength of our product portfolio and our evolving market position.",0.43504708,Strategical,term strength environment position market 
 114,f000056,we fully expect to emerge from the current soft market environment in a position of strength and in the near term we are taking the necessary steps to effectively navigate current conditions.,0.845608345,Strategical,term strength environment position market 
-115,f000057,i will now turn the call over to mark for the financial overview.,1,Netural,overview call 
-116,f000058,"thank you, mike and good afternoon everyone.",1,Netural,afternoon thank everyone 
+115,f000057,i will now turn the call over to mark for the financial overview.,1,Neutral,overview call 
+116,f000058,"thank you, mike and good afternoon everyone.",1,Neutral,afternoon thank everyone 
 117,f000059,"revenue for the december quarter was $4.2 billion at the lower end of the guidance range, primarily due to a decline in flash, offsetting slightly better-than-anticipated hard drive revenue.",0.561252503,Analytical,average price bit gigabyte selling 
 118,f000059,flash revenue was $2.2 billion with a sequential bit growth of 5% and a sequential average selling price per gigabyte declined of 18%.,0.65546156,Analytical,average price bit gigabyte selling 
 119,f000060,hard drive revenue was $2 billion.,0.369884725,Strategical,capacity enterprise mix pricing range 
@@ -135,7 +135,7 @@
 133,f000065,"as steve noted earlier, we planned to reduce our annual non-gaap cost-of-goods sold and total non-gaap operating expense levels by combined $800 million evenly split between the two line items.",0.746447128,Analytical,split expense steve line cost 
 134,f000066,"for cost-of-goods sold, we expect to see the full results of these efforts reflected by the end of the december quarter of 2019. and for operating expenses we expect to see the full results reflected within the september quarter of 2019.",1,Analytical,cost operating end quarter 
 135,f000067,these planned actions are designed to reduce our base level of non-gaap operating expenses before variable compensation by $100 million per quarter including a normal level of variable compensations our new total non-gaap operating expense level for 13-week fiscal quarter would be approximately $740 million starting in the september 2019 quarter.,0.462162768,Strategical,september note quarter 
-136,f000067,"for modeling purposes, please note that the september 2019 quarter will have 14 weeks instead of the normal 13 weeks.",0.795995409,Netural,september note quarter 
+136,f000067,"for modeling purposes, please note that the september 2019 quarter will have 14 weeks instead of the normal 13 weeks.",0.795995409,Neutral,september note quarter 
 137,f000068,i will now provide our guidance for the third fiscal quarter of 2019 on a non-gaap basis.,0.369155453,Analytical,margin 
 138,f000068,we expect revenue in the range of $3.6 billion to $3.8 billion.,0.408392282,Analytical,margin 
 139,f000068,gross margin of approximately 28%.,0.653727005,Analytical,margin 
@@ -143,5 +143,5 @@
 141,f000069,interest and other expenses of approximately $105 million and effective tax rate of 15% to 17%.,0.590189637,Analytical,rate interest tax 
 142,f000069,diluted shares of approximately 294 million.,0.529615264,Analytical,rate interest tax 
 143,f000069,"as a result, we expect non-gaap earnings per share of $0.40 to $0.60.",0.432971154,Analytical,rate interest tax 
-144,f000070,ill now turn the call over to the operator to begin the q&a session.,0.919771109,Netural,ill operator session q call 
-145,f000070,operator?,0.399968468,Netural,ill operator session q call 
+144,f000070,ill now turn the call over to the operator to begin the q&a session.,0.919771109,Neutral,ill operator session q call 
+145,f000070,operator?,0.399968468,Neutral,ill operator session q call 

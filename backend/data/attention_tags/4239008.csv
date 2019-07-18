@@ -1,24 +1,24 @@
 ,id,sentence,normalized_sent_attention,emotion,tags
-0,f000001,"good day, ladies and gentlemen, and welcome to the fourth quarter 2018 nxp semiconductors earnings conference call.",0.44669138,Netural,session answer question time 
-1,f000001,"at this time, all participants are in a listen-only mode.",0.40980563,Netural,session answer question time 
-2,f000001,later we will conduct a question-and-answer session and instructions will follow at that time.,0.593794083,Netural,session answer question time 
-3,f000001,"[operator instructions] and as a reminder, this conference is being recorded.",0.458031342,Netural,session answer question time 
-4,f000002,"i would now like to hand the call over to mr. jeff palmer, vice president of investor relations.",0.95578244,Netural,vice president hand investor call 
-5,f000002,you may begin.,0.384898724,Netural,vice president hand investor call 
-6,f000003,"thank you, amanda, and good morning everyone.",0.373400996,Netural,clemmer kurt president peter ceo 
-7,f000003,welcome to the nxp semiconductors fourth quarter and full-year 2018 earnings call.,0.371152727,Netural,clemmer kurt president peter ceo 
-8,f000003,"with me on the call today is rick clemmer, nxps ceo; kurt sievers, nxps president; and peter kelly, our cfo.",0.976523972,Netural,clemmer kurt president peter ceo 
-9,f000004,"if youve not obtained a copy of our earnings press release, it can be found at our company web site under the investor relations section at nxp.com.",0.829799812,Netural,copy section press site release 
-10,f000004,this call is being recorded and will be available for replay from our corporate web site.,0.443335171,Netural,copy section press site release 
+0,f000001,"good day, ladies and gentlemen, and welcome to the fourth quarter 2018 nxp semiconductors earnings conference call.",0.44669138,Neutral,session answer question time 
+1,f000001,"at this time, all participants are in a listen-only mode.",0.40980563,Neutral,session answer question time 
+2,f000001,later we will conduct a question-and-answer session and instructions will follow at that time.,0.593794083,Neutral,session answer question time 
+3,f000001,"[operator instructions] and as a reminder, this conference is being recorded.",0.458031342,Neutral,session answer question time 
+4,f000002,"i would now like to hand the call over to mr. jeff palmer, vice president of investor relations.",0.95578244,Neutral,vice president hand investor call 
+5,f000002,you may begin.,0.384898724,Neutral,vice president hand investor call 
+6,f000003,"thank you, amanda, and good morning everyone.",0.373400996,Neutral,clemmer kurt president peter ceo 
+7,f000003,welcome to the nxp semiconductors fourth quarter and full-year 2018 earnings call.,0.371152727,Neutral,clemmer kurt president peter ceo 
+8,f000003,"with me on the call today is rick clemmer, nxps ceo; kurt sievers, nxps president; and peter kelly, our cfo.",0.976523972,Neutral,clemmer kurt president peter ceo 
+9,f000004,"if youve not obtained a copy of our earnings press release, it can be found at our company web site under the investor relations section at nxp.com.",0.829799812,Neutral,copy section press site release 
+10,f000004,this call is being recorded and will be available for replay from our corporate web site.,0.443335171,Neutral,copy section press site release 
 11,f000005,"on our call today, we will include forward-looking statements that involve risks and uncertainties that could cause nxps results to differ materially from managements current expectations.",0.819205473,Strategical,today call 
 12,f000005,"these risks and uncertainties include, but are not limited to, statements regarding the macroeconomic impact on the specific end markets in which we operate, the sale of new and existing products, and our expectations for financial results for the first quarter of 2019. please be reminded that nxp undertakes no obligation to revise or update publicly any forward-looking statements.",0.394322134,Strategical,today call 
 13,f000005,"for a full disclosure on our forward-looking statements, please refer to our press release.",0.41895467,Strategical,today call 
-14,f000006,"additionally, during our call today, we will make reference to certain non-gaap financial measures, which exclude the impact of purchase price accounting, restructuring, stock-based compensation, impairment, merger-related costs, and other charges that are driven primarily by discrete events that management does not consider to be directly related to nxps underlying core operating performance.",1,Netural,accounting reference impairment purchase core 
-15,f000007,"pursuant to regulation g, nxp has provided reconciliations of the non-gaap financial measures to the most directly comparable gaap measures in our fourth quarter earnings press release, which will be furnished to the sec on form 6-k and be available on nxps web site in the investor relations section.",1,Netural,sec section form site web 
+14,f000006,"additionally, during our call today, we will make reference to certain non-gaap financial measures, which exclude the impact of purchase price accounting, restructuring, stock-based compensation, impairment, merger-related costs, and other charges that are driven primarily by discrete events that management does not consider to be directly related to nxps underlying core operating performance.",1,Neutral,accounting reference impairment purchase core 
+15,f000007,"pursuant to regulation g, nxp has provided reconciliations of the non-gaap financial measures to the most directly comparable gaap measures in our fourth quarter earnings press release, which will be furnished to the sec on form 6-k and be available on nxps web site in the investor relations section.",1,Neutral,sec section form site web 
 16,f000008,"before we begin the call today, i would like to remind you that beginning january 1st we have shifted our revenue reporting to an end market view from an operating segment approach.",0.368930934,Strategical,relative change insight time business 
 17,f000008,we believe this change over time will enhance the insight into the drivers of our business relative to the markets in which we operate.,0.994525009,Strategical,relative change insight time business 
 18,f000008,"the current and historical end market information is available from our investor relations web site in the historical financial model, which we post every quarter.",0.368850398,Strategical,relative change insight time business 
-19,f000009,and now i would like to turn the call over to rick.,1,Netural,call 
+19,f000009,and now i would like to turn the call over to rick.,1,Neutral,call 
 20,f000010,"thanks, jeff, and welcome everyone to our conference call.",0.368995231,Analytical,view performance environment market year 
 21,f000010,"on todays call, i would like to cover three major themes: our full-year financial performance, our view of the market environment in which we operate, and then the specifics around our fourth quarter performance.",0.996976139,Analytical,view performance environment market year 
 22,f000011,"overall, looking at 2018, our revenue was $9.4 billion, an increase of 2% year-on-year.",0.368377756,Strategical,communication infrastructure offset decline networking 
@@ -43,9 +43,9 @@
 41,f000019,"within the mobile market, we anticipate worse than seasonal trends into the fourth quarter, primarily due to weaker trends in the premium smartphone market and the continued absorption of shipments after the strong launch in india by reliance in the second-half of 2017.",1,Strategical,absorption smartphone launch india reliance 
 42,f000020,"overall, we do not see the historical leading indicators of an overheated supply chain including unusual backlog cancellations or outright program cancellations.",0.985387392,Strategical,backlog chain supply program 
 43,f000020,our distribution channel continues to be in good shape with channel inventory consistently at 2.4 months in line with our long-term targets.,0.373334837,Strategical,backlog chain supply program 
-44,f000021,"unfortunately, we do not have any unique insights to forecast the duration our depth of the slowdown.",0.602111706,Netural,duration depth slowdown 
-45,f000021,"however, our order rates would indicate that q2 revenue will be higher than q1 and with most third-party economist continuing to forecast global gdp.",0.404511003,Netural,duration depth slowdown 
-46,f000021,"at a range just under 3%, you would have to believe the second-half of 2019 will be stronger than the first-half for the semiconductor markets.",0.555652952,Netural,duration depth slowdown 
+44,f000021,"unfortunately, we do not have any unique insights to forecast the duration our depth of the slowdown.",0.602111706,Neutral,duration depth slowdown 
+45,f000021,"however, our order rates would indicate that q2 revenue will be higher than q1 and with most third-party economist continuing to forecast global gdp.",0.404511003,Neutral,duration depth slowdown 
+46,f000021,"at a range just under 3%, you would have to believe the second-half of 2019 will be stronger than the first-half for the semiconductor markets.",0.555652952,Neutral,duration depth slowdown 
 47,f000022,now id like to turn to the specifics of q4.,0.367913157,Strategical,adas q4 market revenue year 
 48,f000022,"total revenue was $2.4 billion, a decline of 2% year-over-year.",0.369683581,Strategical,adas q4 market revenue year 
 49,f000022,our results were modestly better than our guidance for the quarter.,0.36788797,Strategical,adas q4 market revenue year 
@@ -54,7 +54,7 @@
 52,f000022,and mobile revenue was $344 million down 8% year-on-year primarily due to a tough comparison with the ramp up of reliance in the second-half of 2017.,0.564001779,Strategical,adas q4 market revenue year 
 53,f000023,"however, we did see seasonally strong sequential demand for mobile transaction products in the premium smartphone market.",0.385796317,Happy,infrastructure power digit networking revenue 
 54,f000023,"finally, communications infrastructure and other revenue were $493 million, up 3% year-on-year with rf power solutions up a very strong double-digit offset by declines in digital networking.",0.953558718,Happy,infrastructure power digit networking revenue 
-55,f000024,"now, i like the pass the call to peter for a review of our financial performance.",1,Netural,pass peter review call performance 
+55,f000024,"now, i like the pass the call to peter for a review of our financial performance.",1,Neutral,pass peter review call performance 
 56,f000025,"thank you, rick, and good morning to everyone on todays call.",0.368132155,Strategical,rick move revenue quarter 
 57,f000025,"as rick has already covered the drivers of the revenue during the quarter, ill move to the financial highlights.",0.999313525,Strategical,rick move revenue quarter 
 58,f000026,"in summary, our q4 overall revenue performance was modestly better than the midpoint of guidance and as its all year-end ill review the full-year financial trends and then we want the results for the fourth quarter.",1,Analytical,midpoint guidance ill q4 performance 
@@ -86,10 +86,10 @@
 84,f000036,at the midpoint of range this is a decline of approximately 13% sequentially and 8% versus the same period a year ago or $2.09 billion.,0.371630142,Strategical,site web guidance today end 
 85,f000036,"as a reminder beginning january 1, we made a shift towards reporting our total revenue on an end market approach.",0.418244485,Strategical,site web guidance today end 
 86,f000036,we have posted the historic data on our web site and our guidance today will follow the end market definitions.,0.791370678,Strategical,site web guidance today end 
-87,f000037,at the midpoint we anticipate the following sequential trends in the business.,0.584771352,Netural,midpoint business 
-88,f000037,automotive is expected to be down about in the mid-single-digit range.,0.38103341,Netural,midpoint business 
-89,f000037,industrial and iot is expected to be down in the low double-digit range on a percentage basis.,0.581190427,Netural,midpoint business 
-90,f000037,and mobile is expected to be down in the low 30% range.,0.384458048,Netural,midpoint business 
+87,f000037,at the midpoint we anticipate the following sequential trends in the business.,0.584771352,Neutral,midpoint business 
+88,f000037,automotive is expected to be down about in the mid-single-digit range.,0.38103341,Neutral,midpoint business 
+89,f000037,industrial and iot is expected to be down in the low double-digit range on a percentage basis.,0.581190427,Neutral,midpoint business 
+90,f000037,and mobile is expected to be down in the low 30% range.,0.384458048,Neutral,midpoint business 
 91,f000038,"and finally, communication infrastructure is expected to be down in the upper single-digit range.",0.889093215,Strategical,infrastructure digit range 
 92,f000038,we expect non-gaap gross margin to be about 52.3% plus or minus 70 basis points.,0.393030149,Strategical,infrastructure digit range 
 93,f000038,operating expenses are expected to be about $550 million plus or minus 12 million or so and taken together we see non-gaap operating margin to be about 26% plus or minus a 100 basis points.,0.387291419,Strategical,infrastructure digit range 
