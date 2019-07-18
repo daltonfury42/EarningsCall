@@ -12,7 +12,7 @@ body {
   width: 70%;
 }
 
-.dot-success {
+.dot-darkgreen {
   margin-top: 8px;
   height: 10px;
   width: 10px;
@@ -20,7 +20,15 @@ body {
   display: inline-block;
 }
 
-.dot-warning {
+.dot-lightgreen {
+  margin-top: 8px;
+  height: 10px;
+  width: 10px;
+  background-color: #90EE90;
+  display: inline-block;
+}
+
+.dot-neutral {
   margin-top: 8px;
   height: 10px;
   width: 10px;
