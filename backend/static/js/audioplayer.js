@@ -108,19 +108,31 @@ function updateHistoryPane(currentSplitId) {
                 historyPaneElem.classList.remove('disabled');
                 historyPaneElem.setAttribute('style', 'background-color: ' + emotionColor[dataPoint.emotion]);
 
-                if (document.getElementById('history-pane-badges-' + splitId) == undefined) {
-                    var badges = createBadges(dataPoint, splitId, 'history-pane-')
-                    historyPaneElem.appendChild(badges);
+                if (document.getElementById('history-pane-topics-' + splitId) == undefined) {
+                    var titleDiv = document.getElementById('history-pane-title-' + splitId);
+                    var emotionText = document.createElement('small');
+                    emotionText.setAttribute('class', 'text-muted')
+                    emotionText.innerHTML = dataPoint.emotion;
+                    titleDiv.appendChild(emotionText)
+
+                    var topic = document.createElement('p');
+                    topic.innerHTML = dataPoint.tags.join(' ');
+                    topic.setAttribute('id', 'history-pane-topics-' + splitId);
+                    topic.setAttribute('class', 'text-muted text-center');
+                    historyPaneElem.appendChild(topic);
                 }
             }
         } else {
 
 
-            var badgesElem = document.getElementById('history-pane-badges-' + splitId);
+            var badgesElem = document.getElementById('history-pane-topics-' + splitId);
             if (badgesElem != null) {
                 badgesElem.parentNode.removeChild(badgesElem);
                 historyPaneElem.className += ' disabled';
                 historyPaneElem.removeAttribute('style');
+
+                var titleDiv = document.getElementById('history-pane-title-' + splitId);
+                titleDiv.removeChild(titleDiv.lastChild);
             }
         }
     }
@@ -188,13 +200,16 @@ function createHistoryElem(splitId, time, speaker) {
         var seconds = Math.round(time - minutes * 60);
 
         var elem = document.createElement('a');
-        elem.setAttribute('class', 'list-group-item disabled list-group-item-action');
+        elem.setAttribute('class', 'list-group-item disabled list-group-item-action flex-column align-items-start');
         elem.setAttribute('id', 'history-pane-' + splitId);
         elem.setAttribute('href', 'javascript:wavesurfer.play(' + time + ');')
 
         var leftDiv = document.createElement('div');
+        leftDiv.setAttribute('id', 'history-pane-title-' + splitId)
+        leftDiv.setAttribute('class', 'd-flex w-100 justify-content-between')
 
-        var text = document.createElement('p');
+        var text = document.createElement('h5');
+        text.setAttribute('class', 'mb-1')
         text.innerHTML = '(' + pad(minutes, 2) + ':' + pad(seconds, 2) + ')  ' + speaker;
         leftDiv.appendChild(text);
 
