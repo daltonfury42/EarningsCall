@@ -82,6 +82,7 @@ def getResults(callId, threshold):
                 emotion_dict[id] = emotion
                 tags_dict[id] = tags_dict[id].union(set(tags.split()))
                 if float(attention) > threshold and emotion != Emotions.NEUTRAL.value:
+                    print('Highlight')
                     hightlight = (sentence.capitalize(), float(attention), id)
                     highlights_dict[emotion].append(hightlight)
     except IOError:
@@ -95,9 +96,7 @@ def getResults(callId, threshold):
                       + highlights_dict.get(Emotions.STRATEGICAL.value, [])
 
     highlights_flat = highlights_flat[:15]
+    print(highlights_flat)
 
     return highlights_dict, highlights_flat, tags_dict, emotion_dict
 
-
-if __name__ == '__main__':
-    getHighlightsAndTags('4239008', .7)
