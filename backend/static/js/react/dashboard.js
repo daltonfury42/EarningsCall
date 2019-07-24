@@ -2,8 +2,6 @@ class DashBoard extends React.Component {
     constructor(props) {
         super(props);
         this.state = { currentSplitId: null };
-        this.dataJson = props.dataJson;
-        this.callId = props.callId;
     }
 
     componentDidMount() {
@@ -29,8 +27,9 @@ class DashBoard extends React.Component {
                         <div className="row">
                             <div className="list-group scrollable w-100" id="historyPane">
                                 <window.HistoryPane 
-                                    dataJson={this.dataJson} 
+                                    dataJson={this.props.dataJson} 
                                     currentSplitId={this.state.currentSplitId}
+                                    onRowClick={(splitId) => this.playBySplitId(splitId)}
                                 />
                             </div>
                         </div>
@@ -81,7 +80,7 @@ class DashBoard extends React.Component {
                                 <div className="col-md-4">
                                     <window.LiveCounter 
                                         currentSplitId={this.state.currentSplitId}
-                                        dataJson={this.dataJson} 
+                                        dataJson={this.props.dataJson} 
                                     />
                                 </div>
                             </div>
@@ -96,7 +95,7 @@ class DashBoard extends React.Component {
     loadRegions() {
         var callEnd = 0.0;
 
-        for (var splitId in this.dataJson) {
+        for (var splitId in this.props.dataJson) {
             var dataPoint = dataJson[splitId]
             var region = {  id: splitId,
                             start: dataPoint.startTime,
@@ -122,6 +121,10 @@ class DashBoard extends React.Component {
         }
     }
 
+    playBySplitId(splitId) {
+        const startTime = this.props.dataJson[splitId].startTime; 
+        this.wavesurfer.play(startTime);
+    }
 
     initilizeWavesurfer() {
 
@@ -148,7 +151,7 @@ class DashBoard extends React.Component {
             ]
         });
     
-        this.wavesurfer.load("/static/mp3/" + this.callId + ".mp3");
+        this.wavesurfer.load("/static/mp3/" + this.props.callId + ".mp3");
     
         this.wavesurfer.on('ready', () => this.loadRegions());
     
@@ -236,5 +239,5 @@ class DashBoard extends React.Component {
 
 
 const domContainer = document.querySelector('#dash-board');
-ReactDOM.render(<DashBoard dataJson={dataJson} callId={callId}/>, domContainer);
+window.DashBoardRendered = ReactDOM.render(<DashBoard dataJson={dataJson} callId={callId}/>, domContainer);
 

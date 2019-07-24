@@ -30,7 +30,7 @@ class HistoryPane extends React.Component {
         var i = 1;
         while(true) {
             const splitId = generateSplitId(i);
-            const row = <HistoryRow dataPoint={this.dataJson[splitId]} />
+            const row = <HistoryRow dataPoint={this.dataJson[splitId]} onClick={() => this.props.onRowClick(splitId)}/>
             rows.push(row);
 
             if (splitId === this.props.currentSplitId) {

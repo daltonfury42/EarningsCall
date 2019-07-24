@@ -54,5 +54,5 @@ body {
 
 .scrollable {
     height: 60vh;
-    overflow: scroll;
+    overflow-y: scroll;
 }

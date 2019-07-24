@@ -10,7 +10,6 @@ class LiveCounter extends React.Component {
         }
 
         if (this.props.currentSplitId != null) {
-            console.log(this.props.currentSplitId)
             var i = 1;
             while(true) {
                 const splitId = generateSplitId(i);
