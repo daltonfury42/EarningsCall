@@ -1,154 +1,154 @@
 ,id,sentence,normalized_sent_attention,emotion,tags
-0,f000001,"good day, ladies and gentlemen.",0.460149039,Neutral,reminder operator conference 
-1,f000001,and welcome to the western digital corp second quarter fiscal 2019 conference call.,0.514416395,Neutral,reminder operator conference 
-2,f000001,"[operator instructions] as a reminder, this conference is being recorded.",0.571738865,Neutral,reminder operator conference 
-3,f000002,"i would like to introduce your host for todays call, mr. peter andrew, vice president of investor relations.",0.548143864,Neutral,No Topic
-4,f000002,mr. andrew you may begin.,0.671136659,Neutral,No Topic
-5,f000003,okay.,0.401339067,Analytical,meaning industry business outlook conference 
-6,f000003,"thank you and good afternoon, everyone.",0.420616124,Analytical,meaning industry business outlook conference 
-7,f000003,"this conference call will contain forward-looking statements within the meaning of the federal securities laws, including business plans and strategies, industry trends, and business and financial outlook.",0.599354077,Analytical,meaning industry business outlook conference 
-8,f000003,these forward-looking statements are based on management’s current assumptions and expectations and we assume no obligation to update them to reflect new information or events.,0.492080026,Analytical,meaning industry business outlook conference 
-9,f000004,please refer to our most recent annual report on form 10-k filed with the sec for more information on the risks and uncertainties that could cause actual results to differ materially.,0.597986684,Analytical,report form sec k refer 
-10,f000004,we will also make reference to non-gaap financial measures today.,0.423575519,Analytical,report form sec k refer 
-11,f000004,reconciliations between the non-gaap and comparable gaap financial measures are included in the press release and guidance summary that are being posted in the investor relations sections of our website.,0.534304303,Analytical,report form sec k refer 
-12,f000005,"with that, i will now turn the call over to steve milligan, our ceo.",1,Neutral,ceo call i 
-13,f000006,"thank you, peter, and good morning, everyone.",0.546807919,Neutral,cordano officer chief mark president 
-14,f000006,"with me today are mike cordano, president and chief operating officer; and mark long, chief financial officer.",0.672776359,Neutral,cordano officer chief mark president 
-15,f000007,"for the second quarter of fiscal 2019, we reported revenue of $4.2 billion and non-gaap gross margin of 31.3%.",0.48318976,Analytical,share flow cash operating gaap 
-16,f000007,non-gaap operating expenses were $738 million and we delivered $1.45 in non-gaap earnings per share with $469 million in operating cash flow during the quarter.,0.761356038,Analytical,share flow cash operating gaap 
-17,f000008,"despite a softening business environment, our fiscal second quarter results were generally within our guidance ranges.",0.567618624,Analytical,bias weakness day demand investor 
-18,f000008,"consistent with indications we provided at our investor day, overall demand trends exhibited a negative bias as the quarter progressed, subsequent commentaries from several companies in our served markets and highlighted continued demand weakness.",0.58133195,Analytical,bias weakness day demand investor 
-19,f000008,geopolitical and macroeconomic conditions have contributed to our customers having a more cautious outlook.,0.410138186,Analytical,bias weakness day demand investor 
-20,f000009,additionally flash industry dynamics remain challenging.,0.410080027,Analytical,seasonality outlook quarter 
-21,f000009,"consequently, our outlook for the march quarter will be significantly weaker than it would otherwise be given normal seasonality.",0.79228157,Analytical,seasonality outlook quarter 
-22,f000009,i will comment on the actions that we are taking in response to current business conditions.,0.416545901,Analytical,seasonality outlook quarter 
-23,f000010,"first, we have been transparent in sharing our views on the evolving business environment and well continue to do so.",0.63583643,Strategical,environment business 
-24,f000010,"in december 2017, we were the first to describe normalization trends in flash and since then weve enhanced our disclosures to provide greater insight into how we are performing in both flash and hard drives.",0.578575595,Strategical,environment business 
-25,f000011,"second, from a product perspective, we are entering calendar 2019 with the strongest product portfolio in our history.",0.450611145,Analytical,implementation layer calendar customer portfolio 
-26,f000011,we expect to further enhance our portfolio throughout the year.,0.418181866,Analytical,implementation layer calendar customer portfolio 
-27,f000011,"in flash, we continue to lead the industrys transition to 96 layer bics4 technology.",0.431414997,Analytical,implementation layer calendar customer portfolio 
-28,f000011,we expect broad implementation of this technology across our product portfolio in calendar 2019. we have 96 layer products in customer hands today.,0.612426804,Analytical,implementation layer calendar customer portfolio 
-29,f000012,"in the december quarter of calendar 2019, we expect bics4 to achieve bics mix crossover with the bics3 from a supply standpoint.",0.54813212,Strategical,controller firmware development client enterprise 
-30,f000012,the product development investments we have made are yielding results.,0.399706502,Strategical,controller firmware development client enterprise 
-31,f000012,"specifically, we have completed development of internal controller and firmware architectures that can be leveraged across our portfolio in client, enterprise, mobile and embedded applications.",0.563395993,Strategical,controller firmware development client enterprise 
-32,f000012,we now address all the key categories for the enterprise ssd market.,0.403344682,Strategical,controller firmware development client enterprise 
-33,f000013,"in addition, we will be sampling our enterprise nvme product with bics4 by mid-2019.",0.484475619,Analytical,success position client portfolio market 
-34,f000013,we have a significant market position with our nvme client portfolio and expect to further capitalize on this success.,0.534501388,Analytical,success position client portfolio market 
-35,f000013,we will be shipping our mainstream client ssd based on bics4 in the march quarter.,0.52262511,Analytical,success position client portfolio market 
-36,f000014,our embedded solutions are now shipping to all of the top global smartphone manufacturers enabled by our expanding portfolio of ufs products.,0.627190411,Neutral,smartphone portfolio 
-37,f000014,"surveillance, automotive and gaming are attractive growth opportunities for flash and we are already making inroads in these areas.",0.586551444,Neutral,smartphone portfolio 
-38,f000015,"in hard drives we continue to provide the enterprise market with leading aerial densities, enabling the highest capacity points and most cost-effective solutions.",0.491376136,Strategical,qualification process helium customer industry 
-39,f000015,we have had an exceptionally smooth qualification process for our 14-terabyte helium drive and expect customer qualification activities for this industry-leading offering to be completed at virtually all of our customers in the current quarter.,0.662906259,Strategical,qualification process helium customer industry 
-40,f000015,weve already commenced revenue shipments for several customers.,0.415474961,Strategical,qualification process helium customer industry 
-41,f000016,last quarter we announced a 15 terabyte offering at our investor day and described our plans for a 16-terabyte product based on energy assist technology.,0.570523086,Strategical,offering assist energy terabyte day 
-42,f000016,"this will be followed by an 18-terabyte product, details of which will be shared later this calendar year.",0.456365404,Strategical,offering assist energy terabyte day 
-43,f000016,data center systems continue to gain momentum across all of its product offerings in the quarter.,0.519786624,Strategical,offering assist energy terabyte day 
-44,f000017,"as weve previously indicated, we are taking actions to right-size our factory production levels while ensuring we maintain our competitiveness and technology leadership.",0.621550287,Neutral,factory competitiveness size production leadership 
-45,f000017,in flash we are executing on the previously announced changes.,0.591873979,Neutral,factory competitiveness size production leadership 
-46,f000018,ladies and gentlemen please standby.,0.547772758,Neutral,No Topic
-47,f000018,once again ladies and gentlemen please standby.,0.671591342,Neutral,No Topic
-48,f000019,hi sherry.,1,Neutral,sherry hi 
-49,f000020,"hi yes, we can hear you now.",1,Neutral,No Topic
-50,f000021,put me back on the line im going to begin the call.,1,Neutral,im line call 
-51,f000022,"youre in the line, sir.",0.554304003,Neutral,No Topic
-52,f000022,we can hear you now.,0.663678124,Neutral,No Topic
-53,f000023,you can hear?,1,Neutral,No Topic
-54,f000024,"yes, i can hear you.",1,Neutral,No Topic
-55,f000025,okay.,0.555360879,Neutral,side 
-56,f000025,were okay on your side now?,0.662415117,Neutral,side 
-57,f000026,"yes, i believe so.",1,Neutral,No Topic
-58,f000027,okay.,1,Neutral,No Topic
-59,f000028,all right.,0.471239971,Neutral,sorry script bit im 
-60,f000028,"well, i dont know where we cut off.",0.532617567,Neutral,sorry script bit im 
-61,f000028,"anyway im going to back up - sorry about that, im going to back a little bit on my script.",0.539204402,Neutral,sorry script bit im 
-62,f000029,"as we have previously indicated, we are taking actions to right-size our factory production levels while ensuring we are maintaining our competitiveness and technology leadership.",0.455312857,Analytical,wafer output bit calendar growth 
-63,f000029,"in flash, we are executing on the previously announced changes to our wafer output levels to reduce our bit supply growth for calendar 2019.",0.807970685,Analytical,wafer output bit calendar growth 
-64,f000030,we are also making adjustments to the pace of our capital investments in flash in order to align of our bit output with our market demand.,0.6459107,Analytical,output bit pace order capital 
-65,f000030,"additionally, we have accelerated the closure of our kuala lumpur hard drive manufacturing facility by almost three quarters.",0.569551551,Analytical,output bit pace order capital 
-66,f000031,"lastly, we are implementing substantial cost and expense reductions across the company.",0.484626853,Neutral,mike mark 
-67,f000031,"in total, we are targeting $800 million in annualized reductions in non-gaap cost and expenses.",0.526386681,Neutral,mike mark 
-68,f000031,mike and mark will provide further details in their prepared remarks.,0.530516224,Neutral,mike mark 
-69,f000032,the long-term growth opportunities for our business remain unchanged.,0.592983892,Neutral,machine intelligence mobility iot 
-70,f000032,"transformative trends such as artificial intelligence, machine learning, autonomous vehicles, mobility, and iot will continue to drive massive amounts of data that needs to be captured, preserved, accessed, and transformed.",0.620386904,Neutral,machine intelligence mobility iot 
-71,f000033,western digital remains well-positioned to further capitalize on the fundamental opportunities associated with the rapid growth in the volume and value of data.,0.677902343,Neutral,volume value growth digital 
-72,f000033,i want to thank the western digital team and all our partners for their ongoing support.,0.542673211,Neutral,volume value growth digital 
-73,f000034,"with that, i will now ask mike to share our business highlights.",1,Neutral,mike share business i 
-74,f000035,"thank you, steve and good afternoon everyone.",1,Neutral,afternoon everyone thank 
-75,f000036,we have spent the last two years aggressively investing and building our architectural platforms to power product line expansion.,0.52302549,Analytical,confidence history point portfolio 
-76,f000036,we are now at the point where these platforms and the products launched from these platforms are ramping as we enter 2019. the results of these investments gives us the confidence that we have the strongest portfolio in the companys history.,0.703368093,Analytical,confidence history point portfolio 
-77,f000037,"before i get into the details of our december quarter performance, id like to comment on how we intend to capitalize on the strength of our expanding portfolio throughout the calendar year and beyond.",1,Neutral,strength id calendar performance portfolio 
-78,f000038,"our architectural platforms consisted of a combination of industry-leading-based technologies, internally developed controllers, and the corresponding firmware.",0.548806644,Analytical,producer test quality manufacturing storage 
-79,f000038,the underlying storage technology whether flash or the hard drive heads and media and the manufacturing and test processes to mass-producer products with high yields and industry-leading quality.,0.670326143,Analytical,producer test quality manufacturing storage 
-80,f000039,we have developed our product portfolio to allow us to increase our participation and differentiated end markets that have strong growth prospects.,0.577202993,Neutral,marketing market 
-81,f000039,"we are also strengthening our market-facing capabilities across the sales, marketing, and go-to-market organizations.",0.637348464,Neutral,marketing market 
-82,f000040,these key ingredients are allowing us to innovate and quickly bring products to our targeted end markets working collaboratively with our customers in the broader ecosystem.,0.675634178,Strategical,ecosystem end 
-83,f000040,we are now in a position to drive greater participation in higher value markets and expect to corresponding improvement in the quality of our revenue throughout 2019. i will illustrate with a few important achievements today.,0.544495014,Strategical,ecosystem end 
-84,f000041,for the data center we began qualifications of our nvme ssd product in the december quarter and due to stronger customer pull we expect to ramp this product for the meaningful revenue by the middle of this calendar year.,0.515606656,Strategical,ip manner ssd cost platform 
-85,f000041,"leveraging our enterprise architectural platform and the associated ip blocks, we will be able to expand our enterprise ssd product portfolio throughout 2019 in a cost-effective and predictable manner.",0.537727808,Strategical,ip manner ssd cost platform 
-86,f000041,this includes shipping bics4 based products to customers within this calendar year.,0.488123847,Strategical,ip manner ssd cost platform 
-87,f000042,"in capacity enterprise, we are focused our investments to build upon a highly successful helium technology platform, which has become an industry standard.",0.676567819,Happy,helium standard platform capacity industry 
-88,f000042,we continue to maintain our leadership position as demonstrated by the ongoing ramp of our 14-terabyte hard drive and the introduction of our 16-terabyte hard drive later in the calendar year.,0.543743629,Happy,helium standard platform capacity industry 
-89,f000043,"our position in the midrange capacity enterprise market continues to strengthen with the ramp of our cost optimized 4 terabyte to 8 terabyte products, fueling customer breadth and geographic penetration.",1,Happy,midrange ramp cost capacity terabyte 
-90,f000044,we continue to capitalize on our industry-leading client ssd platform with products spanning from high performance gaining solutions to cost optimized mainstream offerings.,0.954998381,Happy,ssd platform mainstream client industry 
-91,f000044,all with the quality and reliability customers expect from western digital.,0.378071804,Happy,ssd platform mainstream client industry 
-92,f000044,this platform will enable exciting derivative products which will announce throughout this year.,0.374829801,Happy,ssd platform mainstream client industry 
-93,f000045,"in mobile and embedded, we will further expand our presence within top-tier accounts given our complete portfolio of products to address all categories of this market.",0.836508238,Happy,tier presence portfolio mobile market 
-94,f000045,weve got it additional design wins with our emmc and ufs solutions further expanding our customer base and enhancing our position among the top five smartphone manufacturers.,0.439779818,Happy,tier presence portfolio mobile market 
-95,f000046,"were also successfully developing leading embedded solutions for automotive, connected home, and surveillance categories.",0.572181476,Strategical,home surveillance 
-96,f000046,"this is being illustrated through several of the product announcements, weve made in the second half of 2018 and expect to make in the coming quarters.",0.522047429,Strategical,home surveillance 
-97,f000046,we are realizing the benefits of two years of accelerated product r&d investments already in terms of greater participation and higher value areas of the market and a broadening customer base.,0.453072061,Strategical,home surveillance 
-98,f000047,i will now provide additional details on some of the near term actions we are taking.,0.419665208,Analytical,proportion reduction way venture deployment 
-99,f000047,we previously announced the reduction to wafer starts for a proportion of the flash joint venture along with the way deployment of the capital equipment.,0.688541464,Analytical,proportion reduction way venture deployment 
-100,f000047,the magnitude of these actions is a planned reduction of 10% to 15% of our bid output in calendar 2019.,0.468358031,Analytical,proportion reduction way venture deployment 
-101,f000048,"as the year progresses, we will continue to assess market conditions and evaluate the need to make further adjustments to right size our inventory.",0.551614869,Neutral,facility closure kuala line manufacturing 
-102,f000048,we are also accelerating our kuala lumpur facility closure time line by almost three quarters along with rationalizing other hdd manufacturing costs.,0.666913569,Neutral,facility closure kuala line manufacturing 
-103,f000049,"in terms of our second quarter results, revenue in each of our end markets declined on year-over-year basis due to a combination of lower demand and aggressive flash pricing conditions despite healthy growth in flash bits sold.",0.516275444,Analytical,factor presence ssds form performance 
-104,f000049,"we maintain our leadership position across our g-tech, sandisk and wd brands in our client solutions portfolio.",0.489356008,Analytical,factor presence ssds form performance 
-105,f000049,we grew up presence in client ssds during the quarter and delivered solid performance on differentiated form factor devices such as ixpand.,0.535679027,Analytical,factor presence ssds form performance 
-106,f000050,demand elasticity contributed to a strong 30% year-over-year increase and average capacity in the flash portion of our client solutions portfolio.,0.623313966,Happy,increase portion capacity elasticity year 
-107,f000050,"within client devices, while near term demand trends in the smartphone market are soft.",0.502788669,Happy,increase portion capacity elasticity year 
-108,f000050,our view on the longer term shift towards higher average capacities remains unchanged.,0.431835853,Happy,increase portion capacity elasticity year 
-109,f000051,we achieved excellent momentum in our client ssd portfolio in the quarter.,0.735690093,Happy,momentum ssd client portfolio quarter 
-110,f000051,average capacity for client ssd grew over 60% year-over-year in the december quarter of fueled by an increase mix of our 512 gigabyte ssd at our key customers.,0.494938725,Happy,momentum ssd client portfolio quarter 
-111,f000051,for the first time our client compute ssd revenue exceeded client compute hdd revenue.,0.37167615,Happy,momentum ssd client portfolio quarter 
-112,f000052,"in data center, devices and solutions we have maintained our position as a leader in aerial density with the highest capacity hdd products.",0.408063047,Strategical,flatter solution track energy generation 
-113,f000052,as steve described the production ramp of a 14-terabyte helium drive has progressed smoothly.,0.462443937,Strategical,flatter solution track energy generation 
-114,f000052,we are pleased to have commenced product sampling of our first generation energy-assisted 16-terabyte drive and we are on-track to begin revenue shipments of this 8 flatter solution later this calendar year.,0.717174234,Strategical,flatter solution track energy generation 
-115,f000053,"in terms of the exabyte growth rate for capacity enterprise, as we previously stated we are seeing a moderation in the first half of calendar 2019. based on our customer discussions we continue to forecast year-over-year growth to resume in the second half of calendar 2019.",1,Happy,moderation rate customer capacity half 
-116,f000054,in data center systems we experienced excellent momentum with record quarterly bookings and new customer acquisitions in our intelliflash and activescale portfolios.,0.783538981,Happy,record momentum intelliflash customer center 
-117,f000054,we also had record revenue in our ultrastar portfolio of storage platform and servers.,0.469510069,Happy,record momentum intelliflash customer center 
-118,f000055,for the third fiscal quarter demand for our products is expected to be affected by many of the market factors we highlighted at our investor day.,0.623301561,Analytical,demand day quarter market investor 
-119,f000055,these include reduced demand for mobile handsets a continued slowdown investments by hyperscale customer’s inventory adjustments at certain customers and geopolitical volatility.,0.590211006,Analytical,demand day quarter market investor 
-120,f000056,"to conclude my remarks as we enter the new year, we are confident in the strength of our product portfolio and our evolving market position.",0.458123445,Analytical,strength position environment term market 
-121,f000056,we fully expect to emerge from the current soft market environment in a position of strength and in the near term we are taking the necessary steps to effectively navigate current conditions.,0.803013785,Analytical,strength position environment term market 
-122,f000057,i will now turn the call over to mark for the financial overview.,1,Neutral,overview call 
-123,f000058,"thank you, mike and good afternoon everyone.",1,Neutral,afternoon everyone thank 
-124,f000059,"revenue for the december quarter was $4.2 billion at the lower end of the guidance range, primarily due to a decline in flash, offsetting slightly better-than-anticipated hard drive revenue.",0.533457996,Analytical,price gigabyte average selling bit 
-125,f000059,flash revenue was $2.2 billion with a sequential bit growth of 5% and a sequential average selling price per gigabyte declined of 18%.,0.68961276,Analytical,price gigabyte average selling bit 
-126,f000060,hard drive revenue was $2 billion.,0.464942313,Analytical,guidance mix margin range capacity 
-127,f000060,non-gaap gross margin in the quarter was 31.3% below the 32% to 33% guidance range due to a product mix for hard drives that included less capacity enterprise products and lower-than-expected flash pricing.,0.791236742,Analytical,guidance mix margin range capacity 
-128,f000061,non-gaap gross margin for flash was 35% and for hard drives 27%.,0.454478572,Analytical,compensation focus gaap operating quarter 
-129,f000061,continued focus on operating expenses combined with lower variable compensation in the quarter resulted in total non-gaap operating expenses of $738 million.,0.556972994,Analytical,compensation focus gaap operating quarter 
-130,f000061,and non-gaap tax rate was 14.5% which was higher-than-expected.,0.53464251,Analytical,compensation focus gaap operating quarter 
-131,f000062,we also recorded a gaap-only charge for various tax-related accruals of $496 million consisting of the true up for the repatriation taxes related to tax reform and future withholding taxes related to decisions about permanent reinvestment in foreign jurisdictions.,0.711839127,Analytical,repatriation consisting reform withholding charge 
-132,f000062,these are not expected to result in the near term cash payments.,0.516801377,Analytical,repatriation consisting reform withholding charge 
-133,f000063,non-gaap eps was $1.45.,0.433113011,Analytical,income increase flow cash inventory 
-134,f000063,"operating cash flow for the december quarter was $469 million and free cash flow was $24 million, primarily driven by lower operating income and a sequential increase in the inventory.",0.595226502,Analytical,income increase flow cash inventory 
-135,f000063,"within inventory almost all of the sequential increase was driven by continued hard drive builds, due to the kuala lumpur plant closure.",0.524961611,Analytical,income increase flow cash inventory 
-136,f000064,"in the december quarter, we returned to $144 million in dividends to shareholders.",0.469372288,Analytical,revolver balance debt 
-137,f000064,we did not repurchase any common stock during the quarter.,0.475459648,Analytical,revolver balance debt 
-138,f000064,"however, we did repay in full our outstanding revolver balance and made scheduled principal payments reducing our overall debt balance by $537 million.",0.606428951,Analytical,revolver balance debt 
-139,f000065,"at quarter end, we had $4.1 billion in cash, cash equivalents and available-for-sale securities and principal debt outstanding of $10.8 billion.",0.86020422,Analytical,sale debt cash end quarter 
-140,f000065,"as steve noted earlier, we planned to reduce our annual non-gaap cost-of-goods sold and total non-gaap operating expense levels by combined $800 million evenly split between the two line items.",0.427665236,Analytical,sale debt cash end quarter 
-141,f000066,"for cost-of-goods sold, we expect to see the full results of these efforts reflected by the end of the december quarter of 2019. and for operating expenses we expect to see the full results reflected within the september quarter of 2019.",1,Neutral,cost end operating quarter 
-142,f000067,these planned actions are designed to reduce our base level of non-gaap operating expenses before variable compensation by $100 million per quarter including a normal level of variable compensations our new total non-gaap operating expense level for 13-week fiscal quarter would be approximately $740 million starting in the september 2019 quarter.,0.815164685,Strategical,compensation week expense base level 
-143,f000067,"for modeling purposes, please note that the september 2019 quarter will have 14 weeks instead of the normal 13 weeks.",0.451294626,Strategical,compensation week expense base level 
-144,f000068,i will now provide our guidance for the third fiscal quarter of 2019 on a non-gaap basis.,0.389027403,Analytical,range revenue 
-145,f000068,we expect revenue in the range of $3.6 billion to $3.8 billion.,0.59882984,Analytical,range revenue 
-146,f000068,gross margin of approximately 28%.,0.418437719,Analytical,range revenue 
-147,f000068,"operating expenses between $760 million and $780 million, which reflect the normal payroll tax reset and other one-time items.",0.510742621,Analytical,range revenue 
-148,f000069,interest and other expenses of approximately $105 million and effective tax rate of 15% to 17%.,0.499549329,Analytical,No Topic
-149,f000069,diluted shares of approximately 294 million.,0.554160034,Analytical,No Topic
-150,f000069,"as a result, we expect non-gaap earnings per share of $0.40 to $0.60.",0.488874579,Analytical,No Topic
-151,f000070,ill now turn the call over to the operator to begin the q&a session.,0.551269476,Neutral,operator 
-152,f000070,operator?,0.667331418,Neutral,operator 
+0,f000001,"good day, ladies and gentlemen.",0.43840586,Neutral,operator instructions reminder conference 
+1,f000001,and welcome to the western digital corp second quarter fiscal 2019 conference call.,0.495617664,Neutral,operator instructions reminder conference 
+2,f000001,"[operator instructions] as a reminder, this conference is being recorded.",0.622856369,Neutral,operator instructions reminder conference 
+3,f000002,"i would like to introduce your host for todays call, mr. peter andrew, vice president of investor relations.",0.506329267,Neutral,NoTopic
+4,f000002,mr. andrew you may begin.,0.726561677,Neutral,NoTopic
+5,f000003,okay.,0.404656463,Analytical,assumptions expectations obligation information events 
+6,f000003,"thank you and good afternoon, everyone.",0.42320848,Analytical,assumptions expectations obligation information events 
+7,f000003,"this conference call will contain forward-looking statements within the meaning of the federal securities laws, including business plans and strategies, industry trends, and business and financial outlook.",0.515753431,Analytical,assumptions expectations obligation information events 
+8,f000003,these forward-looking statements are based on management’s current assumptions and expectations and we assume no obligation to update them to reflect new information or events.,0.563681247,Analytical,assumptions expectations obligation information events 
+9,f000004,please refer to our most recent annual report on form 10-k filed with the sec for more information on the risks and uncertainties that could cause actual results to differ materially.,0.849494205,Analytical,report form 10- k sec uncertainties 
+10,f000004,we will also make reference to non-gaap financial measures today.,0.399506168,Analytical,report form 10- k sec uncertainties 
+11,f000004,reconciliations between the non-gaap and comparable gaap financial measures are included in the press release and guidance summary that are being posted in the investor relations sections of our website.,0.398774268,Analytical,report form 10- k sec uncertainties 
+12,f000005,"with that, i will now turn the call over to steve milligan, our ceo.",1,Neutral,call milligan ceo 
+13,f000006,"thank you, peter, and good morning, everyone.",0.518110741,Neutral,today cordano president officer 
+14,f000006,"with me today are mike cordano, president and chief operating officer; and mark long, chief financial officer.",0.710040175,Neutral,today cordano president officer 
+15,f000007,"for the second quarter of fiscal 2019, we reported revenue of $4.2 billion and non-gaap gross margin of 31.3%.",0.516884945,Analytical,expenses earnings share cash flow 
+16,f000007,non-gaap operating expenses were $738 million and we delivered $1.45 in non-gaap earnings per share with $469 million in operating cash flow during the quarter.,0.71172404,Analytical,expenses earnings share cash flow 
+17,f000008,"despite a softening business environment, our fiscal second quarter results were generally within our guidance ranges.",0.589431297,Analytical,softening business environment results guidance 
+18,f000008,"consistent with indications we provided at our investor day, overall demand trends exhibited a negative bias as the quarter progressed, subsequent commentaries from several companies in our served markets and highlighted continued demand weakness.",0.521341127,Analytical,softening business environment results guidance 
+19,f000008,geopolitical and macroeconomic conditions have contributed to our customers having a more cautious outlook.,0.440408668,Analytical,softening business environment results guidance 
+20,f000009,additionally flash industry dynamics remain challenging.,0.481094247,Analytical,outlook march quarter seasonality 
+21,f000009,"consequently, our outlook for the march quarter will be significantly weaker than it would otherwise be given normal seasonality.",0.662709004,Analytical,outlook march quarter seasonality 
+22,f000009,i will comment on the actions that we are taking in response to current business conditions.,0.424480751,Analytical,outlook march quarter seasonality 
+23,f000010,"first, we have been transparent in sharing our views on the evolving business environment and well continue to do so.",0.769976197,Analytical,views business environment 
+24,f000010,"in december 2017, we were the first to describe normalization trends in flash and since then weve enhanced our disclosures to provide greater insight into how we are performing in both flash and hard drives.",0.477780277,Analytical,views business environment 
+25,f000011,"second, from a product perspective, we are entering calendar 2019 with the strongest product portfolio in our history.",0.546380947,Analytical,product perspective calendar portfolio history 
+26,f000011,we expect to further enhance our portfolio throughout the year.,0.461443576,Analytical,product perspective calendar portfolio history 
+27,f000011,"in flash, we continue to lead the industrys transition to 96 layer bics4 technology.",0.439459488,Analytical,product perspective calendar portfolio history 
+28,f000011,we expect broad implementation of this technology across our product portfolio in calendar 2019. we have 96 layer products in customer hands today.,0.449348772,Analytical,product perspective calendar portfolio history 
+29,f000012,"in the december quarter of calendar 2019, we expect bics4 to achieve bics mix crossover with the bics3 from a supply standpoint.",0.430968818,Strategical,development controller firmware architectures applications 
+30,f000012,the product development investments we have made are yielding results.,0.404357008,Strategical,development controller firmware architectures applications 
+31,f000012,"specifically, we have completed development of internal controller and firmware architectures that can be leveraged across our portfolio in client, enterprise, mobile and embedded applications.",0.660345078,Strategical,development controller firmware architectures applications 
+32,f000012,we now address all the key categories for the enterprise ssd market.,0.432648085,Strategical,development controller firmware architectures applications 
+33,f000013,"in addition, we will be sampling our enterprise nvme product with bics4 by mid-2019.",0.50431046,Analytical,market position nvme client success 
+34,f000013,we have a significant market position with our nvme client portfolio and expect to further capitalize on this success.,0.538161038,Analytical,market position nvme client success 
+35,f000013,we will be shipping our mainstream client ssd based on bics4 in the march quarter.,0.498655723,Analytical,market position nvme client success 
+36,f000014,our embedded solutions are now shipping to all of the top global smartphone manufacturers enabled by our expanding portfolio of ufs products.,0.591438209,Analytical,gaming opportunities flash inroads areas 
+37,f000014,"surveillance, automotive and gaming are attractive growth opportunities for flash and we are already making inroads in these areas.",0.622008243,Analytical,gaming opportunities flash inroads areas 
+38,f000015,"in hard drives we continue to provide the enterprise market with leading aerial densities, enabling the highest capacity points and most cost-effective solutions.",0.435945475,Strategical,qualification process terabyte helium activities 
+39,f000015,we have had an exceptionally smooth qualification process for our 14-terabyte helium drive and expect customer qualification activities for this industry-leading offering to be completed at virtually all of our customers in the current quarter.,0.702239441,Strategical,qualification process terabyte helium activities 
+40,f000015,weve already commenced revenue shipments for several customers.,0.442072647,Strategical,qualification process terabyte helium activities 
+41,f000016,last quarter we announced a 15 terabyte offering at our investor day and described our plans for a 16-terabyte product based on energy assist technology.,0.47242753,Strategical,center systems momentum product offerings 
+42,f000016,"this will be followed by an 18-terabyte product, details of which will be shared later this calendar year.",0.433470128,Strategical,center systems momentum product offerings 
+43,f000016,data center systems continue to gain momentum across all of its product offerings in the quarter.,0.660870954,Strategical,center systems momentum product offerings 
+44,f000017,"as weve previously indicated, we are taking actions to right-size our factory production levels while ensuring we maintain our competitiveness and technology leadership.",0.583252958,Neutral,flash changes 
+45,f000017,in flash we are executing on the previously announced changes.,0.630737378,Neutral,flash changes 
+46,f000018,ladies and gentlemen please standby.,0.506676653,Neutral,gentlemen 
+47,f000018,once again ladies and gentlemen please standby.,0.726063534,Neutral,gentlemen 
+48,f000019,hi sherry.,1,Neutral,NoTopic
+49,f000020,"hi yes, we can hear you now.",1,Neutral,NoTopic
+50,f000021,put me back on the line im going to begin the call.,1,Neutral,line call 
+51,f000022,"youre in the line, sir.",0.554641711,Neutral,NoTopic
+52,f000022,we can hear you now.,0.663274028,Neutral,NoTopic
+53,f000023,you can hear?,1,Neutral,NoTopic
+54,f000024,"yes, i can hear you.",1,Neutral,NoTopic
+55,f000025,okay.,0.550689953,Neutral,side 
+56,f000025,were okay on your side now?,0.668033689,Neutral,side 
+57,f000026,"yes, i believe so.",1,Neutral,NoTopic
+58,f000027,okay.,1,Neutral,NoTopic
+59,f000028,all right.,0.492778202,Neutral,bit script 
+60,f000028,"well, i dont know where we cut off.",0.523727463,Neutral,bit script 
+61,f000028,"anyway im going to back up - sorry about that, im going to back a little bit on my script.",0.524389757,Neutral,bit script 
+62,f000029,"as we have previously indicated, we are taking actions to right-size our factory production levels while ensuring we are maintaining our competitiveness and technology leadership.",0.477992104,Analytical,changes wafer output levels bit 
+63,f000029,"in flash, we are executing on the previously announced changes to our wafer output levels to reduce our bit supply growth for calendar 2019.",0.769634975,Analytical,changes wafer output levels bit 
+64,f000030,we are also making adjustments to the pace of our capital investments in flash in order to align of our bit output with our market demand.,0.593770487,Analytical,closure drive manufacturing facility quarters 
+65,f000030,"additionally, we have accelerated the closure of our kuala lumpur hard drive manufacturing facility by almost three quarters.",0.619565049,Analytical,closure drive manufacturing facility quarters 
+66,f000031,"lastly, we are implementing substantial cost and expense reductions across the company.",0.50591231,Neutral,mark details 
+67,f000031,"in total, we are targeting $800 million in annualized reductions in non-gaap cost and expenses.",0.500164834,Neutral,mark details 
+68,f000031,mike and mark will provide further details in their prepared remarks.,0.534838467,Neutral,mark details 
+69,f000032,the long-term growth opportunities for our business remain unchanged.,0.377233713,Happy,intelligence machine vehicles mobility amounts 
+70,f000032,"transformative trends such as artificial intelligence, machine learning, autonomous vehicles, mobility, and iot will continue to drive massive amounts of data that needs to be captured, preserved, accessed, and transformed.",0.97520298,Happy,intelligence machine vehicles mobility amounts 
+71,f000033,western digital remains well-positioned to further capitalize on the fundamental opportunities associated with the rapid growth in the volume and value of data.,0.638572531,Neutral,digital opportunities growth volume value 
+72,f000033,i want to thank the western digital team and all our partners for their ongoing support.,0.576096565,Neutral,digital opportunities growth volume value 
+73,f000034,"with that, i will now ask mike to share our business highlights.",1,Neutral,business highlights 
+74,f000035,"thank you, steve and good afternoon everyone.",1,Neutral,afternoon everyone 
+75,f000036,we have spent the last two years aggressively investing and building our architectural platforms to power product line expansion.,0.610814099,Analytical,years platforms power line expansion 
+76,f000036,we are now at the point where these platforms and the products launched from these platforms are ramping as we enter 2019. the results of these investments gives us the confidence that we have the strongest portfolio in the companys history.,0.602277258,Analytical,years platforms power line expansion 
+77,f000037,"before i get into the details of our december quarter performance, id like to comment on how we intend to capitalize on the strength of our expanding portfolio throughout the calendar year and beyond.",1,Neutral,details december performance strength calendar 
+78,f000038,"our architectural platforms consisted of a combination of industry-leading-based technologies, internally developed controllers, and the corresponding firmware.",0.656910391,Analytical,platforms industry technologies controllers firmware 
+79,f000038,the underlying storage technology whether flash or the hard drive heads and media and the manufacturing and test processes to mass-producer products with high yields and industry-leading quality.,0.560014648,Analytical,platforms industry technologies controllers firmware 
+80,f000039,we have developed our product portfolio to allow us to increase our participation and differentiated end markets that have strong growth prospects.,0.59587571,Neutral,market capabilities sales marketing organizations 
+81,f000039,"we are also strengthening our market-facing capabilities across the sales, marketing, and go-to-market organizations.",0.617376132,Neutral,market capabilities sales marketing organizations 
+82,f000040,these key ingredients are allowing us to innovate and quickly bring products to our targeted end markets working collaboratively with our customers in the broader ecosystem.,0.611754101,Strategical,ingredients products markets customers ecosystem 
+83,f000040,we are now in a position to drive greater participation in higher value markets and expect to corresponding improvement in the quality of our revenue throughout 2019. i will illustrate with a few important achievements today.,0.601351819,Strategical,ingredients products markets customers ecosystem 
+84,f000041,for the data center we began qualifications of our nvme ssd product in the december quarter and due to stronger customer pull we expect to ramp this product for the meaningful revenue by the middle of this calendar year.,0.502237934,Strategical,enterprise platform ip cost manner 
+85,f000041,"leveraging our enterprise architectural platform and the associated ip blocks, we will be able to expand our enterprise ssd product portfolio throughout 2019 in a cost-effective and predictable manner.",0.522362976,Strategical,enterprise platform ip cost manner 
+86,f000041,this includes shipping bics4 based products to customers within this calendar year.,0.515856773,Strategical,enterprise platform ip cost manner 
+87,f000042,"in capacity enterprise, we are focused our investments to build upon a highly successful helium technology platform, which has become an industry standard.",0.837749391,Happy,capacity investments helium platform standard 
+88,f000042,we continue to maintain our leadership position as demonstrated by the ongoing ramp of our 14-terabyte hard drive and the introduction of our 16-terabyte hard drive later in the calendar year.,0.43912827,Happy,capacity investments helium platform standard 
+89,f000043,"our position in the midrange capacity enterprise market continues to strengthen with the ramp of our cost optimized 4 terabyte to 8 terabyte products, fueling customer breadth and geographic penetration.",1,Happy,position capacity enterprise ramp terabyte 
+90,f000044,we continue to capitalize on our industry-leading client ssd platform with products spanning from high performance gaining solutions to cost optimized mainstream offerings.,0.943957227,Happy,industry client ssd platform solutions 
+91,f000044,all with the quality and reliability customers expect from western digital.,0.37811795,Happy,industry client ssd platform solutions 
+92,f000044,this platform will enable exciting derivative products which will announce throughout this year.,0.37916778,Happy,industry client ssd platform solutions 
+93,f000045,"in mobile and embedded, we will further expand our presence within top-tier accounts given our complete portfolio of products to address all categories of this market.",0.929337284,Happy,mobile presence tier accounts categories 
+94,f000045,weve got it additional design wins with our emmc and ufs solutions further expanding our customer base and enhancing our position among the top five smartphone manufacturers.,0.395851374,Happy,mobile presence tier accounts categories 
+95,f000046,"were also successfully developing leading embedded solutions for automotive, connected home, and surveillance categories.",0.57848863,Strategical,solutions home surveillance categories 
+96,f000046,"this is being illustrated through several of the product announcements, weve made in the second half of 2018 and expect to make in the coming quarters.",0.495939973,Strategical,solutions home surveillance categories 
+97,f000046,we are realizing the benefits of two years of accelerated product r&d investments already in terms of greater participation and higher value areas of the market and a broadening customer base.,0.471723047,Strategical,solutions home surveillance categories 
+98,f000047,i will now provide additional details on some of the near term actions we are taking.,0.463970998,Analytical,reduction starts proportion way deployment 
+99,f000047,we previously announced the reduction to wafer starts for a proportion of the flash joint venture along with the way deployment of the capital equipment.,0.711998104,Analytical,reduction starts proportion way deployment 
+100,f000047,the magnitude of these actions is a planned reduction of 10% to 15% of our bid output in calendar 2019.,0.409676794,Analytical,reduction starts proportion way deployment 
+101,f000048,"as the year progresses, we will continue to assess market conditions and evaluate the need to make further adjustments to right size our inventory.",0.493546461,Analytical,facility closure line quarters hdd 
+102,f000048,we are also accelerating our kuala lumpur facility closure time line by almost three quarters along with rationalizing other hdd manufacturing costs.,0.745379554,Analytical,facility closure line quarters hdd 
+103,f000049,"in terms of our second quarter results, revenue in each of our end markets declined on year-over-year basis due to a combination of lower demand and aggressive flash pricing conditions despite healthy growth in flash bits sold.",0.464326383,Analytical,presence client ssds form factor 
+104,f000049,"we maintain our leadership position across our g-tech, sandisk and wd brands in our client solutions portfolio.",0.514683072,Analytical,presence client ssds form factor 
+105,f000049,we grew up presence in client ssds during the quarter and delivered solid performance on differentiated form factor devices such as ixpand.,0.566301603,Analytical,presence client ssds form factor 
+106,f000050,demand elasticity contributed to a strong 30% year-over-year increase and average capacity in the flash portion of our client solutions portfolio.,0.768289811,Analytical,elasticity year increase capacity portion 
+107,f000050,"within client devices, while near term demand trends in the smartphone market are soft.",0.409535811,Analytical,elasticity year increase capacity portion 
+108,f000050,our view on the longer term shift towards higher average capacities remains unchanged.,0.430124399,Analytical,elasticity year increase capacity portion 
+109,f000051,we achieved excellent momentum in our client ssd portfolio in the quarter.,0.928291344,Happy,momentum client ssd portfolio quarter 
+110,f000051,average capacity for client ssd grew over 60% year-over-year in the december quarter of fueled by an increase mix of our 512 gigabyte ssd at our key customers.,0.393745617,Happy,momentum client ssd portfolio quarter 
+111,f000051,for the first time our client compute ssd revenue exceeded client compute hdd revenue.,0.370263586,Happy,momentum client ssd portfolio quarter 
+112,f000052,"in data center, devices and solutions we have maintained our position as a leader in aerial density with the highest capacity hdd products.",0.415502931,Strategical,sampling generation energy track shipments 
+113,f000052,as steve described the production ramp of a 14-terabyte helium drive has progressed smoothly.,0.528555439,Strategical,sampling generation energy track shipments 
+114,f000052,we are pleased to have commenced product sampling of our first generation energy-assisted 16-terabyte drive and we are on-track to begin revenue shipments of this 8 flatter solution later this calendar year.,0.616235052,Strategical,sampling generation energy track shipments 
+115,f000053,"in terms of the exabyte growth rate for capacity enterprise, as we previously stated we are seeing a moderation in the first half of calendar 2019. based on our customer discussions we continue to forecast year-over-year growth to resume in the second half of calendar 2019.",1,Analytical,exabyte rate moderation customer discussions 
+116,f000054,in data center systems we experienced excellent momentum with record quarterly bookings and new customer acquisitions in our intelliflash and activescale portfolios.,0.932446948,Happy,systems momentum bookings customer acquisitions 
+117,f000054,we also had record revenue in our ultrastar portfolio of storage platform and servers.,0.39453123,Happy,systems momentum bookings customer acquisitions 
+118,f000055,for the third fiscal quarter demand for our products is expected to be affected by many of the market factors we highlighted at our investor day.,0.584987379,Analytical,handsets slowdown inventory adjustments volatility 
+119,f000055,these include reduced demand for mobile handsets a continued slowdown investments by hyperscale customer’s inventory adjustments at certain customers and geopolitical volatility.,0.628867313,Analytical,handsets slowdown inventory adjustments volatility 
+120,f000056,"to conclude my remarks as we enter the new year, we are confident in the strength of our product portfolio and our evolving market position.",0.508662311,Analytical,environment position strength steps conditions 
+121,f000056,we fully expect to emerge from the current soft market environment in a position of strength and in the near term we are taking the necessary steps to effectively navigate current conditions.,0.723229209,Analytical,environment position strength steps conditions 
+122,f000057,i will now turn the call over to mark for the financial overview.,1,Neutral,call overview 
+123,f000058,"thank you, mike and good afternoon everyone.",1,Neutral,afternoon everyone 
+124,f000059,"revenue for the december quarter was $4.2 billion at the lower end of the guidance range, primarily due to a decline in flash, offsetting slightly better-than-anticipated hard drive revenue.",0.515058391,Analytical,bit growth selling price gigabyte 
+125,f000059,flash revenue was $2.2 billion with a sequential bit growth of 5% and a sequential average selling price per gigabyte declined of 18%.,0.714248031,Analytical,bit growth selling price gigabyte 
+126,f000060,hard drive revenue was $2 billion.,0.668163277,Analytical,drive revenue 
+127,f000060,non-gaap gross margin in the quarter was 31.3% below the 32% to 33% guidance range due to a product mix for hard drives that included less capacity enterprise products and lower-than-expected flash pricing.,0.550583149,Analytical,drive revenue 
+128,f000061,non-gaap gross margin for flash was 35% and for hard drives 27%.,0.444065467,Analytical,focus operating expenses compensation quarter 
+129,f000061,continued focus on operating expenses combined with lower variable compensation in the quarter resulted in total non-gaap operating expenses of $738 million.,0.6097847,Analytical,focus operating expenses compensation quarter 
+130,f000061,and non-gaap tax rate was 14.5% which was higher-than-expected.,0.499789941,Analytical,focus operating expenses compensation quarter 
+131,f000062,we also recorded a gaap-only charge for various tax-related accruals of $496 million consisting of the true up for the repatriation taxes related to tax reform and future withholding taxes related to decisions about permanent reinvestment in foreign jurisdictions.,0.689778147,Analytical,consisting repatriation reform withholding reinvestment 
+132,f000062,these are not expected to result in the near term cash payments.,0.53333009,Analytical,consisting repatriation reform withholding reinvestment 
+133,f000063,non-gaap eps was $1.45.,0.461450671,Analytical,cash flow december income increase 
+134,f000063,"operating cash flow for the december quarter was $469 million and free cash flow was $24 million, primarily driven by lower operating income and a sequential increase in the inventory.",0.690217358,Analytical,cash flow december income increase 
+135,f000063,"within inventory almost all of the sequential increase was driven by continued hard drive builds, due to the kuala lumpur plant closure.",0.424912862,Analytical,cash flow december income increase 
+136,f000064,"in the december quarter, we returned to $144 million in dividends to shareholders.",0.569986611,Analytical,december quarter dividends shareholders 
+137,f000064,we did not repurchase any common stock during the quarter.,0.481549595,Analytical,december quarter dividends shareholders 
+138,f000064,"however, we did repay in full our outstanding revolver balance and made scheduled principal payments reducing our overall debt balance by $537 million.",0.493066345,Analytical,december quarter dividends shareholders 
+139,f000065,"at quarter end, we had $4.1 billion in cash, cash equivalents and available-for-sale securities and principal debt outstanding of $10.8 billion.",0.915665007,Analytical,cash equivalents sale securities debt 
+140,f000065,"as steve noted earlier, we planned to reduce our annual non-gaap cost-of-goods sold and total non-gaap operating expense levels by combined $800 million evenly split between the two line items.",0.40176204,Analytical,cash equivalents sale securities debt 
+141,f000066,"for cost-of-goods sold, we expect to see the full results of these efforts reflected by the end of the december quarter of 2019. and for operating expenses we expect to see the full results reflected within the september quarter of 2019.",1,Neutral,goods efforts december expenses september 
+142,f000067,these planned actions are designed to reduce our base level of non-gaap operating expenses before variable compensation by $100 million per quarter including a normal level of variable compensations our new total non-gaap operating expense level for 13-week fiscal quarter would be approximately $740 million starting in the september 2019 quarter.,0.675554858,Strategical,expenses compensation compensations expense week 
+143,f000067,"for modeling purposes, please note that the september 2019 quarter will have 14 weeks instead of the normal 13 weeks.",0.544558946,Strategical,expenses compensation compensations expense week 
+144,f000068,i will now provide our guidance for the third fiscal quarter of 2019 on a non-gaap basis.,0.442235856,Analytical,revenue range 
+145,f000068,we expect revenue in the range of $3.6 billion to $3.8 billion.,0.650007768,Analytical,revenue range 
+146,f000068,gross margin of approximately 28%.,0.412885702,Analytical,revenue range 
+147,f000068,"operating expenses between $760 million and $780 million, which reflect the normal payroll tax reset and other one-time items.",0.419482852,Analytical,revenue range 
+148,f000069,interest and other expenses of approximately $105 million and effective tax rate of 15% to 17%.,0.537628904,Analytical,shares 
+149,f000069,diluted shares of approximately 294 million.,0.562509767,Analytical,shares 
+150,f000069,"as a result, we expect non-gaap earnings per share of $0.40 to $0.60.",0.447505482,Analytical,shares 
+151,f000070,ill now turn the call over to the operator to begin the q&a session.,0.526169633,Neutral,operator 
+152,f000070,operator?,0.699165095,Neutral,operator 
