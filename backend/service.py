@@ -63,7 +63,7 @@ def getData(callId):
             emotion = emotion_dict[splitId]
             topic = topic.strip().title()
             data[splitId] = {'startTime': float(startTime), 'endTime': float(endTime), 'speaker': speaker,
-                         'text': text, 'emotion': emotion, 'topic': topic, 'tags': list(tags_dict[splitId])}
+                         'text': text, 'emotion': emotion, 'topic': topic, 'tags': tags_dict[splitId]}
 
     return title, data, highlightsDict, highlights_flat
 
@@ -80,9 +80,8 @@ def getResults(callId, threshold):
             next(spamReader, None)
             for _, id, sentence, attention, emotion, tags in spamReader:
                 emotion_dict[id] = emotion
-                tags_dict[id] = tags_dict[id].union(set(tags.split()))
+                tags_dict[id] = tags.split()                                            # ends up taking the last tag
                 if float(attention) > threshold and emotion != Emotions.NEUTRAL.value:
-                    print('Highlight')
                     hightlight = (sentence.capitalize(), float(attention), id)
                     highlights_dict[emotion].append(hightlight)
     except IOError:
@@ -96,7 +95,6 @@ def getResults(callId, threshold):
                       + highlights_dict.get(Emotions.STRATEGICAL.value, [])
 
     highlights_flat = highlights_flat[:15]
-    print(highlights_flat)
 
     return highlights_dict, highlights_flat, tags_dict, emotion_dict
 
